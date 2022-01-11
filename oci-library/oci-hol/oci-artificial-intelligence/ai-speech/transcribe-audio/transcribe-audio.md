@@ -1,4 +1,4 @@
-# Lab 1: Analyzing Text with the Console
+# Lab 1: Transcribing audio with the console
 
 ## Introduction
 In this session, we will help users to get familiar with our OCI Language and teach them to use our services via the cloud console.

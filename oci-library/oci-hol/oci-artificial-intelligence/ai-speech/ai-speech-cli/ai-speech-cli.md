@@ -1,4 +1,4 @@
-# Lab 2: Access OCI Language with OCI CLI
+# Lab 2: Access OCI Speech with OCI CLI
 
 ## Introduction
 

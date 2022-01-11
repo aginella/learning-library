@@ -1,4 +1,4 @@
-# Lab 5: Access OCI Language in DataScience Notebook Session.
+# Lab 5: Using OCI Speech with DataScience Notebook Session
 
 ## Introduction
 

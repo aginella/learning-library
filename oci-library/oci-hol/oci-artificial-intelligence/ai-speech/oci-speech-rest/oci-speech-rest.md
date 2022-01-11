@@ -1,4 +1,4 @@
-# Lab 4: Access OCI Language with REST APIs
+# Lab 4: Access OCI Speech with REST APIs
 
 ## Introduction
 
