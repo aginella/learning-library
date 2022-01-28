@@ -55,7 +55,7 @@ If you want to limit access to a user group, create a new policy with the below 
     ```
     ![](./images/group-name-policy.png " ")
 
-## **TASK 1:** Use the Console to Transcribe Audio Files
+## **TASK 1:** Creating a Transcription Job
 
 ### 1: Navigate to OCI Speech
 
@@ -114,9 +114,9 @@ Similar to the job details page, on the task details page we can view specific m
     ![](./images/task-details-page.png " ")
 
 
-## **TASK 3:** Viewing the Results in JSON
+## **TASK 3:** Downloading and Viewing the Results in JSON
 
-You can click on Show JSON button to view the output of the transcription in JSON format.
+You can click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
     ![](./images/show-JSON-button.png " ")
 
 Click Show Standard Results button to leave the JSON view. 
