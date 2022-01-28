@@ -1,30 +1,24 @@
 # Lab 1: Transcribing audio with the console
 
 ## Introduction
-In this session, we will help users to get familiar with our OCI Language and teach them to use our services via the cloud console.
-You can use one or more of these text analysis tools to analyze your text with the Language service:
-- Aspect-Based Sentiment Analysis
-- Named Entity Recognition
-- Key Phrase Extraction
-- Language Detection
-- Text Classification
+In this session, we will help users get familiar with OCI Speech and teach them how to use our services via the cloud console.
 
 ***Estimated Lab Time***: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-- Understand a high level overview of the OCI Language.
-- Understand all the capabilities of OCI Language.
-- Understand how to analyze text using OCI Language via cloud console.
+- Understand a high level overview of the OCI Speech.
+- Understand all the capabilities of OCI Speech.
+- Understand how to analyze text using OCI Speech via cloud console.
 
 ### Prerequisites:
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Tenancy is whitelisted to be able to use OCI Language
+- Tenancy is whitelisted to be able to use OCI Speech
 
 ## **Policy Setup**
 
-Before you start using OCI Language, your tenancy administrator should set up the following policies by following below steps:
+Before you start using OCI Speech, your tenancy administrator should set up the following policies by following below steps:
 
 ### 1. Navigate to Policies
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
@@ -38,93 +32,95 @@ Click Create Policy
 
 ### 3. Create a new policy with the following statements:
 
-If you want to allow all the users in your tenancy to use language service, create a new policy with the below statement:
+If you want to allow all the users in your tenancy to use speech service, create a new policy with the below statement:
     ```
-    <copy>allow any-user to use ai-service-language-family in tenancy</copy>
+    <copy>
+    allow any-user to manage ai-service-speech-family in tenancy
+    allow any-user to manage object-family in tenancy
+    allow any-user to read tag-namespaces in tenancy
+    allow any-user to inspect tag-namespaces in tenancy
+    </copy>
     ```
-    ![](./images/policy3.png " ")
+    ![](./images/any-user-policy.png " ")
 
 
 If you want to limit access to a user group, create a new policy with the below statement:
     ```
-    <copy>allow group <group-name> to use ai-service-language-family in tenancy</copy>
+    <copy>
+    allow group <group-name> to manage ai-service-speech-family in tenancy
+    allow group <group-name> to manage object-family in tenancy
+    allow group <group-name> to read tag-namespaces in tenancy
+    allow group <group-name> to inspect tag-namespaces in tenancy
+    </copy>
     ```
-    ![](./images/policy4.png " ")
+    ![](./images/group-name-policy.png " ")
 
-## **TASK 1:** Use the Console to analyze text
+## **TASK 1:** Use the Console to Transcribe Audio Files
 
-### 1: Navigate to OCI Language
+### 1: Navigate to OCI Speech
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
-    ![](./images/navigate-to-ai-langauge-menu.png " ")
+    ![](./images/navigate-to-ai-speech-menu.png " ")
 
-### 2: Enter Text
+Then, click "Transcription Job" to navigate to transcription jobs list.
+    ![](./images/click-Transcription-Job.png " ")
 
-Enter your text into the dialog box to analyze.
-    ![](./images/text-box.png " ")
+### 2: Create Transcription Job
 
-Below are some of the examples for the text:
+Select the compartment in which you want to create your transcription job, then
+click the "Create transcription job" button to begin job creation process
+    ![](./images/create-transcription-job.png " ")    
+
+### 3: Enter Job Information on Basic Information Page
+
     ```
-    <copy>The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities.</copy>
-    ```
-    ```
-    <copy>The Seattle Sounders Football Club recently announced it was looking for a technology partner to provide a reliable, scalable, and secure solution that could ingest, process, and store game and player data. </copy>
-    ```
-    ```
-    <copy>In 2020 people worldwide moved to working remotely because of the COVID-19 pandemic. As a result, collaborative tools like video conferencing, email and chat have become critical, as they allow employees to perform their jobs from home. </copy>
+    UI UNDER DEVELOPMENT
     ```
 
-### 3: Select the text analysis tools
+### 4: Select Which File(s) From Object Storage to Transcribe in this Job
 
-Select one or more of the text analysis tools to analyze your text with the Language service:
-    ![](./images/lang-services.png " ")
+Select one or more files to transcribe from the specified bucket in object storage then click "Submit"
+    ![](./images/select-files.png " ")
 
-### 4: Click Analyze
+### 5: View Newly Created Job in Transcription Jobs List
 
-You can analyze text by clicking Analyze button.
-    ![](./images/analyze-button.png " ")
-
-<!-- ### 5: Click Reset
-
-You can reset the page by clicking Reset button.
-![](./images/reset-button.png " ") -->
+Once the job is created you will be directed back to the transcription jobs list page, where the newly created job will be at the top
+    ![](./images/new-job-in-list.png " ")
 
 ## **TASK 2:** Viewing the Results
 
-After you analyze your text, the Language service displays the results by category for the selected tools as follows:
+To view the result of the transcription we will navigate to each the job and task details page
 
-### 1: Sentiment Analysis
+### 1: Navigating to Job Details Page
 
-Renders the results in horizontal bar graphs as a percentage.
-    ![](./images/sentiment-result.png " ")
+Click on the name of the job in the list or click "View details" via the three dots kebab menu on the far right of the job
+    ![](./images/navigate-to-job-details-page.png " ")
 
-### 2: Named Entity Recognition
+### 2: Job Details Page
 
-Identifies the named entities that were found and their categories are indicated in square brackets.
-    ![](./images/ner-result.png " ")
+The job details page is split into two main sections, on top we can see various metadata relating to the job, such as description, the compartment the job is located in and the language of the transcribed audio
 
-### 3: Key Phrase Extraction
+The second section is the <i>job tasks list</i> which shows all the files (now dubbed tasks) we had previously selected to transcribe
+    ![](./images/job-details-page.png " ")
 
-Lists the key phrases in a double-quotes delimited list.
-    ![](./images/kpe-result.png " ")
+### 3: Navigate to Individual Task Details
 
-### 4: Language Detection
+To view metadata and the actual transcription for each task (file) in this job either click the name of the particular task within the list or click "View details" from the three dots kebab menu on the far right
+    ![](./images/navigate-to-task-details.png " ")
 
-Lists, by confidence percentage, the languages detected.
-    ![](./images/lang-result.png " ")
+### 4: Task Details Page
 
-### 5: Text Classification
+Similar to the job details page, on the task details page we can view specific metadata for the task in the above section, as well as the audio transcript itself in the lower section
+    ![](./images/task-details-page.png " ")
 
-Lists the word, identified document category, and the confidence score.
-    ![](./images/text-result.png " ")
 
 ## **TASK 3:** Viewing the Results in JSON
 
-You can click on Show JSON button to view the output of each of the capabilities in JSON format.
-    ![](./images/show-json-button.png " ")
+You can click on Show JSON button to view the output of the transcription in JSON format.
+    ![](./images/show-JSON-button.png " ")
 
 Click Show Standard Results button to leave the JSON view. 
-    ![](./images/copy-download-button.png " ")
+    ![](./images/show-standard-results.png " ")
 
 
 
@@ -134,6 +130,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
+    * Alex Ginella  - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
 * **Last Updated By/Date**
