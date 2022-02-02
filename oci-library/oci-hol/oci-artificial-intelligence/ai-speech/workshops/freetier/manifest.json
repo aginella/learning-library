@@ -13,7 +13,7 @@
             "filename": "./intro.md"
         },
         {
-            "title": "# Lab 1: Transcribing audio with the console",
+            "title": "Lab 1: Transcribing audio with the console",
             "description": "Learn how to transcribe audio files using oci console",
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },

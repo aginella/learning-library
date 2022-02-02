@@ -3,7 +3,7 @@
 ## Introduction
 In this session, we will help users get familiar with OCI Speech and teach them how to use our services via the cloud console.
 
-***Estimated Lab Time***: 20 minutes
+***Estimated Lab Time***: 10-15 minutes
 
 ### Objectives
 
