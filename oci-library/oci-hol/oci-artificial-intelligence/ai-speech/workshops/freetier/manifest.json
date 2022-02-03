@@ -13,6 +13,11 @@
             "filename": "./intro.md"
         },
         {
+            "title": "Lab 0: Creating a bucket and uploading files",
+            "description": "Learn how to create an input bucket in object storage and upload files",
+            "filename": "../../object-storage/object-storage.md"
+        },
+        {
             "title": "Lab 1: Transcribing audio with the console",
             "description": "Learn how to transcribe audio files using oci console",
             "filename": "../../transcribe-audio/transcribe-audio.md"
