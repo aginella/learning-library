@@ -4,7 +4,7 @@
 
 Oracle Cloud Infrastructure provides a number of Software Development Kits (SDKs) to facilitate development of custom solutions. SDKs allow you to build and deploy apps that integrate with Oracle Cloud Infrastructure services. Each SDK also includes tools and artifacts you need to develop an app, such as code samples and documentation. In addition, if you want to contribute to the development of the SDKs, they are all open source and available on GitHub.
  
-You can invoke OCI Language capabilities through the OCI SDKs.  In this lab session, we will show several code snippets to access OCI Language through the OCI SDKs. You do not need to execute the snippets, but review them to understand what information and steps are needed to implement your own integration.
+You can invoke OCI speech capabilities through the OCI SDKs. In this lab session, we will show several code snippets to access OCI speech through the OCI SDKs. You do not need to execute the snippets, but review them to understand what information and steps are needed to implement your own integration.
 
 #### 1. [SDK for Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm#SDK_for_Java)
 #### 2. [SDK for Python](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#SDK_for_Python)
@@ -17,7 +17,7 @@ You can invoke OCI Language capabilities through the OCI SDKs.  In this lab sess
 
 ### Objectives:
 
-* Learn how to use Language SDKs to communicate with our language service endpoints.
+* Learn how to use speech SDKs to communicate with our speech service endpoints.
 
 <!-- ### Prerequisites:
 * Familiar with Python programming is required
@@ -108,62 +108,109 @@ Now Install oci by running:
 
 
 
-## **TASK 3:** OCI Language Service SDK Code Sample
+## **TASK 3:** OCI Speech Service SDK Code Sample
 
 #### Python Code
 ```Python
 <copy>
 import oci
+from oci.config import from_file
 
-text = "Zoom interface is really simple and easy to use. The learning curve is very short thanks to the interface. It is very easy to share the Zoom link to join the video conference. Screen sharing quality is just ok. Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people to zoom bomb"
+ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
 
-#Create Language service client with user config default values. Please follow below link to setup ~/.oci directory and user config
-#https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
-#https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/configuration.html
+# Give your job related details in these fields
 
-ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file())
+sample_display_name = "test_job"
+sample_compartment_id = "ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa"
+sample_description = "This is newly created Job"
+sample_mode_details = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code="en-US")
+sample_object_location = oci.ai_speech.models.ObjectLocation(namespace_name="axsjzgvicq5h", bucket_name="speech_test",
+object_names=["adaml-test-3chunk.wav"])
+ 
+sample_input_location = oci.ai_speech.models.ObjectListInlineInputLocation(
+location_type="OBJECT_LIST_INLINE_INPUT_LOCATION", object_locations=[sample_object_location])
+ 
+sample_output_location = oci.ai_speech.models.OutputLocation(namespace_name="axsjzgvicq5h", bucket_name="speech_test",
+prefix="Python_SDK_DEMO")
+# For now only above job details are supported
 
 
-#Detect Entities
-detect_language_entities_details = oci.ai_language.models.DetectLanguageEntitiesDetails(text=text)
-output = ai_client.detect_language_entities(detect_language_entities_details)
-print(output.data)
+# Create Transcription Job with details provided
 
-#Detect Language
-detect_dominant_language_details = oci.ai_language.models.DetectDominantLanguageDetails(text=text)
-output = ai_client.detect_dominant_language(detect_dominant_language_details)
-print(output.data)
+transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=sample_display_name,
+                                                                               compartment_id=sample_compartment_id,
+                                                                               description=sample_description,
+                                                                               model_details=sample_mode_details,
+                                                                               input_location=sample_input_location,
+                                                                               output_location=sample_output_location)
+ 
+transcription_job = None
+try:
+    transcription_job = ai_client.create_transcription_job(create_transcription_job_details=transcription_job_details)
+except Exception as e:
+    print(e)
+else:
+    print(transcription_job.data)
 
-#Detect KeyPhrases
-detect_language_key_phrases_details = oci.ai_language.models.DetectLanguageKeyPhrasesDetails(text=text)
-output = ai_client.detect_language_key_phrases(detect_language_key_phrases_details)
-print(output.data)
+    
+    
+# Gets Transcription Job with given Transcription job id
+try:
+    if transcription_job.data:
+        transcription_job = ai_client.get_transcription_job(transcription_job.data.id)
+except Exception as e:
+    print(e)
+else:
+    print(transcription_job.data)
 
-#Detect Sentiment
-detect_language_sentiments_details = oci.ai_language.models.DetectLanguageSentimentsDetails(text=text)
-output = ai_client.detect_language_sentiments(detect_language_sentiments_details)
-print(output.data)
 
-#Detect Text Classification
-detect_language_text_classification_details = oci.ai_language.models.DetectLanguageTextClassificationDetails(text=text)
-output = ai_client.detect_language_text_classification(detect_language_text_classification_details)
-print(output.data)
+    
+# Gets All Transcription Jobs from a particular compartment
+try:
+    transcription_jobs = ai_client.list_transcription_jobs(compartment_id=sample_compartment_id)
+except Exception as e:
+    print(e)
+else:
+    print(transcription_jobs.data)
+
+    
+    
+#Gets Transcription tasks under given transcription Job Id
+transcription_tasks = None
+try:
+    transcription_tasks = ai_client.list_transcription_tasks(transcription_job.data.id)
+except Exception as e:
+    print(e)
+else:
+    print(transcription_tasks.data)
+
+    
+    
+# Gets a Transcription Task with given Transcription task id under Transcription Job id
+transcription_task = None
+try:
+    if transcription_tasks.data:
+        transcription_task = ai_client.get_transcription_task(transcription_job.data.id, transcription_tasks.data[0].id)
+except Exception as e:
+    print(e)
+else:
+    print(transcription_task.data)
+
 </copy>
 ```
 Follow below steps to run Python SDK:
 
 ### 1. Download Python Code.
 
-Download [code](./files/language.py) file and save it your directory.
+Download [code](./files/speech_example.py) file and save it your directory.
 
 ### 2. Execute the Code.
 Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
 ```
-<copy>python language.py</copy>
+<copy>python speech_example.py</copy>
 ```
 ### 3. Result
 You will see the result as below
-    ![](./images/result.png " ")
 
 
 
@@ -187,6 +234,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
+    * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
 * **Last Updated By/Date**

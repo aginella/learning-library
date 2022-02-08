@@ -2,7 +2,7 @@
 
 ## Introduction
 
-OCI Language can be called from the OCI Command Line Interface (CLI).
+OCI Speech can be called from the OCI Command Line Interface (CLI).
 
 In this lab session, we will show several code snippets to access our service with CLI.
 
@@ -12,7 +12,7 @@ You do not need to execute these codes, but review them to understand what infor
 
 ### Objectives:
 
-* Learn how to use CLI to communicate with our language service endpoints.
+* Learn how to use CLI to communicate with our speech service endpoints.
 
 ### Prerequisites:
 * Familiar with Python programming is required
@@ -37,15 +37,15 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
     ![](./images/cloudShellIcon.png " ")
 
-### 2: Enter Language CLI Command
+### 2: Enter Speech CLI Command
 
-Enter any one of the Language Pre-Deployed CLI commands you want to execute.
+Enter any one of the Speech Pre-Deployed CLI commands you want to execute.
     ![](./images/cloudShellCommand.png " ")
 
 
 ### 2: View Result
 
-The Language service displays the results as shown below:
+The Speech service displays the results as shown below:
     ![](./images/clousShellResult.png " ")
 
 
@@ -58,7 +58,7 @@ For information about using the CLI, see [Command Line Interface (CLI)](https://
 For a complete list of flags and options available for CLI commands, see the [Command Line Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/). -->
 
 
-## **TASK 2:** Try issuing some of the OCI Language commands
+## **TASK 2:** Try issuing some of the OCI Speech commands
 
 ### 1. Language Detection
 Run this command : oci ai language detect-language --text, -? | -h | --help
