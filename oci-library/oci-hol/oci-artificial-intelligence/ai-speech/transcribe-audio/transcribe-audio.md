@@ -73,9 +73,17 @@ click the "Create transcription job" button to begin job creation process
 
 ### 3: Enter Job Information on Basic Information Page
 
-    ```
-    UI UNDER DEVELOPMENT
-    ```
+This page is split into three sections
+
+<strong>Job information:</strong> Optionally enter a name and description for your transcription job, as well as choose the compartment you want your job to be in
+
+ <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names
+
+ <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters 
+    ![](./images/Basic_information_page.png " ")
+
+Click "Next" to continue to file selection
+   
 
 ### 4: Select Which File(s) From Object Storage to Transcribe in this Job
 
