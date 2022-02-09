@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this lab session, we will show you how to access OCI Language services in a DataScience Notebook.
+In this lab session, we will show you how to access OCI Speech services in a DataScience Notebook.
 
 The Datascience Notebook is a web application that contains code, results and visualizations that makes testing and sharing ML pipelines simple.
 
 *Estimated Lab Time*: 15 minutes
 
 ### Objectives:
-* Learn how to use Language Services within a DataScience notebook.
+* Learn how to use Speech Services within a DataScience notebook.
 
 ## **Data Science Prerequisites:**
 
@@ -69,7 +69,7 @@ Select the Compartment in which want to create your project.
 ### 3. Create Project
 Click Create Project to create a new project.
     ![](./images/createProject1.png " ")
-<!-- Select the Project named 'oci-language-livelabs' -->
+<!-- Select the Project named 'oci-Speech-livelabs' -->
     
 
 ### 4. Enter Project Details
@@ -95,7 +95,7 @@ The Notebook Session VM will be created. This might take a few minutes. When cre
 Open the notebook session that was provisioned.
     ![](./images/openNotebook.png " ")
 
-## **TASK 2:** Invoke the Language Service
+## **TASK 2:** Invoke the Speech Service
 
 
 ### 1. Download and Upload the Files
@@ -105,6 +105,7 @@ Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
 
 ### 2. Setup API Signing Key and Config File
 Open the Terminal by clicking the Terminal icon in the Launcher Tab.
+    ![](./images/DS_notebook_terminal.png " ")
 
 In the terminal, create a .oci directory in the Data Science notebook session.
     ```
@@ -130,7 +131,7 @@ Open the Notebook that you've just uploaded
 
 Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
-These notebooks demonstrates how you can be more productive by using the various Language services.
+These notebooks demonstrates how you can be more productive by using the various Speech services.
 
 Congratulations on completing this lab!
 
