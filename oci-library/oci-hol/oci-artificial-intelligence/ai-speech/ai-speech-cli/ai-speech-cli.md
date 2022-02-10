@@ -15,6 +15,7 @@ You do not need to execute these codes, but review them to understand what infor
 * Learn how to use CLI to communicate with our speech service endpoints.
 
 ### Prerequisites:
+* Have completed Lab #1 policy setup
 * Familiar with Python programming is required
 * Have a Python environment ready in local
 * Familiar with local editing tools, vi and nano

@@ -21,7 +21,7 @@ In this lab, you will:
 ## Task 1: Format audio files with proper headers
 
 OCI speech supports single-channel, 16-bit PCM WAV audio files with a 16kHz sample rate. We recommend Audacity (GUI) or ffmpeg (command line) for audio transcoding. 
-If you have audio files that aren't in the supported encoding, you can install ffmpeg and run the following command:
+If you have audio files that aren't in the supported encoding, you can [install ffmpeg](https://ffmpeg.org/download.html) and run the following command:
 
     <copy>
     ffmpeg -y -i <path to input file> -map 0:a -ac 1 -ar 16000 -b:a 16000 -acodec pcm_s16le <path to output wav file>

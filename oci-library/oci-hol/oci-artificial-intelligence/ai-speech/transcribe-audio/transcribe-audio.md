@@ -38,7 +38,6 @@ If you want to allow all the users in your tenancy to use speech service, create
     allow any-user to manage ai-service-speech-family in tenancy
     allow any-user to manage object-family in tenancy
     allow any-user to read tag-namespaces in tenancy
-    allow any-user to inspect tag-namespaces in tenancy
     </copy>
     ```
     ![](./images/any-user-policy.png " ")
@@ -50,12 +49,11 @@ If you want to limit access to a user group, create a new policy with the below 
     allow group <group-name> to manage ai-service-speech-family in tenancy
     allow group <group-name> to manage object-family in tenancy
     allow group <group-name> to read tag-namespaces in tenancy
-    allow group <group-name> to inspect tag-namespaces in tenancy
     </copy>
     ```
     ![](./images/group-name-policy.png " ")
 
-## **TASK 1:** Creating a Transcription Job
+## **TASK 1:** Manage a Transcription Job
 
 ### 1: Navigate to OCI Speech
 

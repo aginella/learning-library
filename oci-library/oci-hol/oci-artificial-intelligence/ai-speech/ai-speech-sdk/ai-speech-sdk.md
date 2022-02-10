@@ -19,11 +19,10 @@ You can invoke OCI speech capabilities through the OCI SDKs. In this lab session
 
 * Learn how to use speech SDKs to communicate with our speech service endpoints.
 
-<!-- ### Prerequisites:
+Prerequisites:
+* Have completed Lab #1 policy setup
 * Familiar with Python programming is required
-* Have a Python environment ready in local
-* Familiar with local editing tools, vi and nano
-* Installed with Python libraries: `oci` and `requests` -->
+* Install with Python libraries: `oci` and `requests`
 
 
 ## **TASK 1:** Setup API Signing Key and Config File
