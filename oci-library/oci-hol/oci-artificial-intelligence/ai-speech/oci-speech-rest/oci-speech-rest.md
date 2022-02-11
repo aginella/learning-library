@@ -33,6 +33,7 @@ Open and edit the newly imported environment (OCI_Environment), and set the vari
 Make sure to set both Initial Value and Current Value of the variables(set both as the same value).
 
 Click the Save button to commit your changes to the environment.
+(sensitive information redacted from below screenshot)
     ![](./images/setVar.png " ")
 
 ### 3. Import the Collections
@@ -54,41 +55,142 @@ Just make sure that the OCI REST calls are executed as part of the OCI REST COLL
 
 ## **TASK 2:** Invoke Speech OCI REST APIs
 
-Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI REST COLLECTION. Enter the text you want to analyze in the body as shown below:
-    ```
-    <copy>{
-        "text" : "American football was derived from the European games of rugby and soccer. Unlike the game of soccer, however, American football focuses more on passing and catching the ball with the hands as opposed to kicking the ball with the feet. Standard American football field is 120 yards in length and 160 feet in width. They are hash marks on every yards and every 10 yards. American football is quickly become more popular then baseball and fan bases are increasing rapidly. Jerry Rice, Tom Brady and Lawrence Taylor are few top player of this sports."
-    }<copy>
-    ```
+Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
-Below in the example shown to invoke Detect Language Service.
-    ![](./images/collectionREST.png " ")
+Below in the example shown to invoke Create Transcription Job.
 
-OCI Language Service EndPoints for all the services:
+Replace all <placeholder> values with the corresponding values of the job you want to create
+    ![](./images/postman_screenshot.png " ")
 
+OCI Speech Service EndPoints for all the services:
+NOTE: be sure to replace <placeholder> values with actual job values
+
+
+### <u>Create Transcription Job</u>
+Endpoint:
 ```
-# Language Detection
-https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectDominantLanguage
-
-# Key Phrase Extraction
-https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageKeyPhrases
-
-# Named Entity Recognition
-https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageEntities
-
-# Text Classification
-https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageTextClassification
-
-# Aspect-Based Sentiment Analysis
-https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageSentiments
-
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+</copy>
 ```
+Body:
+```
+<copy>
+{
+    "compartmentId": "ocid1.compartment.oc1..<uniqueID>",
+    "definedTags": null,
+    "description": "<descriptionPlaceholder>",
+    "displayName": "<displayNamePlaceholder>",
+    "freeformTags": null,
+    "inputLocation": {
+        "locationType": "OBJECT_LIST_INLINE_INPUT_LOCATION",
+        "objectLocations": [
+            {
+                "bucketName": "<bucketNamePlaceholder>",
+                "namespaceName": "<namespacePlaceholder>",
+                "objectNames": [
+                    "<filename1>",
+                    "<filename2>",
+                    "<filename3>"
+                ]
+            }
+        ]
+    },
+    "modelDetails": {
+        "domain": "GENERIC",
+        "languageCode": "en-US"
+    },
+    "normalization": null,
+    "outputLocation": {
+        "bucketName": "<outputBucketPlaceholder>",
+        "namespaceName": "<namespacePlaceholder>",
+        "prefix": "<examplePrefix>/"
+    }
+}
+</copy>
+```
+
+### <u>Get Transcription Job</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
+```
+### <u>List Transcription Jobs</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
+```
+### <u>Edit Transcription Job</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
+</copy>
+```
+Body:
+```
+<copy>
+{
+    "displayName": "<newNameOfJob>",
+    "description": "<newDescriptionOfJob>"
+}
+</copy>
+```
+### <u>Move Resource</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
+```
+Body:
+```
+<copy>
+{
+    "compartmentId": "<targetCompartmentHere>"
+}
+</copy>
+```
+### <u>Cancel Transcription Job</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
+</copy>
+```
+
+### <u>Get Transcription Task</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
+</copy>
+```
+
+### <u>Get Transcription Tasks</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
+</copy>
+```
+
+### <u>Cancel Transcription Task</u>
+Endpoint:
+```
+<copy>
+https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
+</copy>
+```
+
 
 [Proceed to the next section](#next).
 
 
 ## Acknowledgements
 * **Authors**
+    * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
 * **Last Updated By/Date**
