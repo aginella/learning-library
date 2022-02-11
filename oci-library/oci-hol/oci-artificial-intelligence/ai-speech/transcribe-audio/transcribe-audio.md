@@ -43,24 +43,49 @@ If you want to allow all the users in your tenancy to use speech service, create
     ![](./images/any-user-policy.png " ")
 
 
-If you want to limit access to a user group, create a new policy with the below statement:
+If you want to limit access to a user group, first create a group
+
+navigate to oci groups:
+    ![](./images/navigate-to-groups.png " ")
+
+click "Create Group"
+    ![](./images/create-group.png " ")
+
+add group name and description, click create
+    ![](./images/group-name-description.png " ")
+
+to add users click "Add User to Group" and select user from dialog
+    ![](./images/add-users-to-group.png " ")
+
+
+
+
+create a new policy with the below statement:
     ```
     <copy>
-    allow group <group-name> to manage ai-service-speech-family in tenancy
-    allow group <group-name> to manage object-family in tenancy
-    allow group <group-name> to read tag-namespaces in tenancy
+    allow group group-name to manage ai-service-speech-family in tenancy
+    allow group group-name to manage object-family in tenancy
+    allow group group-name to read tag-namespaces in tenancy
     </copy>
     ```
     ![](./images/group-name-policy.png " ")
 
-## **TASK 1:** Manage a Transcription Job
-
-### 1: Navigate to OCI Speech
+## **TASK 1:** Navigate to Overview Page
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
     ![](./images/navigate-to-ai-speech-menu.png " ")
 
-Then, click "Transcription Job" to navigate to transcription jobs list.
+This will navigate you to the transcription jobs overview page.
+On the left you can toggle between overview and transcription jobs listing page.
+Under documentation you can find helpful links relevant to OCI speech service
+    ![](./images/overview-page.png " ")
+
+
+## **TASK 2:** Create and Manage Transcription Job
+
+### 1: Navigate to OCI Speech
+
+Click "Transcription Job" to navigate to transcription jobs list.
     ![](./images/click-Transcription-Job.png " ")
 
 ### 2: Create Transcription Job
@@ -93,7 +118,7 @@ Select one or more files to transcribe from the specified bucket in object stora
 Once the job is created you will be directed back to the transcription jobs list page, where the newly created job will be at the top
     ![](./images/new-job-in-list.png " ")
 
-## **TASK 2:** Viewing the Results
+## **TASK 3:** Viewing the Results
 
 To view the result of the transcription we will navigate to each the job and task details page
 
@@ -120,7 +145,7 @@ Similar to the job details page, on the task details page we can view specific m
     ![](./images/task-details-page.png " ")
 
 
-## **TASK 3:** Downloading and Viewing the Results in JSON
+## **TASK 4:** Downloading and Viewing the Results in JSON
 
 You can click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
     ![](./images/show-JSON-button.png " ")
