@@ -61,34 +61,61 @@ For a complete list of flags and options available for CLI commands, see the [Co
 
 ## **TASK 2:** Try issuing some of the OCI Speech commands
 
-### 1. Language Detection
-Run this command : oci ai language detect-language --text, -? | -h | --help
+### 1. Create Transcription Job
+Run this command : oci speech transcription-job create -c 
     ```
-    <copy>oci ai language detect-language --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    <copy>
+    oci speech transcription-job create -c ocid1.tenancy.oc1..<unique_ID> --input-location '{
+    "location_type": "OBJECT_LIST_INLINE_INPUT_LOCATION",
+    "object_locations": [
+      {
+        "bucket_name": <your_bucket_here>,
+        "namespace_name": <namespace_here>,
+        "object_names": [
+            <object_file_name>
+            <object_file_name>
+        ]
+      }
+    ]
+  }' --model-details '{"domain": "GENERIC","language_code": "en-US"}' --output-location '{
+    "bucket_name": <output_bucket_placeholder>,
+    "namespace_name": <namespace_here>,
+    "prefix": <job_prefix>
+  }' --defined-tags null --description "This is newly created Job from CLI" --display-name "cli_test_job" --freeform-tags null
+ 
+    </copy>
     ```
 
-### 2. Named Entity Recognition
-Run this command : oci ai language detect-entities --text, -? | -h | --help, --is-pii
+### 2. Get Transcription Job
+Run this command : oci speech transcription-job get
     ```
-    <copy>oci ai language detect-entities --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-    ```
-
-### 3. Key Phrase Extraction
-Run this command : oci ai language detect-key-phrases --text, -? | -h | --help
-    ```
-    <copy>oci ai language detect-key-phrases --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    <copy>
+    oci speech transcription-job get --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID>
+    </copy>
     ```
 
-### 4. Aspect-Based Sentiment Analysis
-Run this command : oci ai language detect-sentiments --text, -? | -h | --help
+### 3. Gets All Transcription Jobs from a particular compartment
+Run this command : oci speech transcription-job list --all --compartment-id
     ```
-    <copy>oci ai language detect-sentiments --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    <copy> 
+    oci speech transcription-job list --all --compartment-id ocid1.tenancy.oc1..<unique_ID>
+    </copy>
     ```
 
-### 5. Text Classification
-Run this command : oci ai language detect-text-classification --text, -? | -h | --help
+### 4. Gets Transcription tasks under given transcription Job Id
+Run this command : oci speech transcription-task list --transcription-job-id 
     ```
-    <copy>oci ai language detect-text-classification --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    <copy>
+    oci speech transcription-task list --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID> --all
+    </copy>
+    ```
+
+### 5. Gets a Transcription Task with given Transcription task id under Transcription Job id
+Run this command : oci speech transcription-task get --transcription-job-id <jobID> --transcription-task-id <taskID>
+    ```
+    <copy>
+    oci speech transcription-task get --transcription-job-id ocid1.aispeechtranscriptionjob.oc1..<unique_ID> --transcription-task-id ocid1.aispeechtranscriptiontask.oc1..<unique_ID>
+    </copy>
     ```
 
 
