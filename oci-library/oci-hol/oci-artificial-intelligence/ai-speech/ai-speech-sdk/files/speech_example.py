@@ -4,27 +4,29 @@ from oci.config import from_file
 ai_client = oci.ai_speech.AIServiceSpeechClient(oci.config.from_file())
 
 # Give your job related details in these fields
-sample_display_name = "test_job"
-sample_compartment_id = "ocid1.tenancy.oc1..aaaaaaaavhztk6bkuogd5w3nufs5dzts6dfob4nqxedvgbsi7qadonat76fa"
-sample_description = "This is newly created Job"
-sample_mode_details = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code="en-US")
-sample_object_location = oci.ai_speech.models.ObjectLocation(namespace_name="axsjzgvicq5h", bucket_name="speech_test",
-object_names=["adaml-test-3chunk.wav"])
+SAMPLE_DISPLAY_NAME = "test_job"
+SAMPLE_COMPARTMENT_ID = "ocid1.tenancy.oc1..<uniqueID>"
+SAMPLE_DESCRIPTION = "This is newly created Job"
+SAMPLE_NAMESPACE = "<namespace_placeholder>"
+SAMPLE_BUCKET = "<bucket_placeholder>"
+SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code="en-US")
+SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
+OBJECT_NAMES=["<filename1>, <filename2>"])
  
-sample_input_location = oci.ai_speech.models.ObjectListInlineInputLocation(
-location_type="OBJECT_LIST_INLINE_INPUT_LOCATION", object_locations=[sample_object_location])
+SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(
+location_type="OBJECT_LIST_INLINE_INPUT_LOCATION", object_locations=[SAMPLE_OBJECT_LOCATION])
  
-sample_output_location = oci.ai_speech.models.OutputLocation(namespace_name="axsjzgvicq5h", bucket_name="speech_test",
-prefix="Python_SDK_DEMO")
+SAMPLE_OUTPUT_LOCATION = oci.ai_speech.models.OutputLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
+PREFIX="Python_SDK_DEMO")
 # For now only above job details are supported
 
 # Create Transcription Job with details provided
-transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=sample_display_name,
-                                                                               compartment_id=sample_compartment_id,
-                                                                               description=sample_description,
-                                                                               model_details=sample_mode_details,
-                                                                               input_location=sample_input_location,
-                                                                               output_location=sample_output_location)
+transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=SAMPLE_DISPLAY_NAME,
+                                                                               compartment_id=SAMPLE_COMPARTMENT_ID,
+                                                                               description=SAMPLE_DESCRIPTION,
+                                                                               model_details=SAMPLE_MODE_DETAILS,
+                                                                               input_location=SAMPLE_INPUT_LOCATION,
+                                                                               output_location=SAMPLE_OUTPUT_LOCATION)
  
 transcription_job = None
 try:
@@ -49,7 +51,7 @@ else:
     
 # Gets All Transcription Jobs from a particular compartment
 try:
-    transcription_jobs = ai_client.list_transcription_jobs(compartment_id=sample_compartment_id)
+    transcription_jobs = ai_client.list_transcription_jobs(compartment_id=SAMPLE_COMPARTMENT_ID)
 except Exception as e:
     print(e)
 else:

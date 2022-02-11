@@ -127,6 +127,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
+    * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
 * **Last Updated By/Date**
