@@ -118,6 +118,17 @@ Select one or more files to transcribe from the specified bucket in object stora
 Once the job is created you will be directed back to the transcription jobs list page, where the newly created job will be at the top
     ![](./images/new-job-in-list.png " ")
 
+### 6: Edit Job
+
+Select "Edit" from the three dots menu on the right to change job information from this page
+    ![](./images/kebab-edit.png " ")
+
+Enter new job information in edit slider
+    ![](./images/edit-slider.png " ")
+
+To change the compartment of a job from this view select "Move Resource" from the right side three dots menu and choose the target compartment from the dialog
+    ![](./images/kebab-move-resource.png " ")
+
 ## **TASK 3:** Viewing the Results
 
 To view the result of the transcription we will navigate to each the job and task details page
@@ -133,6 +144,11 @@ The job details page is split into two main sections, on top we can see various 
 
 The second section is the <i>job tasks list</i> which shows all the files (now dubbed tasks) we had previously selected to transcribe
     ![](./images/job-details-page.png " ")
+
+### 2a: Make Changes to Job
+
+On the job details page click "Edit" to make changes to title, description and tags of the job. Click "Move Resource" to change the compartment that the job is located in (select target compartment form dialog)
+    ![](./images/edit-move-resource-details-page.png " ")
 
 ### 3: Navigate to Individual Task Details
 
