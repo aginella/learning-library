@@ -2,40 +2,22 @@
 
 ## Introduction
 
-OCI Language empowers developers with production ready pre-trained models to automate sophisticated text analysis at scale without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs.
-
-The Language service contains these pretrained language processing capabilities:
-
-### 1. Aspect-Based Sentiment Analysis
-Identifies aspects from the given text and classifies each into positive, negative, or neutral polarity.
-
-### 2. Named Entity Recognition
-Identifies common entities, people, places, locations, email, and so on.
-
-### 3. Key Phrase Extraction
-Identify the most salient talking points in your text.
-
-### 4. Language Detection
-Detects languages based on the given text, and includes a confidence score.
-
-### 5. Text Classification
-Identifies the document category and subcategory that the text belongs to.
-
+OCI Speech enables developers to extract text from audio using production ready pre-trained ASR (Automatic Speech Recognition) models. OCI’s Speech service provides automated, accurate transcription at scale, without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs.
 
 <!-- [AI Language Demonstration Video](youtube:LamMjG3mD-s) -->
 
-Explore the Language service within the Oracle Cloud AI service group to perform NLP tasks like detecting languages, extracting key elements, classifying intent, detecting the sentiment, etc., in the text with a few simple steps.
+Explore the OCI Speech service within the Oracle Cloud AI service group to perform automatic speech recognition tasks like creating closed captions to your audio files or indexing your content using extracted metadata tags with a few simple steps.
 
 *Estimated Lab Time*: 1 hour
 
 ### Objectives:
 
-* Understand a high level overview of the OCI Language
-* Understand the full cycle/workflow of services provided in the OCI Language
-* Learn to use REST API to interact with OCI Language
-* Learn to use CLI to interact with OCI Language
-* Learn to use the OCI Language SDKs.
-* Learn to access OCI Language in DataScience NotebookSession
+* Understand a high level overview of the OCI Speech
+* Understand the full cycle/workflow of services provided by OCI Speech
+* Learn to use REST API to interact with OCI Speech
+* Learn to use CLI to interact with OCI Speech
+* Learn to use the OCI Speech SDKs.
+* Learn to access OCI Speech in DataScience NotebookSession
 <!-- * Learn to access OCI Language Service in Data Flow. -->
 
 ### Prerequisites:
@@ -58,7 +40,8 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 
 ### Acknowledgements:
 * **Authors**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services
-    * Ankit Tyagi -  Oracle AI OCI Langauge Services
+    * Alex Ginella - Oracle AI OCI Speech Services
+    * Rajat Chawla  - Oracle AI OCI Speech Services
+    * Ankit Tyagi -  Oracle AI OCI Speech Services
 * **Last Updated By/Date**
     * Srijon Sarkar  - Oracle AI Services, September 2021
