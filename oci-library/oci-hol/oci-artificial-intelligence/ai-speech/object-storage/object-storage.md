@@ -23,7 +23,7 @@ In this lab, you will:
 OCI speech supports single-channel, 16-bit PCM WAV audio files with a 16kHz sample rate. We recommend Audacity (GUI) or ffmpeg (command line) for audio transcoding. 
 If you have audio files that aren't in the supported encoding, you can [install ffmpeg](https://ffmpeg.org/download.html) and run the following command:
 
-Alternatively, download these pre-formatted sample files:
+Alternatively, download these pre-formatted sample files to use in Task 2:
 
 [sample1](./files/sample1.wav)
 

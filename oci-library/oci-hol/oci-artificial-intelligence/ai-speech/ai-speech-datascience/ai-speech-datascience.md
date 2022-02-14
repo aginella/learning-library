@@ -99,9 +99,8 @@ Open the notebook session that was provisioned.
 
 
 ### 1. Download and Upload the Files
-Download this [Sentiment Analysis](./files/Sentiment.ipynb) and [Named Entitiy Recognition](./files/NER.ipynb) files and upload it in the Notebook. 
-Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
-    ![](./images/uploadFiles.png " ")
+Download this [Speech Notebook](./files/Speech.ipynb) and upload to notebook session
+    ![](./images/upload_speech_notebook.png " ")
 
 ### 2. Setup API Signing Key and Config File
 Open the Terminal by clicking the Terminal icon in the Launcher Tab.
@@ -123,7 +122,7 @@ In the terminal, move those files to the .oci folder.
     ```
     
 To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
-    ![](./images/ociFolder.jpg " ")
+    ![](./images/ociFolder.png " ")
 
 ### 3. Execute the Notebooks
 
@@ -139,6 +138,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
+    * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
 * **Last Updated By/Date**
