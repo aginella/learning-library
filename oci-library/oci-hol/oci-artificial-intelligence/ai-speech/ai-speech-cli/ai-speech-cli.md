@@ -44,7 +44,7 @@ Enter any one of the Speech Pre-Deployed CLI commands you want to execute.
     ![](./images/cloudShellCommand.png " ")
 
 
-### 2: View Result
+### 3: View Result
 
 The Speech service displays the results as shown below:
     ![](./images/clousShellResult.png " ")
