@@ -7,13 +7,14 @@ This lab walks you through the steps to monitor the Extract and Replicat process
 Estimated Lab Time: 2 minutes
 
 ### About Performance Monitoring
-Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in both the GoldenGate deployment console as well as in the Oracle Cloud Infrastructure Console on the Deployment Details page.
+
+Monitoring the performance of your GoldenGate instance ensures that your data replication processes are running smoothly and efficiently. You can monitor performance in both the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console as well as in the Oracle Cloud Console on the Deployment Details page.
 
 ### Objectives
 
 In this lab, you will:
 * View charts and statistics using the Performance Metrics Server in the GoldenGate deployment console
-* Use Metrics on the Deployment Details page in the Oracle Cloud Infrastructure Console to determine overall instance health and utilization.
+* Use Metrics on the Deployment Details page in the Oracle Cloud Console to determine overall instance health and utilization.
 
 ### Prerequisites
 
@@ -66,7 +67,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 4.  Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
-## Task 3: Viewing GoldenGate Metrics in the OCI Console
+## Task 3: Viewing GoldenGate Metrics in the Oracle Cloud Console
 
 1.  On the OCI GoldenGate Deployments page, select **GGSDeployment**.
 

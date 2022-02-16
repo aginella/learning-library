@@ -28,6 +28,10 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
+* Lab standard  
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
 
 **Server:** 
 - serverA for Enterprise Monitor
@@ -58,12 +62,12 @@ This is used when you Add Instance as Remote Monitoring using agentless option
 1.	On  serverB : Install the MEM agent and connect to your MEM server on MEMBER1
 
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>cd /workshop/linux/agent</copy>
     ```
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo ./mysqlmonitoragent-8.0.25.1328-linux-x86-64bit-installer.bin </copy>
@@ -225,7 +229,7 @@ View Agent Readme File [Y/n]: n
 
 1.	Start the agent
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo /etc/init.d/mysql-monitor-agent start</copy>
@@ -241,7 +245,7 @@ View Agent Readme File [Y/n]: n
 
     a.	run the test tool “mysqlslap” (available in all MySQL Server installations):
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy> mysqlslap --user=admin --password --host=127.0.0.1 --port=3307 --concurrency=20 --iterations=5000 --number-int-cols=5 --number-char-cols=20 --auto-generate-sql --verbose</copy>

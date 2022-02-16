@@ -2,11 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate deployment.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
 
 Estimated time: 5 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Deployments
+
 A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
 ### Objectives
@@ -93,7 +94,7 @@ On the Deployment Details page, you can:
 
 After you log in, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Services, as well as add Extracts and Replicats for your data replication tasks.
 
-In this lab, you created an OCI Deployment, reviewed its Deployment details, and launched the Deployment Console. You may now **proceed to the next lab**.
+In this lab, you created an OCI Deployment, reviewed its Deployment details, and launched the Deployment Console.
 
 ## Learn More
 

@@ -129,9 +129,9 @@ To run this lab, you must have:
 2. To verify a successful Verrazzano installation, copy the following command and paste it in the Cloud Shell. This command checks that the *InstallComplete* condition has been met and notifies you. In this example, *my-verrazzano* is the name of the *Verrazzano Custom Resource*.
 
 ```bash
-<copy>kubectl wait --timeout=10m --for=condition=InstallComplete verrazzano/my-verrazzano</copy>
+<copy>kubectl wait --timeout=10m --for=condition=InstallComplete verrazzano/example-verrazzano</copy>
 ```
-When the process is complete you should see the `verrazzano.install.verrazzano.io/my-verrazzano condition met` response.
+When the process is complete you should see the `verrazzano.install.verrazzano.io/example-verrazzano condition met` response.
 
 Or, another option is to check that the pods associated with Verrazzano have a *Running* status.
 
@@ -141,22 +141,23 @@ Or, another option is to check that the pods associated with Verrazzano have a *
 You should get similar result:
 ```bash
 $ kubectl get pods -n verrazzano-system
-NAME                                               READY   STATUS    RESTARTS   AGE
-coherence-operator-6497f8d5d5-jxrk6                1/1     Running   1          47min
-fluentd-k5x9g                                      2/2     Running   2          47min
-fluentd-tdsp2                                      2/2     Running   1          47min
-fluentd-vq6tb                                      2/2     Running   1          47min
-oam-kubernetes-runtime-769d5d779-wrm75             1/1     Running   0          47min
-verrazzano-api-b698dfd65-rgcmr                     2/2     Running   0          47min
-verrazzano-application-operator-54cfdc77db-lhbkm   1/1     Running   0          47min
-verrazzano-console-8677b86b65-jzkbt                2/2     Running   0          47min
-verrazzano-monitoring-operator-6458486845-6jzzf    1/1     Running   0          47min
-verrazzano-operator-d7576746-nktbj                 1/1     Running   0          47min
-vmi-system-es-master-0                             3/3     Running   0          47min
-vmi-system-grafana-6c9fd469cd-vnb8h                3/3     Running   0          47min
-vmi-system-kibana-676958bc56-7w8b2                 3/3     Running   0          47min
-vmi-system-prometheus-0-84897fb854-sgvr4           4/4     Running   0          47min
-weblogic-operator-786b8db578-gtf54                 2/2     Running   0          47min
+NAME                                              READY   STATUS    RESTARTS   AGE
+coherence-operator-dcfb446df-kqhcr                1/1     Running   2          30min
+fluentd-4qhck                                     2/2     Running   1          30min
+fluentd-6btbd                                     2/2     Running   1          30min
+fluentd-cffhb                                     2/2     Running   1          30min
+oam-kubernetes-runtime-549db9798b-96zps           1/1     Running   0          30min
+verrazzano-application-operator-54668f668-gq7b7   1/1     Running   0          30min
+verrazzano-authproxy-5f6c4d747c-2mrqr             2/2     Running   0          30min
+verrazzano-console-68d969ccdf-4bpxb               2/2     Running   0          30min
+verrazzano-monitoring-operator-787bfc7f86-5xldf   1/1     Running   0          30min
+verrazzano-operator-86bd88cb4c-xgc66              1/1     Running   0          30min
+vmi-system-es-master-0                            2/2     Running   0          30min
+vmi-system-grafana-69449bcd96-vkzxv               2/2     Running   0          30min
+vmi-system-kiali-5949966fb8-tfrmz                 2/2     Running   0          30min
+vmi-system-kibana-95d8c5d96-78sk5                 2/2     Running   0          30min
+vmi-system-prometheus-0-6d4df8855b-jqmlz          3/3     Running   0          30min
+weblogic-operator-5df5f94bd7-5dk8x                2/2     Running   0          30min
 ```
 
 ## Task 2: Deploy the Helidon quickstart-mp application
@@ -172,7 +173,7 @@ cd ~
 ```
 2. Modify the image name in *hello-helidon-comp.yaml*. You can use the `vi` editor:
 ```bash
-<copy>vi hello-helidon-comp.yaml</copy>
+<copy>vi ~/hello-helidon-comp.yaml</copy>
 ```
 
 3. Use `i` to change insert mode and modify the image name to reflect your repository path at line 23:
@@ -267,4 +268,4 @@ You should see the same result you received during the development:
 
 * **Author** -  Peter Nagy
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, September 2021
+* **Last Updated By/Date** - Ankit Pandey, January 2022

@@ -53,7 +53,7 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
     * **Name**: The name of the cluster. Leave the default value.
     * **Compartment**: The name of the compartment. Leave the default value.
-    * **Kubernetes version**: The version of Kubernetes. Leave the default value which should be *v1.20.8* or select the latest version available.
+    * **Kubernetes version**: The version of Kubernetes. Leave the default value which should be *v1.21.5* or select the latest version available.
     * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
     * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Leave the default *Private Workers* value.
     * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select *VM.Standard.E2.4* (which is typically available in Oracle Free Tier Account).
@@ -123,10 +123,10 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ```bash
     $ kubectl get node
-    NAME          STATUS   ROLES   AGE    VERSION
-    10.0.10.112   Ready    node    4m32s   v1.20.8
-    10.0.10.200   Ready    node    4m32s   v1.20.8
-    10.0.10.36    Ready    node    4m28s   v1.20.8
+    NAME          STATUS   ROLES   AGE   VERSION
+    10.0.10.17    Ready    node    11m   v1.21.5
+    10.0.10.184   Ready    node    11m   v1.21.5
+    10.0.10.31    Ready    node    11m   v1.21.5
     ```
 
     > If you see the node's information, then the configuration was successful.
@@ -141,4 +141,4 @@ Leave this *Cloud Shell* open; we will use it for further labs.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, July 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2022

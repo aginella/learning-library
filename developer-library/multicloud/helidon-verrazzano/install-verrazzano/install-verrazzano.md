@@ -76,10 +76,10 @@ You may need to run this command several times until you see the output similar 
 
     ```bash
     $ kubectl get node
-    NAME          STATUS   ROLES   AGE    VERSION
-    10.0.10.112   Ready    node    4m32s   v1.19.7
-    10.0.10.200   Ready    node    4m32s   v1.19.7
-    10.0.10.36    Ready    node    4m28s   v1.19.7
+    NAME         STATUS   ROLES   AGE   VERSION
+    10.0.10.37   Ready    node    4m32s   v1.21.5
+    10.0.10.85   Ready    node    4m28s   v1.21.5
+    10.0.10.89   Ready    node    4m32s   v1.21.5
     ```
 
     > If you see the node's information, then the configuration was successful.
@@ -98,10 +98,23 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
 1. Copy the following command and paste it in the *Cloud Shell* to run it.
 
     ```bash
-    <copy>kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.0.0/operator.yaml</copy>
+    <copy>kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.1.0/operator.yaml</copy>
     ```
 
-    ![verrazzano operator](images/9.png)
+    The output should be similar to the following:
+    ```bash
+    $ kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.1.0/operator.yaml
+    customresourcedefinition.apiextensions.k8s.io/verrazzanomanagedclusters.clusters.verrazzano.io created
+    customresourcedefinition.apiextensions.k8s.io/verrazzanos.install.verrazzano.io created
+    namespace/verrazzano-install created
+    serviceaccount/verrazzano-platform-operator created
+    clusterrole.rbac.authorization.k8s.io/verrazzano-managed-cluster created
+    clusterrolebinding.rbac.authorization.k8s.io/verrazzano-platform-operator created
+    service/verrazzano-platform-operator created
+    deployment.apps/verrazzano-platform-operator created
+    validatingwebhookconfiguration.admissionregistration.k8s.io/verrazzano-platform-operator created
+    $
+    ```
 
     > This `operator.yaml` file contains information about the operator and the service accounts and custom resource definitions. By running this *kubectl apply* command, we are specifying whatever is in the `operator.yaml` file.
     > All deployments in Kubernetes happen in a namespace. When we deploy the Verrazzano Platform Operator, it happens in the namespace called "verrazzano-install".
@@ -112,7 +125,12 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
     <copy>kubectl -n verrazzano-install rollout status deployment/verrazzano-platform-operator</copy>
     ```
 
-    ![rollout status](images/10.png)
+    The output should be similar to the following:
+    ```bash
+    $ kubectl -n verrazzano-install rollout status deployment/verrazzano-platform-operator
+    deployment "verrazzano-platform-operator" successfully rolled out
+    $
+    ```
 
     > Confirm that the operator pod associated with the Verrazzano Platform Operator is correctly defined and running. A Pod is a unit which runs containers / images and Pods belong to nodes.
 
@@ -122,7 +140,13 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
     <copy>kubectl -n verrazzano-install get pods</copy>
     ```
 
-    ![running pod](images/11.png)
+    The output should be similar to the following:
+    ```bash
+    $ kubectl -n verrazzano-install get pods
+    NAME                                           READY   STATUS    RESTARTS   AGE
+    verrazzano-platform-operator-f56788bfc-rgql6   1/1     Running   0          71s
+    $
+    ```
 
 ## Task 3: Install the Verrazzano Development Profile
 
@@ -160,26 +184,41 @@ According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS
     apiVersion: install.verrazzano.io/v1alpha1
     kind: Verrazzano
     metadata:
-      name: my-verrazzano
+      name: example-verrazzano
     spec:
-      profile: ${VZ_PROFILE:-dev}
+      profile: dev
     EOF
     </copy>
     ```
 
-    ![wait for installation to complete](images/13.png)
-
-    > It takes around 15 to 20 minutes to complete the installation. To view the installation logs, go to the next commands.
-
-2. To find out how the installation process is going, you can copy and paste the following command in the *Cloud Shell* to monitor the console log.
-
+    The output should be similar to the following:
     ```bash
-    <copy>kubectl logs -f $(kubectl get pod -l job-name=verrazzano-install-my-verrazzano -o jsonpath="{.items[0].metadata.name}")</copy>
+    $ kubectl apply -f - <<EOF
+    apiVersion: install.verrazzano.io/v1alpha1
+    kind: Verrazzano
+    metadata:
+      name: example-verrazzano
+    spec:
+      profile: dev
+    EOF
+    verrazzano.install.verrazzano.io/example-verrazzano created
+    $
     ```
 
-    > The console log contains information about all the steps performed by the platform operator for installing Verrazzano, the components being installed, and the URLs we can use for accessing them.
+    > It takes around 15 to 20 minutes to complete the installation. 
 
-    ![view logs](images/15.png)
+2. To verify the successful installation, copy the following command and paste it in the *Cloud Shell*. It checks for the condition, if *InstallComplete* condition is met, and notifies you. Here *example-verrazzano* is the name of the *Verrazzano Custom Resource*.
+
+    ```bash
+    <copy>kubectl wait --timeout=20m --for=condition=InstallComplete verrazzano/example-verrazzano</copy>
+    ```
+
+    The output should be similar to the following:
+    ```bash
+    $ kubectl wait --timeout=20m --for=condition=InstallComplete verrazzano/example-verrazzano
+    verrazzano.install.verrazzano.io/example-verrazzano condition met
+    $
+    ```
 
 3. Leave the *Cloud Shell* open and let the installation running. Please continue with the next lab.
 
@@ -187,4 +226,4 @@ According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, August 2021
+* **Last Updated By/Date** - Ankit Pandey, January 2022

@@ -207,7 +207,7 @@ To create the table:
 
 This completes the task of creating the CUSTOMERS360 table.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

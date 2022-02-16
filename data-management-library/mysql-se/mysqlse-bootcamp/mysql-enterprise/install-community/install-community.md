@@ -274,7 +274,7 @@ Run this command but don’t confirm
 
 1. Login to MySQL with admin user
 
-2.  ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+)
+2.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) mysql>** 
   
     ```
     <copy>mysql -uadmin -p -h 127.0.0.1 </copy>

@@ -41,15 +41,11 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 - [Enterprise Manager](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
 - [Multitenant Lifecycle Management](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
-## *** GGMA for BigData lab***
-
-- [GGNA](https://github.com/smadhukumar/learning-library/blob/master/data-management-library/goldengate/bigdata-new/mysql-to-kafka-via-ggma)
-
 ## Contributing
-Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Kay Malcolm or Tom McGinn.
+Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Michelle Malcher or Kevin Lazarz.
 
 ## License
-Copyright (c) 2014, 2021 Oracle and/or its affiliates
+Copyright (c) 2014, 2022 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
 See [LICENSE](LICENSE.md) for details.
 

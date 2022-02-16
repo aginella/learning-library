@@ -1,4 +1,4 @@
-# Introduction to Oracle Machine Learning for SQL
+# Use Oracle Machine Learning for SQL
 
 ## Introduction
 
@@ -97,7 +97,7 @@ The output is follows:
     </copy>
     ```
 
-	![Displays few rows from the created view](images/timeseries_table_view.png)
+	![Displays few rows from the created view](images/timeseries-table-view.png)
 
 ## Task 3: Build Your Model
 To build a model using the time series data, you will use the Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
@@ -188,7 +188,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     ORDER BY SETTING_NAME;
     </copy>
     ```
-	![Review model settings](images/timeseries_modelsettings.png)
+	![Review model settings](images/timeseries-modelsettings.png)
 
 2. To view the model diagnostic view, `DM$VG`, and evaluate the model, run the following query:
 
@@ -201,7 +201,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     </copy>
     ```
 
-	![Review diagnostic metrics](images/timeseries_diagnosticview.png)
+	![Review diagnostic metrics](images/timeseries-diagnosticview.png)
 The `DM$VG` view for time series contains the global information of the model along with the estimated smoothing constants, the estimated initial state, and global diagnostic measures.
 
 - `NAME`: Indicates the diagnostic attribute name.
@@ -219,7 +219,7 @@ In exponential smoothing, a series extends infinitely into the past, but that in
 
 Note that _α_ is associated with the error or noise of the series, _β_ is associated with the trend, and _γ_ is associated with the seasonality factors.
 
-## Task 5 Access Forecasts from Your Model
+## Task 5: Access Forecasts from Your Model
 For a time series model, you use the `DM$VP` view to retrieve the forecasts for the requested time periods.
 1. Query the `DM$VP` model detail view to see the forecast (sales for four quarters). The `DM$VP` view for time series contains the result of an ESM model. The output has a set of records such as partition, `CASE_ID`, value, prediction, lower, upper, and so on and ordered by partition and `CASE_ID` (time). Run the following statement:
 
@@ -235,7 +235,7 @@ For a time series model, you use the `DM$VP` view to retrieve the forecasts for 
     </copy>
     ```
 
-	![The image displays the forecast using the DM$VP model detail view](images/timeseries_forecast.png)
+	![The image displays the forecast using the DM$VP model detail view](images/timeseries-forecast.png)
 	In this step, the forecast shows the amount sold along with the `case_id`. The forecasts display upper and lower confidence bounds showing that the estimates can vary between those values.
 
 	Examine the statement:
@@ -259,13 +259,13 @@ Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD (avg)`, `
     ```
 
 
-	![A visual representation of the forecast](images/timeseries_forecast_graph.png)
+	![A visual representation of the forecast](images/timeseries-forecast-graph.png)
 
 
 
 This completes the prediction step. The model has successfully forecast sales for the next four quarters.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 
 ## Learn More

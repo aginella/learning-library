@@ -155,41 +155,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
 Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
-## Task 5: Verify AI Food and Wine Pairing Functionality
-
-1. Deploy the foodwinepairing-python service using the following command.
-
-    ```
-    <copy>cd $GRABDISH_HOME/foodwinepairing-python;./deploy.sh</copy>
-    ```
-   
-2.  Verify the foodwinepairing-python pod is running:
-
-    ```
-    <copy>kubectl get pods --all-namespaces</copy>
-    ```
-
-3. Redeploy inventory-helidon passing true to `./deploy.sh` using the following command. This will change the `isSuggestiveSaleAIEnabled` value in inventory-helidon-deployment.yaml to true and redeploy.                                                                                         
-  
-    ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon;./deploy.sh true</copy>
-    ```
-  
-4.  Verify the new inventory-helidon pod is running:
-
-    ```
-    <copy>kubectl get pods --all-namespaces</copy>
-    ```
-    ![](images/foodandwinepairingandrestartedinventorypods.png " ")
-
-5. Add inventory if necessary and place another order.  You should see that there is now a wine suggesting for you food order.
-
-   ![](images/orderwithfoodandwinepairing.png " ")
-
-The food and wine pairing service uses AI/ML to recommend suitable wines for the food that is ordered on Grabdish. A Word2vec model is trained for a Wine reviews  dataset and Food reviews dataset. The order{food item} is passed through the Word2Vec model as an input to get wine recommendations. The best-match wines based on vector matching between the order feature vector, and wine feature vectors (aroma, and non-aroma) are suggested . While popular NLP techniques are used (Gensim, NLTK, and Scikit-learn), it is used in the context of microservices with the converged Oracle database. The trained Word2vec model can be imported in Oracle Machine Learning, in Open Neural Network eXchange (ONNX) model format.
-Note: This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
-
-## Task 6: Show Metrics
+## Task 5: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -204,7 +170,7 @@ Note: This use case for GrabDish is inspired by [this article](https://towardsda
 
    ![](images/metrics-show.png " ")
 
-## Task 7: Verify Health
+## Task 6: Verify Health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
@@ -236,7 +202,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/health-liveness-restarted.png " ")
 
-## Task 8: Understand Passing Database Credentials to a Microservice (Study)
+## Task 7: Understand Passing Database Credentials to a Microservice (Study)
 
 To connect to an  'Oracle Autonomous Transaction Processing database you need the following four pieces of information:
    - Database user name
@@ -322,7 +288,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    The URL references a TNS alias that is defined in the tnsnames.ora file that is contained within the wallet.
 
-## Task 9: Understand How Database Credentials are Used by a Helidon Microservice (Study)
+## Task 8: Understand How Database Credentials are Used by a Helidon Microservice (Study)
 
 Let’s analyze the `microprofile-config.properties` file.
 
@@ -348,7 +314,7 @@ Look for the inject portion. The `@Inject` has the data source under `@Named` as
 PoolDataSource atpOrderPdb;
 ```
 
-## Task 10: Understand shortcut commands and development process (Study)
+## Task 9: Understand shortcut commands and development process (Study)
 
 A number of shortcut commands are provided to analyze and debug the workshop kubernetes environment including the following:
 
@@ -376,8 +342,8 @@ The following are the major considerations in doing so...
 
 - Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
 
-- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. 
-You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc). 
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken.
+You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc).
 Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
 
   ```
@@ -401,8 +367,6 @@ This can be found under `Developer Services->Kubernetes Clusters` where you will
    ```
    <copy>export INVENTORY_PDB_NAME=grabdishi</copy>
    ```
-
-
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata

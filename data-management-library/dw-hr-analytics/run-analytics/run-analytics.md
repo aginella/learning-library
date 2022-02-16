@@ -16,9 +16,9 @@ Estimated Lab Time: 45 minutes
 
 - Autonomous Data Warehouse (ADW) and Oracle Analytics Cloud (OAC) instances.
 - Access to the files needed to recreate this demo. 
-    - [AttritionPrediction.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fp-wLXQ7mf0Q5Dtae0hH9o1VABJujAfRI2UOVs4dzsU/n/oradbclouducm/b/bucket-20200907-1650/o/AttritionPrediction.csv)
-    - [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0VqpqURMs3ARIovzyCfR369sv5qqvVxMkmGbag8-wWA/n/oradbclouducm/b/bucket-20200907-1650/o/HumanResource.dva)
-    - [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k_O2qXLAvew-YfooziwLpiHgHau_1HQO6438oc20m2LM3WwhH1gGQElUZTs8bBjZ/n/oradbclouducm/b/bucket-20200907-1650/o/hr.sql)
+    - [AttritionPrediction.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1uXvRQ1CH_XaMaQChi4pFXwh3cISJSF__CS7gEqfvAqYa9_RTpXdDNFBQ8DNVcLG/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/AttritionPrediction.csv)
+    - [HumanResources.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xbGtLake6Q_zuIyIhdovKWaw3SEw8bSFadgvRL17mZrnzi8mW-dKFhmQbeyxK-G3/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/HumanResource.dva)
+    - [hr.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/gF8XAB5AoAzp2h1XMZKG7yu69D8oqwNAvYtNkWuJplolDYQEUoNQTjdEGvRSep0e/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/hr.sql)
 
 **Note:** Please download the files above before continuing.
 

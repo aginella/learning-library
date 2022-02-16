@@ -69,4 +69,4 @@ Use these links to get more information about Oracle Autonomous Database:
 - **Author** - Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Supriya Ananth
 - **Adapted for Cloud by** - Rick Green
-- **Last Updated By/Date** - Rick Green, April 2021
+- **Last Updated By/Date** - Rick Green, February 2022

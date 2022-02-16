@@ -1,0 +1,13 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do I access the database after I connect from the terminal?",
+            "description": "",
+            "filename": "sprint-accessing-the-database-after-you-connect-from-the-terminal.md"
+        }
+
+
+    ]
+}

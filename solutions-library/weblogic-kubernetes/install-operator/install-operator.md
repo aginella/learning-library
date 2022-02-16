@@ -8,7 +8,7 @@ This lab walks you through the steps to prepare OCI Cloud shell (client) environ
 
 Estimated Lab Time: 15 minutes
 
-## Task 1: Prepare the Kubernetes environment
+## **STEP 1**: Prepare the Kubernetes environment
 Kubernetes distinguishes between the concept of a user account and a service account for a number of reasons. The main reason is that user accounts are for humans while service accounts are for processes, which run in pods. The operator also requires service accounts.  If a service account is not specified, it defaults to `default` (for example, the namespace's default service account). If you want to use a different service account, then you must create the operator's namespace and the service account before installing the operator Helm chart.
 
 Thus, create the operator's namespace in advance:
@@ -25,7 +25,7 @@ Finally, add the weblogic-operator repository to Helm.
 <copy>helm repo add weblogic-operator https://oracle.github.io/weblogic-kubernetes-operator/charts --force-update</copy>
 ```
 
-## Task 2: Install the operator using Helm
+## **STEP 2**: Install the operator using Helm
 
 Use the `helm install` command to install the operator Helm chart. As part of this, you must specify a "release" name for their operator.
 
@@ -57,7 +57,7 @@ Execute the following `helm install`:
 The output will be similar to the following:
 ```bash
 NAME: sample-weblogic-operator
-LAST DEPLOYED: Thu Sep  3 13:48:24 2020
+LAST DEPLOYED: Sun Dec 19 07:25:54 2021
 NAMESPACE: sample-weblogic-operator-ns
 STATUS: deployed
 REVISION: 1
@@ -70,10 +70,10 @@ Check the operator pod:
 The output will be similar to the following:
 ```bash
 NAME                                 READY   STATUS    RESTARTS   AGE
-weblogic-operator-67d66b4576-jkp9g   1/1     Running   0          41s
+weblogic-operator-559c95b97d-7zxwf   1/1     Running   0          92s
 ```
 
-Make sure to wait until the pod is in **running** state.
+Make sure to wait until the pod is in **Running** state.
 
 Check the operator Helm chart:
 ```bash
@@ -81,12 +81,12 @@ Check the operator Helm chart:
 ```
 The output will be similar to the following:
 ```bash
-NAME                            NAMESPACE                       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
-sample-weblogic-operator        sample-weblogic-operator-ns     1               2020-09-03 13:48:24.187689635 +0000 UTC deployed        weblogic-operator-3.0.0
+NAME                            NAMESPACE                       REVISION        UPDATED                                 STATUS          CHART                      APP VERSION
+sample-weblogic-operator        sample-weblogic-operator-ns     1               2021-12-19 07:25:54.073084938 +0000 UTC deployed        weblogic-operator-3.0.0
 ```
 
 The WebLogic Server Kubernetes Operator has been installed. You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Maciej Gruszka, Peter Nagy, September 2020
-* **Last Updated By/Date**
+* **Author** - Ankit Pandey, Maciej Gruszka, Peter Nagy 
+* **Last Updated By/Date** - December 2021

@@ -5,7 +5,7 @@ This workshop introduces the various features and functionality of Oracle Databa
 
 *Estimated Lab Time:* 45 minutes
 
-*Version tested in this lab:* Oracle DB 19.10
+*Version tested in this lab:* Oracle DB 19.13
 
 ### Video Preview
 Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
@@ -37,7 +37,13 @@ This lab assumes you have:
 
 ## Task 1: Enable Database Vault
 
-1. As OS user *oracle* on your **DBSec-Lab** VM remote desktop session, Double-Click on the *Terminal* icon on the desktop to launch a session
+1. Open a Terminal session on your **DBSec-Lab** VM as OS user *oracle*
+
+    ````
+    <copy>sudo su - oracle</copy>
+    ````
+
+    **Note**: If you are using a remote desktop session, double-click on the *Terminal* icon on the desktop to launch a session
 
 2. Go to the scripts directory
 
@@ -51,9 +57,9 @@ This lab assumes you have:
       <copy>./dv_enable_on_cdb.sh</copy>
       ````
 
-    ![](./images/dv-001.png " ")
-
     **Note**: To enable DB Vault, database will be rebooted!
+
+    ![](./images/dv-001.png " ")
 
 4. Next, enable it on the pluggable database. For now, just enable it on **pdb1**
 
@@ -101,7 +107,7 @@ This lab assumes you have:
 
     ![](./images/dv-003.png " ")
 
-6. Now, create the **Realm**
+6. Now, create the **Realm** `PROTECT_EMPLOYEESEARCH_PROD` to protect objects in the `EMPLOYEESEARCH_PROD` schema from malicious activity
 
     ````
     <copy>./dv_create_realm.sh</copy>
@@ -109,7 +115,7 @@ This lab assumes you have:
 
     ![](./images/dv-004.png " ")
 
-7. Add objects to the Realm to protect
+7. Add objects to the Realm to protect (here you add all the schema's objects)
 
     ````
     <copy>./dv_add_obj_to_realm.sh</copy>
@@ -372,11 +378,11 @@ This lab assumes you have:
     <copy>./dv_disable_on_pdb.sh pdb1</copy>
     ````
 
-   You should see a status like this
+    **Note**: `DV_ENABLE_STATUS` for pdb1 must be **FALSE**
 
     ![](./images/dv-027.png " ")
 
-2. Now, Disable Database Vault in the container database **cdb1**
+2. Now, disable Database Vault in the container database **cdb1**
 
     ````
     <copy>./dv_disable_on_cdb.sh</copy>
@@ -384,7 +390,9 @@ This lab assumes you have:
 
     ![](./images/dv-028.png " ")
 
-      **Note**: To disable DB Vault, database will be rebooted!
+    **Note**:
+    - To disable DB Vault, database will be rebooted!
+    - `DV_ENABLE_STATUS` for cdb must be **FALSE**
 
 3. Now, Database Vault is disabled in the container database as well as pdb1!
 
@@ -396,7 +404,7 @@ Oracle Database Vault provides controls to prevent unauthorized privileged users
 
 The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
 
-    ![](./images/dv-concept.png " ")
+![](./images/dv-concept.png " ")
 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization.
 
@@ -457,5 +465,5 @@ Video:
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Alan Williams, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+- **Contributors** - Alan Williams, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2021

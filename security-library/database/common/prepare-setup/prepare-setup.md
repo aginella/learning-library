@@ -37,6 +37,9 @@ This lab assumes you have:
 <if type="database-vault">
     - [dbsec-mkplc-vm01-database-vault.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i-s1WT5M2QKEaTau4uETMh5WKFWx5ge5_27_AeTEFFG6IZaClky5WS53HoHJDgrP/n/natdsecurity/b/stack/o/dbsec-mkplc-vm01-database-vault.zip)
 </if>
+<if type="data-safe">
+    - [dbsec-mkplc-vm01-data-safe.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5Y5Aw1HrFU3Pli2EyRt9babAXAuTJkULeWYdPRblEQv8X0dTTvQgoWhIOQG8S7o/n/natdsecurity/b/stack/o/dbsec-mkplc-vm01-data-safe.zip)
+</if>
 <if type="dbsat">
     - [dbsec-mkplc-vm01-dbsat.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/QCMNJEix6fNLEtQvzKKqIMqmuXarwOo9O8LxjWY0i6aVEz1QbpBfY_Pyfyi_yBB1/n/natdsecurity/b/stack/o/dbsec-mkplc-vm01-dbsat.zip)
 </if>

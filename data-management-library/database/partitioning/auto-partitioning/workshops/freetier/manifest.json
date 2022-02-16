@@ -32,9 +32,14 @@
             "title": "Lab 4: Execute Recommend Task",
             "description": "Test partitioning scheme and validate SQL performance improvements",
             "filename": "../../recommend/recommend.md"
-        },  
+        },
         {
-            "title": "Lab 5: Apply the Recommendation",
+            "title": "Lab 5: View Recommendation",
+            "description": "View the details of the recommendation",
+            "filename": "../../view-recommendation/view-recommendation.md"
+        },      
+        {
+            "title": "Lab 6: Apply the Recommendation",
             "description": "Execute Apply API to Apply the Recommendation",
             "filename": "../../apply/apply.md"
         },                             

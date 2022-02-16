@@ -1,191 +1,287 @@
 # Audit Direct User Activities
 
 ## Introduction
-This 15-minute tutorial shows you how to audit top-level user activities in a database without collecting recursive user activity.
-
-Before Oracle Database 19c, the audit policies records user activities including both directly issued events and recursive SQL statements.
+Before Oracle Database 18c, the audit policies record user activities, including both directly issued events and recursive SQL statements.
 
 In Oracle Database 19c, auditing can exclude recursive SQL statements. Top-level statements are SQL statements that users directly issue. These statements can be important for both security and compliance. SQL statements run from within PL/SQL procedures or functions are not considered top-level because they may be less relevant for auditing purposes.
 
 Estimated Time: 15 minutes
 
 ### Objectives
-- Create The Table and The Procedure
-- Create and Enable The Audit Policy
-- Audit The User Activities Including Recursive Statements
-- Display the Activities Audited
-- Audit the Top-Level Statements Only
-- Display The Top-Level Activities Audited
-- Clean Up the Environment
+- Prepare your environment
+- Create the table and the procedure
+- Create and enable the Audit Policy
+- Audit the user activities including recursive statements
+- Display the audited activities
+- Audit the top-level statements only
+- Display the top-level audited activities
+- Reset your environment
 
 ### Prerequisites
-- Oracle Database 19c installed
-- A database, either non-CDB or CDB with a PDB
-- The [create_proc.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/create_proc.sql) SQL script. Download the SQL script to the labs directory created on your server /home/oracle/labs
+  This lab assumes you have:
+  - Obtained and signed in to your `workshop-installed` compute instance
 
-## Prepare your environment
+## Task 1: Prepare your environment
+
+> **NOTE:** Unless otherwise stated, all passwords will be `Ora4U_1234`. When copying and pasting a command that includes a password, please replace the word `password` with `Ora4U_1234`. This only applies to instances created through OCI Resource Manager with our provided terraform scripts.
 
 1. Open a terminal window on the desktop.
 
-2. Set the Oracle environment variables. At the prompt, enter **PDB1**.
+2. Set the Oracle environment variables. At the prompt, enter CDB1.
 
     ```
     $ <copy>. oraenv</copy>
-    PDB1
+    CDB1
     ```
 
 
-## Task 1: Create the table and the procedure
-1. Execute the Oracle script $ORACLE_HOME/demo/schema/human_resource/hr_main.sql that creates the `HR` schema in `PDB1` in the tablespace `USERS`. The password in the command is the password for the `HR` schema.
+## Task 2: Create the table and the procedure
+1. Log in to PDB1 as `SYS`.
+   
+    ```
+    $ <copy>sqlplus sys/password@PDB1 as sysdba</copy>
 
-  ```
-  <copy>sqlplus system@PDB1 @$ORACLE_HOME/demo/schema/human_resources/hr_main.sql password users temp /tmp </copy>
-  Enter password: Ora4U_1234
-  ```
+    Connected.
+    ```
 
 2. Query the HR.EMPLOYEES table.
 
-  ```
-  <copy>SELECT employee_id, salary FROM hr.employees; </copy>
-  ```
+    ```
+    SQL> <copy>SELECT employee_id, salary FROM hr.employees; </copy>
 
-Read the rows from the HR.EMPLOYEES table. Read the result from the [result1](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result1.txt) text file.
+    107 rows selected.
+    ```
+
 3. Create a procedure that allows the HR user to raise the employees’ salaries in PDB1.
 
-  ```
-  <copy>$HOME/labs/19cnf/create_proc.sql</copy>
-  ```
+    ```
+    SQL> <copy>@$HOME/labs/19cnf/create_proc.sql</copy>
+    ```
 
-Read the result from the [result2](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result2.txt) text file.
+## Task 3: Create and enable the audit policy
 
-## Task 2: Create and enable the audit policy
 1. Create the security officer. The security officer is the one responsible for managing audit policies.
-  ```
-  <copy>CREATE USER auditor_admin IDENTIFIED BY Ora4U_1234;</copy>
-  ```
+
+    ```
+    SQL> <copy>CREATE USER auditor_admin IDENTIFIED BY password;</copy>
+
+    User created.
+    ```
+
 2. Grant the security officer the CREATE SESSION system privilege and the AUDIT_ADMIN role.
-  ```
-  <copy>GRANT create session, audit_admin TO auditor_admin;</copy>
-  ```
+   
+    ```
+    SQL> <copy>GRANT create session, audit_admin TO auditor_admin;</copy>
+
+    Grant succeeded.
+    ```
+
 3. Connect to PDB1 as auditor_admin.
-  ```
-  <copy>sqlplus sys/Ora4U_1234@PDB1</copy>
 
-  ```
+    ```
+    SQL> <copy>CONNECT auditor_admin/password@PDB1</copy>
+
+    Connected.
+    ```
+
 4. Create an audit policy that audits any salary increase.
-  ```
-  <copy>CREATE AUDIT POLICY pol_sal_increase
-                      ACTIONS UPDATE ON hr.employees;</copy>
-  ```
-5. Enable the audit policy.
-  ```
-  <copy>AUDIT POLICY pol_sal_increase WHENEVER SUCCESSFUL;</copy>
-  ```
 
-## Task 3: Audit the user activities including recursive statements
-1. In another session, `session2`, connect as HR and increase the salary for employee ID 106 through the RAISE_SALARY procedure.
-  ```
-  <copy>sqlplus hr@PDB1</copy>
-  Enter password: Ora4U_1234
-  ```
-  ```
-  <copy>EXEC emp_admin.raise_salary(106,10)</copy>
-  ```
-2. Still in `session2`, update the row directly and commit.
-  ```
-  <copy>UPDATE hr.employees SET salary=salary*0.1
-  WHERE  employee_id = 106;</copy>
-  ```
-  ```
-  <copy>COMMIT;</copy>
-  ```
-3. Quit the session.
-  ```
-  <copy>EXIT</copy>
-  ```
-## Task 4: Display the activities audited
+    ```
+    SQL> <copy>CREATE AUDIT POLICY pol_sal_increase
+                      ACTIONS UPDATE ON hr.employees;</copy>
+
+    Audit policy created.
+    ```
+
+5. Enable the audit policy.
+
+    ```
+    SQL> <copy>AUDIT POLICY pol_sal_increase WHENEVER SUCCESSFUL;</copy>
+
+    Audit succeeded.
+    ```
+
+## Task 4: Audit the user activities including recursive statements
+
+1. In another terminal session, set the Oracle environment variables. Enter **CDB1** when prompted.
+
+    ```
+    $ <copy>. oraenv</copy>
+
+    CDB1
+    ```
+2. In this session, which will be labelled `session2`, log into PDB1 as `HR`.
+
+    ```
+    $ <copy>sqlplus hr/password@PDB1</copy>
+    ```
+
+2. Increase the salary for employee ID 106 through the `RAISE_SALARY` procedure.
+
+    ```
+    SQL> <copy>EXEC emp_admin.raise_salary(106,10)</copy>
+
+    PL/SQL procedure successfully completed.
+    ```
+
+3. Still in `session2`, update the row directly and commit.
+
+    ```
+    SQL> <copy>UPDATE hr.employees SET salary=salary*0.1
+    WHERE  employee_id = 106;</copy>
+
+    1 row updated.
+    ```
+4. Commit the changes.
+
+    ```
+    SQL> <copy>COMMIT;</copy>
+
+    Commit completed.
+    ```
+
+## Task 5: Display the activities audited
+
 1. Verify from `session1` that the update actions executed through the PL/SQL procedure and directly by the UPDATE command are audited.
-  ```
-  <copy>SELECT action_name, object_name, sql_text
+
+    ```
+    SQL> <copy>SELECT action_name, object_name, sql_text
        FROM   unified_audit_trail
        WHERE  unified_audit_policies = 'POL_SAL_INCREASE';</copy>
-  ```
-Read the result from the [result3](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result3.txt) text file.
-2. Disable the audit policy.
-  ```
-  <copy>NOAUDIT POLICY pol_sal_increase;</copy>
-  ```
-3. Drop the audit policy.
-  ```
-  <copy>DROP AUDIT POLICY pol_sal_increase;</copy>
-  ```
-## Task 5: Audit the top-Level statements only
-1. Create an audit policy that audits any salary increase executed directly with an UPDATE command only.
-  ```
-  <copy>CREATE AUDIT POLICY pol_sal_increase_direct
-                      ACTIONS UPDATE ON hr.employees ONLY TOPLEVEL;</copy>
-  ```
-2. Enable the audit policy.
-  ```
-  <copy>AUDIT POLICY pol_sal_increase_direct WHENEVER SUCCESSFUL;</copy>
-  ```
-3. In `session2`, connect as HR to PDB1.
-  ```
-  <copy>sqlplus hr@PDB1</copy>
-  Enter password: Ora4U_1234
-  ```
-4. Increase the salary for employee ID 107 through the RAISE_SALARY procedure.
-  ```
-  <copy>EXEC emp_admin.raise_salary(107,30)</copy>
-  ```
-5. Still in `session2`, update the row directly and commit.
-  ```
-  <copy>UPDATE hr.employees SET salary=salary*0.1
-  WHERE  employee_id = 107;</copy>
-  ```
-  ```
-  <copy>COMMIT;</copy>
-  ```
-## Task 6: Display the top-Level activities audited
-1. Verify from `session1` that the update actions executed through the PL/SQL procedure are not audited.
-  ```
-  <copy>SELECT action_name, object_name, sql_text FROM unified_audit_trail
-  WHERE  unified_audit_policies = 'POL_SAL_INCREASE_DIRECT';</copy>
 
-  ACTION_NAME  OBJECT_NAME
-  ------------ ------------
-  SQL_TEXT
-  ---------------------------------------------------------
-  UPDATE       EMPLOYEES
-  UPDATE hr.employees SET salary=salary*0.1 WHERE employee_id = 107
-  ```
+    ACTION_NAME  OBJECT_NAME SQL_TEXT
+    ----------- ------------ ------------------------------------------------------------------- 
+    UPDATE       EMPLOYEES    UPDATE EMPLOYEES SET SALARY = SALARY + :B2 WHERE EMPLOYEE_ID = :B1
+    
+
+    UPDATE       EMPLOYEES    UPDATE hr.employees SET salary=salary*0.1 WHERE  employee_id = 106
+    ```
+
+2. Disable the audit policy.
+
+    ```
+    SQL> <copy>NOAUDIT POLICY pol_sal_increase;</copy>
+
+    Noaudit succeeded.
+    ```
+
+3. Drop the audit policy.
+
+    ```
+    SQL> <copy>DROP AUDIT POLICY pol_sal_increase;</copy>
+
+    Audit Policy dropped.
+    ```
+
+## Task 6: Audit the top-Level statements only
+
+1. Create an audit policy that audits any salary increase executed directly with an UPDATE command only.
+
+    ```
+    SQL> <copy>CREATE AUDIT POLICY pol_sal_increase_direct
+                      ACTIONS UPDATE ON hr.employees ONLY TOPLEVEL;</copy>
+
+    Audit policy created.
+    ```
+
+2. Enable the audit policy.
+
+    ```
+    SQL> <copy>AUDIT POLICY pol_sal_increase_direct WHENEVER SUCCESSFUL;</copy>
+
+    Audit succeeded.
+    ```
+
+3. In `session2`, connect as HR to PDB1.
+
+    ```
+    SQL> <copy>CONNECT hr/password@PDB1</copy>
+
+    Connected.
+    ```
+
+4. Increase the salary for employee ID 107 through the RAISE_SALARY procedure.
+
+    ```
+    SQL> <copy>EXEC emp_admin.raise_salary(107,30)</copy>
+
+    PL/SQL procedure successfully completed.
+    ```
+
+5. Still in `session2`, update the row directly and commit.
+
+    ```
+    SQL> <copy>UPDATE hr.employees SET salary=salary*0.1
+    WHERE  employee_id = 107;</copy>
+
+    1 row updated.
+    ```
+
+6. Commit the changes.
+
+    ```
+    SQL> <copy>COMMIT;</copy>
+    ```
+
+## Task 7: Display the top-Level activities audited
+
+1. Verify from `session1` that the update actions executed through the PL/SQL procedure are not audited.
+
+    ```
+    SQL> <copy>SELECT action_name, object_name, sql_text FROM unified_audit_trail
+    WHERE  unified_audit_policies = 'POL_SAL_INCREASE_DIRECT';</copy>
+
+    ACTION_NAME  OBJECT_NAME
+    ------------ ------------
+    SQL_TEXT
+    ---------------------------------------------------------
+    UPDATE       EMPLOYEES
+    UPDATE hr.employees SET salary=salary*0.1 WHERE employee_id = 107
+    ```
+
 Observe that only the direct UPDATE statement is audited as this is the purpose of the ONLY TOPLEVEL clause of the CREATE AUDIT POLICY command.
 
-## Task 7: Clean up the environment
+## Task 8: Reset your environment
+
 1. In `session1`, disable the audit policy.
 
-  ```
-  <copy>NOAUDIT POLICY pol_sal_increase_direct;</copy>
-  ```
+    ```
+    SQL> <copy>NOAUDIT POLICY pol_sal_increase_direct;</copy>
+
+    Noaudit succeeded.
+    ```
 
 2. Drop the audit policy.
-  ```
-  <copy>DROP AUDIT POLICY pol_sal_increase_direct;</copy>
-  ```
-3. Connect as SYSTEM to PDB1.
-  ```
-  <copy>CONNECT system@PDB1</copy>
-  Enter password: Ora4U_1234
-  ```
+
+    ```
+    SQL> <copy>DROP AUDIT POLICY pol_sal_increase_direct;</copy>
+
+    Audit Policy dropped.
+    ```
+3. Connect as `SYSTEM` to PDB1.
+
+    ```
+    SQL> <copy>CONNECT system/password@PDB1</copy>
+
+    Connected.
+    ```
 
 4. Drop the auditor_admin user.
-  ```
-  <copy>DROP USER auditor_admin CASCADE;</copy>
-  ```
-5. Quit the session.
-  ```
-  <copy>EXIT</copy>
-  ```
+
+    ```
+    SQL> <copy>DROP USER auditor_admin CASCADE;</copy>
+
+    User dropped.
+    ```
+5. Quit the session. You may quit `session2` as well.
+
+    ```
+    SQL> <copy>EXIT</copy>
+    ```
+
+    You may now **proceed to the next lab**.
 
 ## Acknowledgements
-- **Last Updated By/Date** - Blake Hendricks, Austin Specialist Hub, November 12 2021
+- **Author**- Dominique Jeunot, Consulting User Assistance Developer
+- **Technical Contributor** -  Blake Hendricks, Austin Specialist Hub
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialist Hub, December 21 2021

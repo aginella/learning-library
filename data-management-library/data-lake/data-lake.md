@@ -22,6 +22,8 @@ Watch the video below for a quick walk through of the lab.
 
 You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First, we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
 
+This is just an example of how you can use your already created scripts to run as an application and schedule using OCI Data Flow. This currently only reads the data from a csv file which can be used to populate a table or put the output into the bucket.
+
 First navigate to the OCI Data Flow and click on Create Application.
 
 ![Create Data Flow](./images/nav_dataflow.png " ")
@@ -62,9 +64,10 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/cu
 </copy>
 ```
 Output
+You will need to supply the namespace of your tenancy for your dataflow-warehouse bucket, and use this as the output for the process.
 ```
 <copy>
-oci://dataflow-warehouse@id05dmgeno0f/optimized_listings
+oci://dataflow-warehouse@NAMESPACE
 </copy>
 ```
 

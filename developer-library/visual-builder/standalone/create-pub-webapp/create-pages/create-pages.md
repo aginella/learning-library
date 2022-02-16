@@ -1,9 +1,10 @@
 # Create Pages for Business Objects
+
 ## Introduction
 
 This lab shows you how to create web pages to display the business objects you created in the previous lab.
 
-Estimated Lab Time:  15 minutes
+Estimated Time:  15 minutes
 
 ### Background
 
@@ -14,6 +15,7 @@ Now that you've created the Location, Department, and Employee business objects,
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
 1.  Click the **Web Applications** ![Web Applications icon](./images/vbcscp_webapp_icon.png) tab in the Navigator.
+
 2.  Expand the **hrwebapp** and **main** nodes if necessary, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the main-start tab just below the header.) You're viewing the Page Designer, with the Components palette visible.
 
     You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
@@ -64,13 +66,14 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
 
-
 ## Task 2: Add a Create Page for the Department Business Object
 
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
 1.  With the Departments table on the main-start page selected, click the **Quick Start** tab, then click **Add Create Page**.
+
 2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
+
 3.  On the Page Detail page, under Endpoint Structure, select the **location** check box (the **name** check box is already selected, because name is a required field). Name and Location are the only fields the user needs to specify to create a department.
 
     ![](./images/department_add_create.png)
@@ -118,10 +121,15 @@ We'll now create a page to display employees, similar to the one you created to 
     ![](./images/vbcscp_cpe_s2.png)
 
 3.  Drag the **Heading** component from the Components palette and drop it onto the page.
+
 4.  Click the **Properties** tab (if necessary), then in the heading's Properties pane, enter `Employees` in the **Text** field.
+
 5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
+
 6.  Click **Add Data**.
+
 7.  On the Locate Data page, select **Employee** under Business Objects and click **Next**.
+
 8.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
 
     ![](./images/vbcscp_cpe_s8.png)
@@ -145,11 +153,15 @@ We'll now create a page to display employees, similar to the one you created to 
     ![](./images/employees_table.png)
 
 ## Task 4: Add a Create Page for the Employee Business Object
+
 Add a Create page that lets your users create new employees.
 
 1.  Click the **Quick Start** tab, then click **Add Create Page**.
+
 2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
+
 3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
+
 4.  Leave the **Button label** field and other values to their default values. Click **Finish**.
 
     ![](./images/vbcscp_cpc_s4.png)
@@ -157,6 +169,7 @@ Add a Create page that lets your users create new employees.
     A **Create Employee** button appears above the table, and the main-create-employee page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
+
 6.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
 
     ![](./images/employees_add_create_max_columns.png)
@@ -196,14 +209,14 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](./images/vbcscp_cpn_s2.png)
 
 3.  Double-click **main-departments** to go to that page again.
+
 4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) in the Navigator and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
 
     ![](./images/vbcscp_cpn_s4.png)
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
-You may now [proceed to the next lab](#next).
-
 ## Acknowledgements
+
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
 * **Last Updated By** - November 2021

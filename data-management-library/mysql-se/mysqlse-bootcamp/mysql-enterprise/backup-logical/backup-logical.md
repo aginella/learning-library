@@ -39,21 +39,21 @@ This lab assumes you have:
 
 1.	Create the export folder
 
-    a. **shell>** 
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo mkdir -p /mysql/exports</copy>
     ```
-    b. **shell>** 
+    b. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chown mysqluser:mysqlgrp /mysql/exports/</copy>
     ```
-    c. **shell>** 
+    c. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chmod 770 /mysql/exports/</copy>
     ```
 2.	Export all the data with mysqldump
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysqldump -uroot -p -h127.0.0.1 -P3307 --single-transaction --events --routines --flush-logs --all-databases > /mysql/exports/full.sql</copy>
@@ -62,7 +62,7 @@ This lab assumes you have:
 
 4.	Export employees database
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysqldump -uroot -p -h127.0.0.1 -P3307 --single-transaction --set-gtid-purged=OFF employees > /mysql/exports/employees.sql</copy>
@@ -70,40 +70,40 @@ This lab assumes you have:
 ## Task 2: 	Delete current employees database
 1.	Drop employees database
 
-    a. **shell>** 
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h127.0.0.1 -P3307</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>DROP DATABASE employees;</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>show databases;</copy>
     ```
 ## Task 3: 	Restore Dump
 1.	Import the employees database
 
-    a. **mysql>**  
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>CREATE DATABASE employees;</copy>
     ```
-    b.**mysql>**
+    b.**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>exit</copy>
     ```
-    c. **shell>** 
+    c. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h127.0.0.1 -P3307 employees < /mysql/exports/employees.sql</copy>
     ```
 2.	Confirm database employees exist
 
-    a. **shell>** 
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h127.0.0.1 -P3307</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>show tables in employees;</copy>
     ```

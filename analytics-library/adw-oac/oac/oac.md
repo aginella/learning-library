@@ -95,7 +95,7 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
 
     - **Username**: `ADMIN` -- We have created this user on the ADW instance creation.
 
-    - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop. `ADWwelcome-1234`.
+    - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop.
 
     ![Connection Creation - ADW - WORKSHOPADWOAC](./images/lab300_11.png)
 

@@ -86,7 +86,7 @@ Estimated Lab Time: 15 minutes.
 
 3. Under **Create administration credentials** section:
 
-    - **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is `ADWwelcome-1234`.
+    - **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW.
     
     - **Reminder:** Note your password in a safe location as this cannot be easily reset.
 

@@ -144,7 +144,7 @@ To help you we created one with some variables, please copy it
 
 5.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>netstat -an | grep 3307t</copy>
+    <copy>netstat -an | grep 3307</copy>
     ```
 
 

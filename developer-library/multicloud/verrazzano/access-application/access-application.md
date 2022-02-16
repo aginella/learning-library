@@ -29,8 +29,13 @@ In this lab, you will:
       -o jsonpath={.status.loadBalancer.ingress[0].ip}; echo</copy>
       ```
 
-   ![hostName](images/1.png " ")
-
+   The output should be similar to the following:
+      ```bash
+         $ kubectl get service \
+         > -n "istio-system" "istio-ingressgateway" \
+         > -o jsonpath={.status.loadBalancer.ingress[0].ip}; echo
+         XX.XX.XX.XX
+      ```
 2. To open the Robert's Book Store Home Page, copy the following URL and replace *XX.XX.XX.XX* with your *EXTERNAL_IP* address which we got in the last step, as shown in the following image.
 
       ```bash
@@ -92,17 +97,28 @@ In this lab, you will:
 
 Verrazzano installs several consoles. The endpoints for an installation are stored in the `Status` field of the installed Verrazzano Custom Resource.
 
-1. You can get the endpoints for these consoles by using the following command and looking at the `Status.Instance` field:
+1. You can get the endpoints for these consoles by using the following command:
 
       ```bash
-      <copy>kubectl get vz -o yaml</copy>
+      <copy>kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .</copy>
       ```
 
-   ![Console URL](images/12.png " ")
-
-   This results in output similar to the following (output abbreviated to show only the relevant portions). Click the links to open the *Verrazzano* Console as shown:
-
-   ![Verrazzano Console](images/13.png " ")
+   The output should be similar to the following:
+      ```bash
+      $ kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .
+      {
+      "consoleUrl": "https://verrazzano.default.XX.XX.XX.XX.nip.io",
+      "elasticUrl": "https://elasticsearch.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "grafanaUrl": "https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "keyCloakUrl": "https://keycloak.default.XX.XX.XX.XX.nip.io",
+      "kialiUrl": "https://kiali.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "kibanaUrl": "https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "prometheusUrl": "https://prometheus.vmi.system.default.1XX.XX.XX.XX.nip.io",
+      "rancherUrl": "https://rancher.default.XX.XX.XX.XX.nip.io"
+      }
+      $
+      ```
+    Click the links to open the *Verrazzano* Console.
 
 2. Click *Advanced*.
 
@@ -126,7 +142,12 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
       <copy>kubectl get secret --namespace verrazzano-system verrazzano -o jsonpath={.data.password} | base64 --decode; echo</copy>
       ```
 
-   ![Verrazzano Password](images/18.png " ")
+   The output should be similar to the following:
+      ```bash
+      $ kubectl get secret --namespace verrazzano-system verrazzano -o jsonpath={.data.password} | base64 --decode; echo
+      aBsNxxZnl1ea3Vzp
+      $
+      ```
 
 7. Copy the password and go back to the browser, where the *Verrazzano Console* is open.
 
@@ -206,6 +227,30 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
     ![Dashboard](images/37.png " ")
 
+## Task 4: Explore the Kiali Console
+
+1. Go to Verrazzao console and click on the link for Kiali Console.
+
+   ![Dashboard](images/43.png " ")
+
+2. On Left side, Click on Graph.
+
+   ![Dashboard](images/44.png " ")
+
+3. In the Namespace dropdown, check the box for *bobs-books* and make the curser move outside the dropdown. 
+   ![Dashboard](images/45.png " ")
+
+4. You can view the graphical view of *bobs-books* application. Click *Legend* to view the *Legend* view.
+
+   ![Dashboard](images/46.png " ")
+
+5. Here you can view, what each shapes represents, like circle represents the *Workloads*.
+
+   ![Dashboard](images/47.png " ")
+
+6. On Left side, Click on *Applications*.
+
+   ![Dashboard](images/48.png " ")
 
 
 Leave the *Cloud Shell* open; we will use it for upcoming labs.
@@ -214,4 +259,4 @@ Leave the *Cloud Shell* open; we will use it for upcoming labs.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, July 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2022

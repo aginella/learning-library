@@ -13,8 +13,8 @@ Estimated time: 3 minutes
 
 ### Prerequisites
 
-* Oracle cloud account
-* Provisioned Autonomous Database Shared Instance
+- Oracle cloud account
+- Provisioned Autonomous Database
 
 ## Task 1: Login to Database Actions
 
@@ -28,7 +28,7 @@ In Autonomous Database Details page, open **Tools** tab and click **Database Act
 
 ![](images/adb-console.jpg)
 
-Enter `ADMIN` as Username and go next.
+Enter **ADMIN** as Username and go next.
 
 ![](images/login-1.jpg)
 
@@ -36,7 +36,7 @@ Input the password (you set up at Lab 2) and sign in.
 
 ![](images/login-2.jpg)
 
-Go to **SQL** menu once you logged in as the `ADMIN` user. 
+Go to **SQL** menu once you logged in as the **ADMIN** user. 
 
 ![](images/ADB_SQLDevWebHome.jpg)
 
@@ -85,7 +85,7 @@ END;
 </copy>
 ```
 
-Assign the default permissions to the roles, `GRAPH_DEVELOPER` and `GRAPH_ADMINISTRATOR`, to group multiple permissions together.
+Assign the default permissions to the roles, **GRAPH_ADMINISTRATOR** and **GRAPH_DEVELOPER**, to group multiple permissions together.
 ```
 <copy>
 GRANT PGX_SESSION_CREATE TO GRAPH_ADMINISTRATOR;
@@ -101,19 +101,19 @@ GRANT PGX_SESSION_READ_MODEL TO GRAPH_DEVELOPER;
 
 ## Task 3: Create a database user
 
-Now create the `CUSTOMER_360` user and provide Database Actions access for this user.
+Now create the **CUSTOMER_360** user and provide Database Actions access for this user.
 
 Open the main menu and click "Database Users".
 
 ![](images/user-1.jpg)
 
-Click `Create User` button, input user name and password. Enable **Web Access** and set the quota to `UNLILMITED`.
+Click **Create User** button, input user name and password. Enable **Web Access** and set the quota to **UNLILMITED**.
 
 ![](images/user-2.jpg)
 
-Go to **Granted Roles** tab and grant `GRAPH_DEVELOPER` role to this user. (Two roles `CONNECT` and `RESOURCE` are selected by default. Please keep them checked so they will be also granted.)
+Go to **Granted Roles** tab and grant **`GRAPH_DEVELOPER`** role and **`PGX_SESSION_ADD_PUBLISHED_GRAPH`** role to this user. (Two roles **CONNECT** and **RESOURCE** are selected by default. Please keep them checked so they will be also granted.)
 
-![](images/user-3.jpg)
+![](images/user-3.png)
 
 Proceed with **Create User**, and open the login window.
 
@@ -129,7 +129,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
-* **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management.
-* **Last Updated By/Date** - Ryota Yamanaka, August 2021
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph
+* **Contributors** - Arabella Yao, Jenny Tsai
+* **Last Updated By/Date** - Ryota Yamanaka, January 2022
 

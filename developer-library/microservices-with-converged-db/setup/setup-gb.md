@@ -48,39 +48,24 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.11.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.1.5 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the current directory.
 
-2. Run the following command to edit your .bashrc file so that you are returned to the workshop directory when you connect to cloud shell in the future.
-
-    ```
-    <copy>
-    sed -i.bak '/grabdish/d' ~/.bashrc
-    echo "source $PWD/microservices-datadriven/grabdish/env.sh" >>~/.bashrc
-    </copy>
-    ```
-
 ## Task 4: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
-    ```
-    <copy>
-    source microservices-datadriven/grabdish/env.sh
-    source setup.sh
-    </copy>
-    ```
+  ```
+  <copy>
+  source microservices-datadriven/workshops/dcms-oci/source.env
+  setup
+  </copy>
+  ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
-
-    ```
-    <copy>
-    source setup.sh
-    </copy>
-    ```
+   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run the same command again to resume.
 
    The setup process will typically take around 20 minutes to complete.  
 
@@ -122,13 +107,13 @@ Database passwords must be 12 to 30 characters and contain at least one uppercas
 
 ## Task 5: Complete the Setup
 
-Once the majority of the setup has been completed the setup will periodically give a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
+The setup will provide a summary of the setup status as it proceeds. Once everything has completed you will see the message: **SETUP COMPLETED**.
 
-If any of the background setup jobs are still running you can check their progress with the following command.
+While the background setup jobs are running you can monitor their progress with the following command.
 
 ```
 <copy>
-ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
+ps -ef
 </copy>
 ```
 
@@ -140,17 +125,15 @@ ls -al $GRABDISH_LOG
 </copy>
 ```
 
-You can also cat through the logs by using the `showsetuplogs` shortcut command.
+Once the setup has completed you are ready to [move on to Lab 2](#next).
+
+Note, builds may continue to run even after the setup has completed. The status of the builds can be monitored with this command:
 
 ```
 <copy>
-showsetuplogs
+status
 </copy>
 ```
-
-Once the setup has completed you are ready to move to the next lab.
-
-Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 

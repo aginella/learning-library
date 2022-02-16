@@ -30,7 +30,7 @@ Estimated Time: 50 minutes
 Set up Database Management to monitor and manage Oracle Databases on the following Co-managed Oracle Database Cloud solutions:
 
 -   Bare Metal and Virtual Machine DB Systems
-    
+
 -   Exadata Cloud Service
 
 ### Prerequisites
@@ -57,30 +57,30 @@ This lab assumes you have completed the following labs:
     ```
 
     The database user password checks in Database Management require the password to be Federal Information Processing Standards (FIPS) compliant:
-    
+
     * Password length must be between 14 to 127 characters.
     * Password must have at least one lowercase, one uppercase, one digit, and one special character.
 
-    ![Management Agents](./images/prereqs.png " ") 
+    ![Management Agents](./images/prereqs.png " ")
 
 ## Task 2: Assign IAM permissions
 
 1.  From the Oracle Cloud console navigation menu located in the upper left, click **Identity & Security**. Under **Identity**, click **Policies**.
 
-    ![Management Agents](./images/policy.png " ") 
+    ![Management Agents](./images/policy.png " ")
 
 2. Click **Create Policy**. In the **Create Policy** dialog :
 
-    ![Management Agents](./images/policy2.png " ") 
+    ![Management Agents](./images/policy2.png " ")
 
      **Name:** Enter **Policy-for-dbmgmt**.
-     
+
      **Description:** Enter **Policy for OCI DB Management**.
-     
+
      **Compartment:** Select **root**.
-     
+
      Enable **Show manual editor**.
-     
+
      Enter the following in **Policy Builder**:
 
     ```
@@ -104,7 +104,7 @@ This lab assumes you have completed the following labs:
 
 1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Identity & Security** and click **Vault**.
 
-    ![Management Agents](./images/vault.png " ") 
+    ![Management Agents](./images/vault.png " ")
 
 2.  On the **OCI Vaults** page, click **Create Vault**.
 
@@ -112,9 +112,9 @@ This lab assumes you have completed the following labs:
 
 3.  In the **Create Vault** dialog:
     ![Management Agents](./images/vault2.png " ")
-    
+
     **Create in Compartment:** Select the name of compartment.
-    
+
     **Name:** Enter **dbmgmt-vault**.
 
     Click **Create Vault**.
@@ -144,13 +144,13 @@ This lab assumes you have completed the following labs:
      **Create in Compartment:** Select Compartment Name
 
      **Name:** dbmgmt-secret
-     
+
      **Description:** Monitoring user password
-     
+
      **Encryption Key:** Select **dbmgmt-key**
-     
+
      **Secret Type Template:** Select default
-     
+
      **Secret Contents:** Enter the DBSNMP user password
 
     Click **Create Secret**.
@@ -166,7 +166,6 @@ You must create a private endpoint to connect Database Management to an Oracle C
 The private endpoint is a representation of Database Management in the VCN in which the Oracle Cloud Database can be accessed, and acts as a VNIC with private IP addresses in a subnet of your choice. The private endpoint need not be on the same subnet as the Oracle Cloud Database, although, it must be on a subnet that can communicate with the Oracle Cloud Database.
 
 Refer [Create a Database Management Private Endpoint]( https://docs.oracle.com/en-us/iaas/database-management/doc/perform-database-management-prerequisite-tasks.html#GUID-AC816009-3FE9-42A1-A133-83281E0790FD) for best practices.
-
 
 1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
@@ -233,7 +232,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 6.  Click **Add Ingress Rules** to add a Ingress rule for the Virtual Machine DB system's VCN. The Virtual Machine DB system's VCN (on port 1521) can receive incoming traffic from the Database Management private IP address (10.0.0.69/32) from any port.
 
     ![Management Agents](./images/seclist6.png " ")
-    
+
      **Source Type:** Select **CIDR**
 
      **Source CIDR:** 10.0.0.69/32
@@ -299,7 +298,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
      **Database System:** Select **DBCSDB**.
 
      **Database Home:** Select the name of Database Home.
-     
+
      **Database:** Select the name of Database.
 
      **Service Name:** Select the Service Name.
@@ -337,7 +336,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
     ![Management Agents](./images/enabledbmgmt6.png " ")
 
     For ASH Analytics & SQL Monitoring, click **Performance Hub** on the **Database Details** page. Note that the **Performance Hub** on the **Database Details** page does not include all the features that are available when **Performance Hub** is accessed from the Database Management **Managed Database Details** page.
-    
+
     ![Management Agents](./images/enabledbmgmt8.png " ")    
 
 ## Acknowledgements

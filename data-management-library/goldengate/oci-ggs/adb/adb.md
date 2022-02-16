@@ -2,11 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for OCI GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
 Estimated time: 20 mins
 
 ### Objectives
+
 -  Learn to provision a VCN and subnet
 -  Learn how to provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
 -  Learn how to provision an Autonomous Data Warehouse (ADW) instance
@@ -162,8 +163,6 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     ![License Type](./images/01-08-license.png)
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
-
-You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -64,40 +64,38 @@ PowerShell -Command Invoke-WebRequest -Uri "https://helidon.io/cli/latest/window
 ## Task 2: Create Helidon Greeting Application
 1. In your console enter:
 ```bash
-<copy>helidon init --version 2.3.2 </copy>
+<copy>helidon init --version 2.4.1 </copy>
 ```
 > To avoid any potential issues, define the specific Helidon version that was tested for this lab's environment.
 
 2. For this demo we will create a MicroProfile supported microservice, so choose option **(2)** for **Helidon MP Flavor**:
 
 ```bash
-Version 2.2.0 of this CLI is now available.
-Please see https://github.com/oracle/helidon-build-tools/blob/master/helidon-cli/CHANGELOG.md to update.
-
-Using Helidon version 2.3.2
+Using Helidon version 2.4.1
 Helidon flavor
-  (1) SE
-  (2) MP
+  (1) SE 
+  (2) MP 
 Enter selection (Default: 1): 2
 ```
 
-3. For the most functionality, choose option **(2) quickstart** then **Enter** for the default answers. Note that you can have different default package and project group names because it uses the OS user name.
+3. For the most functionality, choose option **(2) quickstart** then **Enter** for the default answers. Note that you can have different default package and project group names because it uses the OS user name. Notedown the package name, you will need to use it while creating new Java class.
 
 
 ```bash
 Select archetype
-  (1) bare | Minimal Helidon MP project suitable to start from scratch
-  (2) quickstart | Sample Helidon MP project that includes multiple REST operations
-  (3) database | Helidon MP application that uses JPA with an in-memory H2 database
+  (1) bare | Minimal Helidon MP project suitable to start from scratch 
+  (2) quickstart | Sample Helidon MP project that includes multiple REST operations 
+  (3) database | Helidon MP application that uses JPA with an in-memory H2 database 
 Enter selection (Default: 1): 2
-Project name (Default: quickstart-mp):
-Project groupId (Default: me.buzz-helidon):
-Project artifactId (Default: quickstart-mp):
-Project version (Default: 1.0-SNAPSHOT):
-Java package name (Default: me.buzz.mp.quickstart):
-Switch directory to /Users/mitia/Desktop/quickstart-mp to use CLI
+Project name (Default: quickstart-mp): 
+Project groupId (Default: me.user-helidon): 
+Project artifactId (Default: quickstart-mp): 
+Project version (Default: 1.0-SNAPSHOT): 
+Java package name (Default: me.user_name.mp.quickstart): 
+Switch directory to /home/user/quickstart-mp to use CLI
 
 Start development loop? (Default: n):
+$
 ```
 
 >For the **development loop** accept the default (**n**) for now. You will start the development loop later in this lab.
@@ -266,6 +264,7 @@ Be sure to stop the development loop with `CTRL+C`
 
 ```java
 <copy>
+package me.user_name.me.quickstart;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -345,4 +344,4 @@ And the new endpoint has been added.
 
 * **Author** -  Dmitry Aleksandrov
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, September 2021
+* **Last Updated By/Date** - Ankit Pandey, January 2022

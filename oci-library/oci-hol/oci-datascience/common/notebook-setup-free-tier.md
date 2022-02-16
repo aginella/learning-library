@@ -8,9 +8,10 @@ A notebook session is associated with a compute instance, VCN, subnet, and block
 
 When a notebook session is activated or created, the compute instance shape, block storage, VCN, and subnet are configured. These resources can only be changed by deactivating a notebook session, and then changing the configuration while activating the notebook session again. The size of the block storage can only be increased.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Time*: 15 minutes
 
 ### Objectives
+
 In this lab, you:
 * Use the Console to create a Data Science notebook session
 * Use the Console to open the Data Science notebook session
@@ -24,10 +25,15 @@ In this lab, you:
 ## Task 1: Creating a Notebook Session
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
+<<<<<<< HEAD
+1. Open the navigation menu.
+1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
+=======
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
+>>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session.
     ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
@@ -38,13 +44,13 @@ In this lab, you:
 1. Select the compartment that you want to contain the notebook session.
 1. (Optional, but recommended) Enter a unique name for the notebook session (limit of 255 characters). If you do not provide a name, a name is automatically generated for you.
 1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
-1. Enter the block volume in GB. The suggested size is 100 Gb or larger. 
-1. Select the VCN compartment that contains the VCN that you want to use. 
+1. Enter the block volume in GB. The suggested size is 100 Gb or larger.
+1. Select the VCN compartment that contains the VCN that you want to use.
 1. Select the VCN to use.
 1. Select the subnet compartment that contains the subnet you want to use.
 1. Select the subnet to use. Using a private subnet is recommended.
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
-1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**. 
+1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**.
 1. Click **Create**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/create-ns.png)
 
@@ -56,11 +62,16 @@ In this lab, you:
 Once the notebook session has been created the notebook session page shows the notebook in an **Active** or **Inactive** state. To open the notebook:
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
+<<<<<<< HEAD
+1. Open the navigation menu.
+1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
+=======
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
+>>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session. This will open the Projects page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
@@ -74,19 +85,16 @@ Once the notebook session has been created the notebook session page shows the n
 1. If the notebook is in an **Inactive** state, then:
     1. Click **Activate** to open the **Activate Notebook Session** dialog with the configuration from the last time the notebook session was activated or created.
     1. Select a VM shape. The [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm) page has details on the specifications. For this lab, select a VM.Standard2.4.
-    1. Enter the block volume in GB. The suggested size is 100 Gb or larger. The size of the block storage can be increased, but not decreased. 
-    1. Select the VCN compartment that contains the VCN that you want to use. 
+    1. Enter the block volume in GB. The suggested size is 100 Gb or larger. The size of the block storage can be increased, but not decreased.
+    1. Select the VCN compartment that contains the VCN that you want to use.
     1. Select the VCN to use.
     1. Select the subnet compartment that contains the subnet that you want to use.
     1. Select the subnet to use. Using a private subnet is recommended.
     1. Click **Activate** and the notebook session status changes to **Updating**.
     1. When the notebook session status changes to **Active**, click **Open**
 
-You can *proceed to the next lab*.
-
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
-
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022

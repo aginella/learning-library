@@ -12,19 +12,18 @@ Quick walk through to tear down the resources created in your tenancy and the di
 
 ### Objectives
 
-* Clone the setup and microservices code
-* Execute the setup
+* Teardown the setup
 
 ### Prerequisites
 
-* Have successfully completed the earlier labs
+* Have successfully or partially completed lab 1
 
 ## Task 1: Delete the Workshop Resources
 
-1. Run the following command to delete the resources created in you tenancy. It will delete everything except the compartment. It will take several minutes to run. The script will delete the Object Storage bucket,  'Oracle Cloud Infrastructure Registry  repositories, OKE cluster, listeners, VCN and databases.
+1. Run the following command to delete the resources created in you tenancy. It will delete everything except the compartment. It will take several minutes to run. The script will delete the Object Storage bucket, 'Oracle Cloud Infrastructure Registry repositories, OKE cluster, listeners, VCN and databases.
 
     ```
-    <copy>source destroy.sh</copy>
+    <copy>teardown</copy>
     ```
 
 ## Task 2: Delete the Directory

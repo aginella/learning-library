@@ -8,9 +8,14 @@
       "filename": "./../../intro/intro-monitoring-overview.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
+      "title": "Get Started",
+      "description": "Get Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+    },
+    {
+      "title": "Lab 1: Verify Compute Instance Setup",
       "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
+      "filename": "https://github.com/oracle/learning-library/blob/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
       "title": "Lab 2: Initialize Environment",

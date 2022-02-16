@@ -4,7 +4,7 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Lab Time:* 10 Minutes.
+*Estimated Time:* 10 Minutes.
 
 Watch the video below for a quick walk through of the lab.
 
@@ -265,6 +265,8 @@ Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDEN
     ```
     <copy>sudo systemctl restart oracle-emcc</copy>
     ```
+
+You may now proceed to the next lab.
 
 ## Appendix 2: External Web Access
 

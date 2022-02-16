@@ -36,24 +36,24 @@ This lab assumes you have:
 
 1. Create a database for JSON tests
 
-    a. **mysql>**
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>CREATE DATABASE json_test;</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>USE json_test;</copy>
     ```
 2.	Create a JSON table
 
-    a. **mysql>**  
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
 
     ```
     <copy>CREATE TABLE jtest (id bigint NOT NULL AUTO_INCREMENT, doc JSON, PRIMARY KEY (id));</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT * FROM jtest;</copy>
@@ -62,19 +62,19 @@ This lab assumes you have:
 
 1.	add data to this table
 
-    a. **mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>INSERT INTO jtest(doc) VALUE('{"A": "hello", "b": "test", "c": {"hello": 1}}');</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>INSERT INTO jtest(doc) VALUE('{"b": "hello"}'),('{"c": "help"}');</copy>
     ```
 2.	Display table dada  
 
-    **mysql>**
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT * FROM jtest;</copy>
@@ -83,29 +83,29 @@ This lab assumes you have:
 
 1.	Retrieve json documents with shortcut “->” 
 
-    a. **mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT json_extract (doc, "$.b") FROM jtest;</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>>** 
 
     ```
     <copy>SELECT doc->"$.b" FROM jtest;</copy>
     ```
 2.	Retrieve json documents with shortcut “$.” 
 
-    a. **mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT json_extract (doc, "$.c") FROM jtest;</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT doc->"$.b" from jtest;</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT doc->>"$.b" from jtest;</copy>
@@ -113,17 +113,17 @@ This lab assumes you have:
 ## Task 4: Use Index
 5.	Create Index on the virtual column
 
-    a. **mysql>**  
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
 
     ```
     <copy>alter table jtest add column gencol CHAR(7) AS (doc->"$.b");</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>CREATE INDEX myvirtindex ON jtest(gencol);</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT * FROM jtest;</copy>

@@ -58,7 +58,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
     $ <copy>. oraenv</copy>
     CDB1
     ```
-4. In Session1, log in to `PDB1` and capture the workload data by using Database Replay.
+4. In **Session1**, log in to `PDB1` and capture the workload data by using Database Replay.
 
     ```
     $ <copy>sqlplus system@PDB1</copy>

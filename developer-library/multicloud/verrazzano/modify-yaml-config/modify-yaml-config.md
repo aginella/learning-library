@@ -32,7 +32,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![Open file](images/6.png " ")
 
-3. As part of Lab 5, you saved your Docker image full name. You need to copy the following line and paste it in your text editor. Then, you need to replace `docker image full name` with your Docker image name. Then copy the modified line and press *i* to insert the text in the `*bobs-books-comp.yaml*` file. Paste the output at line number 145 (make sure you keep the indentation) and comment out the exiting line with *#* as shown in the following image, then press *Esc* and then type *:wq* to save the file.
+3. As part of Lab 5, you saved your Docker image full name. You need to copy the following line and paste it in your text editor. Then, you need to replace `docker image full name` with your Docker image name. Then copy the modified line and press *i* to insert the text in the `*bobs-books-comp.yaml*` file. Paste the output at line number 153 (make sure you keep the indentation) and comment out the exiting line with *#* as shown in the following image, then press *Esc* and then type *:wq* to save the file.
 
     ```bash
     <copy>image:  `docker image full name`</copy>
@@ -61,7 +61,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     You will see output similar to the following:
 
     ```bash
-    vera_zano@cloudshell:~ (us-ashburn-1)$ kubectl get pods -n bobs-books
+    $ kubectl get pods -n bobs-books
     NAME                                               READY  STATUS   RESTARTS  AGE
     bobbys-coherence-0                                 2/2    Running  0         130m
     bobbys-front-end-adminserver                       4/4    Running  0         127m
@@ -81,7 +81,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
     bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
     bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
-    vera_zano@cloudshell:~ (us-ashburn-1)$
+    $
     ```
 
     After you see that all the pods are in the *Running* Status, press *CTRL + C* to kill this command.
@@ -92,4 +92,4 @@ Leave the *Cloud Shell* open as we also need it for our last lab.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, July 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2022

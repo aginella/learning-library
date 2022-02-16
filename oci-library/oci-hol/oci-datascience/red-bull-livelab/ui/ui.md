@@ -83,7 +83,7 @@ Congratulations! You have completed this workshop!
 
 
 ## Acknowledgements
-* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Author** - Olivier Francois Xavier Perard , Principal Data Scientist
 * **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
 
 ## Need Help?

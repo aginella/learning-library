@@ -1,4 +1,4 @@
-# Graph Visualization
+# Visualize the Graph
 
 ## Introduction
 
@@ -16,15 +16,16 @@ The following video provides an overview of the Graph Visualization component (=
 
 ### Prerequisites
 
-- This lab assumes you have successfully completed Lab - Graph Query and Analysis with Python and published the graph. It also assumes the GraphViz is up and running on the compute instance on `public_ip_for_compute:7007/ui`. We will use the GraphViz to explore the graph and run some PGQL queries.
+- The graph is created and published
+- The Graph Server (with GraphViz) is up and running
 
 ## Task 1: Login to GraphViz
 
-Open the GraphViz at `https://<public_ip_for_compute>:7007/ui` using a web browser. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
+Open the GraphViz at **`https://<public_ip_for_compute>:7007/ui`** using a web browser. Replace **`<public_ip_for_compute>`** with the one for your Graph Server compute instance.
 
 Since the marketplace image is distributed with a self-signed SSL certificate, you should change it for your own certificate in production use. Meanwhile, web browsers should show warnings, while we understand that it is safe.
 
-If you use **Chrome**, type `thisisunsafe` in the warning window to move to the GraphViz screen.
+If you use **Chrome**, type **thisisunsafe** in the warning window to move to the GraphViz screen.
 
 ![](images/login-chrome.jpg)
 
@@ -32,13 +33,13 @@ Using **Firefox**, click **Advanced** and then **Accep the Risk and Continue**.
 
 ![](images/login-firefox.jpg)
 
-You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password, then click submit. **Graph Server** is the default in the Advanced Options, so you don't need to change it.
+You should see a screen similar to the screenshot below. Enter the username (**customer_360**) and password, then click submit. **Graph Server** is the default in the Advanced Options, so you don't need to change it.
 
 ![](images/login.jpg)
 
 ## Task 2: Modify query
 
-Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.
+Modify the query to get the first 5 rows, i.e. change **LIMIT 100** to **LIMIT 5**, and click Run.
 
 You should see a graph similar to the screenshot below.
 
@@ -46,9 +47,9 @@ You should see a graph similar to the screenshot below.
 
 ## Task 3: Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download a zip file, `highlights.json.zip`. Unzip this file and note where it is unzipped.
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download a zip file, highlights.json.zip. Unzip this file and note where it is unzipped.
 
-Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file and click Open to load that.
+Click on the Load button under **Settings** (on the right side of the screen). Browse to the appropriate folder and choose the file and click Open to load that.
 
 ![](images/GraphVizLoadHighlights.png)
 
@@ -60,23 +61,24 @@ The graph should now look like
 
 1. Next let's run a few PGQL queries.
 
-    The [pgql-lang.org](http://pgql-lang.org) site and [Specification](http://pgql-lang.org/spec/1.3) are the best references for details and examples. For the purposes of this lab, however, here are minimal basics.
+    The [pgql-lang.org](http://pgql-lang.org) site and [Specification](http://pgql-lang.org/spec/1.4) are the best references for details and examples. For the purposes of this lab, however, here are minimal basics.
 
-    The general structure of a PGQL query is
+    The general structure of a PGQL query is:
 
     ```
-    SELECT <select list>
-    FROM <graph_name>      (Please omit the graph name here, as it is selected from the GraphViz UI)
-    MATCH <graph_pattern>
+    SELECT <select_list>
+    FROM MATCH <graph_pattern> ON <graph_name>
     WHERE <condition>
     ```
 
-    PGQL provides a specific construct known as the `MATCH` clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
-    - `(v)` indicates a vertex variable `v`   
-    - `-` indicates an undirected edge, as in (source)-(dest)  
-    - `->` an outgoing edge from source to destination  
-    - `<-` an incoming edge from destination to source  
-    - `[e]` indicates an edge variable `e`
+    PGQL provides a specific construct known as the **MATCH** clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.  
+    - **(v)** indicates a vertex variable **v**   
+    - **-** indicates an undirected edge, as in (source)-(dest)  
+    - **->** an outgoing edge from source to destination  
+    - **<-** an incoming edge from destination to source  
+    - **[e]** indicates an edge variable **e**
+
+    Also, please omit the **graph_name** here, as it is selected from the GraphViz UI.
 
 2. Let's find accounts that have had an outbound and and inbound transfer of over 500 on the same day.
 
@@ -93,11 +95,11 @@ The graph should now look like
     </copy>
     ```
 
-    In the first `MATCH` clause above, `(a)` indicates the source vertex and `(a1)` the destination, while `[t1:transfer]` is the edge connecting them. The `:transfer` specifies that the `t1` edge has the label `TRANSFER`. The comma (`,`) between the two patterns is an AND condition.
+    In the first **MATCH** clause above, **(a)** indicates the source vertex and **(a1)** the destination, while **[t1:transfer]** is the edge connecting them. The **:transfer** specifies that the **t1** edge has the label **TRANSFER**. The comma (,) between the two patterns is an AND condition.
 
 3. Copy and paste the query into the PGQL Graph Query text input box of the GraphViz application. Click Run.
 
-    The result should look as shown below. In the highlight settings, the accounts starting with `xxx-yyy-` are shown in red (= accounts of the bank), while `xxx-zzz-` are shown in orange (= accounts from another bank). 
+    The result should look as shown below. In the highlight settings, the accounts starting with **xxx-yyy-** are shown in red (= accounts of the bank), while **xxx-zzz-** are shown in orange (= accounts from another bank). 
 
     ![](images/same-day-transfers.jpg)
 
@@ -138,8 +140,7 @@ The graph should now look like
 
 ## Acknowledgements
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Ryota Yamanaka, August 2021
-* **Lab Expiry Date** - November 30, 2021
-
+* **Author** - Jayant Sharma
+* **Contributors** - Arabella Yao, Jenny Tsai
+* **Last Updated By/Date** - Ryota Yamanaka, January 2022
+* **Lab Expiry Date** - October 31, 2022

@@ -1,8 +1,8 @@
-# Provision an Autonomous Database Instance
+# Provisioning a new Autonomous Data Database
 
 ## Introduction
 
-This workshop walks you through the steps to get started using the **Oracle Autonomous Data Warehouse Database (ADW)**. You will provision a new database in just a few minutes.
+This workshop walks you through the steps to get started using the Oracle Autonomous Database. For this workshop we're going to use an **Autonomous Database optimized for Analytics and Warehousing (ADW)**. You will provision a new database in just a few minutes.
 
 Oracle Autonomous Databases have the following characteristics:
 
@@ -25,7 +25,7 @@ Watch our short video that explains how to provision your Autonomous Database in
 
 [](youtube:IfWJhnodAxk)
 
-Estimated Time: 15 minutes.
+Estimated Lab Time: 15 minutes.
 
 ### Objectives 
 - Create an Autonomous Database with the latest features of Oracle Databases
@@ -136,3 +136,9 @@ You have just created an Autonomous Database with the latest features of Oracle 
 
 - **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
+- **Last Updated By/Date** - Kamryn Vinson, October 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -2,13 +2,17 @@
 
 ## About this Workshop
 
-Time series is a series of data points that is indexed overtime. The goal of time series mdoels is describe and predict the pattern of the data as it changes over time
+Time series is a series of data points that is indexed overtime. The goal of time series mdoels is describe and predict the pattern of the data as it changes over time.
+
+This lab is the sequence to the livelab 'Times Series Forecasting with fb Prophet'. Please complete the lab ![here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=771&p210_type=1&session=104277712897414) before attempting this one.
 
 In this workshop, you will first provision an Oracle Data Science Notebook session and upload SP500 data either through a local file upload. You will then go ahead and build the model, with detailed explanations and instructions throughout the entire Data Science lifecycle. Upon completion, you will analyze the results of your model and deploy the model to OCI Model Catalog.
 
-This lab is the second part of the Time Series livelab. Please makre sure to complete that lab before starting this one.
+This lab is the second part of the Time Series livelab. Please make sure to complete that lab before starting this one.
 
-Estimated workshop time: 60 minutes (this includes all the labs in this workshop)
+You will be introduced to Oracle Cloud and gain a high level overview of the products involved in Data Science and Machine Learning. You will learn at a high level about OCI Data Science, Oralce Advanced Data Science (ADS) SDK, OCI Model Catalog and OCI Object Storage.
+
+Estimated time: 60 minutes
 
 ### Objectives
 
@@ -25,9 +29,7 @@ In this workshop you will:
 
 ## Product Overview
 
-You will be introduced to Oracle Cloud and gain a high level overview of the products involved in Data Science and Machine Learning. You will learn at a high level about OCI Data Science, Oracle Autonomous Data Warehouse and OCI Object Storage.
 
-[Detailed Overview of Apriori Algorithm](https://docs.oracle.com/database/121/DMCON/GUID-B7D12599-FB4C-45E3-BCE4-E54A3C6F0E64.htm#DMCON294)
 
 ## Acknowledgements
 * **Authors** - Simon Weisser, Cloud Engineer

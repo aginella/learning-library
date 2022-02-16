@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Improve Performance of Big Data and Data Warehouse with Database 21c",
+    "workshoptitle": "Improve Performance and Functionality of Oracle Big Data Cloud Service and Oracle Autonomous Data Warehouse in Oracle Database 21c",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -41,11 +41,13 @@
         },
         {
             "title": "Lab 7: Measure Asymmetry in Data",
-            "filename": "../../skewness/skewness.md"
+            "filename": "../../skewness/skewness.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 8: Measure Tailedness of Data",
-            "filename": "../../kurtosis/kurtosis.md"
+            "filename": "../../kurtosis/kurtosis.md",
+            "type": "dbcs"
         },
         {
             "title": "Need Help?",
