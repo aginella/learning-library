@@ -86,7 +86,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![](./images/02-03-atp.png " ")
 
-4.  Click the **Tools** tab, and then click **Open Database Actions**.
+4.  Click the **Tools** tab, and then click **Database Actions**.
 
     ![](./images/02-04-db-actions.png "")
 

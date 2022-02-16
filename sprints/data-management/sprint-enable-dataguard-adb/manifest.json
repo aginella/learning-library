@@ -1,0 +1,16 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "  How to enable Data Guard for an ADB instance?",
+            "description": "",
+            "filename": "sprint-enable-dataguard-adb.md"
+        },
+        {
+          "title": "How to disable Data Guard for an ADB instance?",
+          "description": "",
+          "filename": "../sprint-disable-dataguard-adb/sprint-disable-dataguard-adb.md"
+        }
+    ]
+}

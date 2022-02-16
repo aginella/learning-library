@@ -83,8 +83,6 @@ Using the default connection you can put in User Name ADMIN and the password you
 
 Test Connection to make sure you can connect to this data asset.
 
-![Create Data Asset](./images/create_dataasset5.png " ")
-
 Second data asset will be the dataflow-warehouse bucket that you created for data flows. Click on Create Data Asset. Fill in the name **dataflow-warehouse-bucket** Choose **Oracle Object Storage** for **Type**.
 
 ![Create Data Asset](./images/create_dataasset6.png " ")
@@ -199,9 +197,9 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/
 
 The data asset will then be added to this data catalog. Now we can use these data assets to set up processes for data loading and ETL with OCI Data Flow.
 
-## Task 6: New table for Spark application data loads
+## Task 6: New table to demonstrate catalog discovery
 
-In this step, you will simply be creating a new table to be used in the data loading process that uses the application in the next lab. You will also verify that the table is now part of the discovered entities in the OCI Data Catalog.
+In this step, you will simply be creating a new table to be verify that the table is now part of the discovered entities in the OCI Data Catalog.
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 

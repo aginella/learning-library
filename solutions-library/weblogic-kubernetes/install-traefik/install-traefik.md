@@ -8,7 +8,7 @@ This tutorial demonstrates how to install the [Traefik](https://traefik.io/) Ing
 
 Estimated Lab Time: 10 minutes
 
-## Task 1: Install the Traefik operator with a Helm chart
+## **STEP 1**: Install the Traefik operator with a Helm chart
 
 
 Create a namespace for Traefik:
@@ -40,25 +40,12 @@ traefik/traefik \
 The output should be similar to the following:
 ```bash
 NAME: traefik-operator
-LAST DEPLOYED: Fri Mar  6 20:31:53 2020
+LAST DEPLOYED: Sun Dec 19 07:30:22 2021
 NAMESPACE: traefik
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
 NOTES:
-1. Get Traefik\'s load balancer IP/hostname:
-
-     NOTE: It may take a few minutes for this to become available.
-
-     You can watch the status by running:
-
-         $ kubectl get svc traefik-operator --namespace traefik -w
-
-     Once 'EXTERNAL-IP' is no longer '<pending>':
-
-         $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'
-
-2. Configure DNS records corresponding to Kubernetes ingress resources to point to the load balancer IP/hostname found in step 1
 ```
 
 The Traefik installation is basically done. Verify the Traefik (load balancer) services:
@@ -67,9 +54,8 @@ The Traefik installation is basically done. Verify the Traefik (load balancer) s
 ```
 The output should be similar to the following:
 ```bash
-NAME                         TYPE           CLUSTER-IP     EXTERNAL-IP       PORT(S)                      AGE
-traefik-operator             LoadBalancer   10.96.50.120   129.146.148.215   443:31388/TCP,80:31282/TCP   48s
-traefik-operator-dashboard   ClusterIP      10.96.206.52   <none>            80/TCP                       48s
+NAME               TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)                      AGE
+traefik-operator   LoadBalancer   10.96.25.22   132.226.153.42   80:30655/TCP,443:32269/TCP   96s
 ```
 Please note the EXTERNAL-IP of the *traefik-operator* service. This is the public IP address of the load balancer that you will use to access the WebLogic Server Administration Console and the sample application.
 
@@ -79,7 +65,7 @@ To print only the public IP address, execute this command:
 ```
 The output should be similar to the following:
 ```bash
-129.146.148.215
+132.226.153.42
 ```
 
 Verify the `helm` charts:
@@ -89,11 +75,11 @@ Verify the `helm` charts:
 The output should be similar to the following:
 ```bash
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-traefik-operator        traefik         1               2020-09-03 13:50:09.199419556 +0000 UTC deployed        traefik-1.87.2  1.7.24
+traefik-operator        traefik         1               2021-12-19 07:30:22.594021816 +0000 UTC deployed        traefik-10.7.1  2.5.4      
 ```
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Maciej Gruszka, Peter Nagy, September 2020
-* **Last Updated By/Date**
+* **Author** - Ankit Pandey, Maciej Gruszka, Peter Nagy
+* **Last Updated By/Date** - December 2021

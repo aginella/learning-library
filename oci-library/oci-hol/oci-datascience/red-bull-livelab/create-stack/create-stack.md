@@ -56,7 +56,7 @@ After creating your Oracle Cloud account, there is some infrastructure that must
 
   ![Alerts Page](./images/rm-7.jpeg)
 
-9. Next, open a new tab in your browser to load up the web UI for JupyterLab. Paste the IP address you just copied with     ```:8001``` added to the end. The URL should look like ``` http://xxx.xxx.xxx.xxx:8001 ``` (substituting the public IP we   copied in the previous step). JupyterLab is running on port 8001, so when you navigate to this URL you should see the Juypter login.
+9. Next, open a new tab in your browser to load up the web UI for JupyterLab. Paste the IP address you just copied with     ```:8888``` added to the end. The URL should look like ``` https://xxx.xxx.xxx.xxx:8888 ``` (substituting the public IP we   copied in the previous step). JupyterLab is running on port 8001, so when you navigate to this URL you should see the Juypter login.
 
   _Note: You should not be on VPN when opening JupyterLab_.
 
@@ -69,7 +69,7 @@ After creating your Oracle Cloud account, there is some infrastructure that must
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Author** - Olivier Francois Xavier Perard , Principal Data Scientist
 * **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
 
 ## Need Help?

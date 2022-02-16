@@ -2,13 +2,15 @@
 
 ## Introduction
 
-Oracle Cloud Infrastructure Object Storage service is an Internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+Oracle Cloud Infrastructure (OCI) Object Storage service is an Internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
 
 With Object Storage, you can safely and securely store or retrieve data directly from the Internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
 Object Storage is a regional service and is not tied to any specific compute instances. You can access data from anywhere inside or outside the context of Oracle Cloud Infrastructure.
 
 Estimated Time: 15 minutes
+
+[](youtube:ci-U-174T_8)
 
 **Object storage offers 2 tiers:**
 
@@ -50,7 +52,7 @@ In this lab, you will:
   </if>
   <if type="livelabs">
   Select the compartment that you are assigned to. Expand **c4u04 (root)**, **Livelabs**, then click **your\_user\_name-COMPARTMENT**.
-  ![](images/select-compartment.png " ")</if>
+  ![Select Compartment](images/select-compartment.png " ")</if>
   Click **Create Bucket**.
   ![](images/create-bucket.png " ")
 

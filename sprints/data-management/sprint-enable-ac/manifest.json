@@ -1,0 +1,25 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to enable Application Continuity",
+            "description": "",
+            "filename": "sprint-enable-ac.md"
+        },
+
+        {
+          "title": "How to enable Transparent Application Continuity",
+          "description": "",
+          "filename": "../sprint-enable-tac/sprint-enable-tac.md"
+        },
+
+        {
+          "title": "How to disable Application Continuity",
+          "description": "",
+          "filename": "../sprint-disable-ac/sprint-disable-ac.md"
+        }
+
+
+    ]
+}

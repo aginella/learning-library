@@ -11,6 +11,19 @@ We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute 
 Watch the video below for an overview of the lab.
 [](youtube:oq2Hk1Yy9Cg)
 
+Estimated Time: 5 minutes
+
+### Objectives
+In this lab, you will:
+- Generate SSH keys using Oracle cloud shell
+- List content of the public key
+
+### Prerequisites
+* An Oracle Cloud Account - please view this workshop's LiveLabs landing page to see which environments are supported.
+
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
+
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## About Oracle Cloud Shell
 
@@ -63,10 +76,10 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-cat.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
 * **Contributors** - Jaden McElvey, Kamryn Vinson
-* **Last Updated By/Date** - Tom McGinn, Database Product Management, May 2021
+* **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021
 * **Workshop (or Lab) Expiry Date** - May 2022

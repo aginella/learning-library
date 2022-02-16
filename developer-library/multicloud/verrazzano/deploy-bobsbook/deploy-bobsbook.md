@@ -202,6 +202,14 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Verify License Agreement](images/28.png " ")
 
+7. In the Home page of Oracle Container Registry, Search for *weblogic*
+   
+    ![Search WebLogic](images/31.png " ")
+
+8. Click *weblogic* as shown and accept the license as you did for Verrazzano imagaes.
+
+    ![Accept License Agreement](images/32.png " ")
+    
 ## Task 2: Deploy the Bob's Books application
 
 We need to download the source code, where we have configuration files, `bobs-books-app.yaml` and `bobs-books-comp.yaml`.
@@ -210,13 +218,11 @@ We need to download the source code, where we have configuration files, `bobs-bo
 
     ```bash
     <copy>
-    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-app.yaml >~/bobs-books-app.yaml
-    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-comp.yaml >~/bobs-books-comp.yaml
-    cd
+    curl -LSs  https://raw.githubusercontent.com/verrazzano/verrazzano/v1.1.0/examples/bobs-books/bobs-books-app.yaml >~/bobs-books-app.yaml
+    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/v1.1.0/examples/bobs-books/bobs-books-comp.yaml >~/bobs-books-comp.yaml
+    cd ~
     </copy>
     ```
-
-    ![Oracle SSO](images/7.png " ")
 
 2. We will keep all Kubernetes artifacts in the separate namespace. Create a namespace for the Bob's Books example application. Namespaces are a way to organize clusters into virtual sub-clusters. We can have any number of namespaces within a cluster, each logically separated from others but with the ability to communicate with each other.
 Also we need to make Verrazzano aware that we store in that namespace Verrazzano artifacts. So we need to add a a label identifying the bobs-books namespace as managed by Verrazzano. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users. Here, for the bobs-book namespace, we are attaching a label to it, which marks this namespace as managed by Verrazzano. The *istio-injection=enabled*, enables an Istio "sidecar", and as such, helps establish an Istio proxy. With an Istio proxy, we can access other Istio services like an Istio gateway and such. To add the label to the bobs-books namespace with the previously mentioned attributes, copy the following command and run it in the *Cloud Shell*
@@ -257,7 +263,7 @@ Please copy and paste the block of commands into the *Cloud Shell*.
         --from-literal=password=$WLS_PASSWORD \
         --from-literal=url=jdbc:mysql://mysql.bobs-books.svc.cluster.local:3306/books \
         -n bobs-books
-    cd    
+    cd ~ 
     </copy>
     ```
 
@@ -279,13 +285,28 @@ Please copy and paste the block of commands into the *Cloud Shell*.
 
     ![app](images/21.png " ")
 
-7. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace. It takes around 4-5 minutes.
+7. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace. It takes around 4-5 minutes. If you are waiting for more then 5 minutes, then you can re-run the command again.
 
     ```bash
     <copy>kubectl wait --for=condition=Ready pods --all -n bobs-books --timeout=600s</copy>
     ```
 
-    ![Pods to be ready](images/22.png " ")
+    The output should be similar to the following:
+    ```bash
+      $ kubectl wait --for=condition=Ready pods --all -n bobs-books --timeout=600s
+      pod/bobbys-coherence-0 condition met
+      pod/bobbys-front-end-adminserver condition met
+      pod/bobbys-front-end-managed-server1 condition met
+      pod/bobbys-helidon-stock-application-5f74cbcc8b-cw4x4 condition met
+      pod/bobs-bookstore-adminserver condition met
+      pod/bobs-bookstore-managed-server1 condition met
+      pod/mysql-6bc8f9f785-n4qjh condition met
+      pod/robert-helidon-65b8874988-7x5vj condition met
+      pod/robert-helidon-65b8874988-vnntp condition met
+      pod/roberts-coherence-0 condition met
+      pod/roberts-coherence-1 condition met
+      $
+    ```
 
 8. Get the `EXTERNAL_IP` address of the istio-ingressgateway service. Copy this `EXTERNAL_IP` in your text editor; we will use it in many places, so you can directly copy it from your text editor.
 
@@ -340,20 +361,20 @@ Verify that the application configuration, domains, Coherence resources, and ing
     ```
 
     ```bash
-    YOURUSERNAME@cloudshell:~ (us-ashburn-1)$ kubectl get pods -n bobs-books
+    $ kubectl get pods -n bobs-books
     NAME                                                READY   STATUS    RESTARTS   AGE
-    bobbys-coherence-0                                  2/2     Running   0          11m
-    bobbys-front-end-adminserver                        4/4     Running   0          8m15s
-    bobbys-front-end-managed-server1                    4/4     Running   0          7m32s
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5   2/2     Running   0          11m
-    bobs-bookstore-adminserver                          4/4     Running   0          7m59s
-    bobs-bookstore-managed-server1                      4/4     Running   0          7m14s
-    mysql-65d864bf8c-xf64p                              2/2     Running   0          10m
-    robert-helidon-bfdfb58b8-58qfs                      2/2     Running   0          11m
-    robert-helidon-bfdfb58b8-lkw8m                      2/2     Running   0          11m
-    roberts-coherence-0                                 2/2     Running   0          11m
-    roberts-coherence-1                                 2/2     Running   0          11m
-    YOURUSERNAME@cloudshell:~ (us-ashburn-1)$
+    bobbys-coherence-0                                  2/2     Running   0          7m51s
+    bobbys-front-end-adminserver                        4/4     Running   0          5m28s
+    bobbys-front-end-managed-server1                    4/4     Running   0          4m30s
+    bobbys-helidon-stock-application-5f74cbcc8b-cw4x4   2/2     Running   0          7m54s
+    bobs-bookstore-adminserver                          4/4     Running   0          4m31s
+    bobs-bookstore-managed-server1                      4/4     Running   0          3m41s
+    mysql-6bc8f9f785-n4qjh                              2/2     Running   0          5m52s
+    robert-helidon-65b8874988-7x5vj                     2/2     Running   0          7m53s
+    robert-helidon-65b8874988-vnntp                     2/2     Running   0          7m54s
+    roberts-coherence-0                                 2/2     Running   0          7m52s
+    roberts-coherence-1                                 2/2     Running   0          7m51s
+    $
     ```
 
     Note the pod name for **bobbys-helidon-stock-application**. When we redeploy this component, you will notice that this pod will go into a *Terminating* status and new pod will start and come in the *Running* state in Lab 7.
@@ -364,4 +385,4 @@ Leave the *Cloud Shell* open; we will use it for the next labs as well.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, July 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2022

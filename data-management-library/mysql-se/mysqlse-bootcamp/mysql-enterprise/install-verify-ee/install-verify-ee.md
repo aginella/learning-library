@@ -171,7 +171,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
     <copy>exit</copy>
     ```
 
-## Task 3: Remove MySQL Community Installation and Iimport Databses
+## Task 3: Remove MySQL Community Installation and Import Databses
 1. Now that you understand how to connect, we can remove the MySQL Community installation
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
@@ -188,7 +188,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
-    <copy>mysql -uroot -p -S /mysql/temp/mysql.sock</copy>
+    <copy>mysql -uroot -p -P3307 -h 127.0.0.1 < /workshop/databases/world/world.sql</copy>
     ``` 
 3.	Import the employees demo database that is in /workshop/databases folder.
 
@@ -211,7 +211,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
 2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
-    <copy>eSHOW VARIABLES LIKE "%version%";</copy>
+    <copy>SHOW VARIABLES LIKE "%version%";</copy>
     ```
 
 3. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 

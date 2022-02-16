@@ -7,12 +7,15 @@ This lab walks you through the steps to create database registrations.
 Estimated time: 2 minutes
 
 ### About Database Registrations
-Database Registrations capture source and target credential information. A database registration also enables networking between the OCI GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
+
+Database Registrations capture source and target credential information. A database registration also enables networking between the Oracle Cloud Infrastructure (OCI) GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
 ### Objectives
+
 In this lab, you will register source and target Oracle Autonomous databases for Oracle GoldenGate deployments to use for the duration of this lab.
 
 ### Prerequisites
+
 This lab assumes that you completed all preceding labs.
 
 ## Task 1: Register the source database
@@ -124,13 +127,12 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 7.  Repeat the instructions under Task 2 to unlock the GGADMIN user on the TargetADW database.
 
-You may now **proceed to the next lab**.
-
 ## Learn more
 
 * [Managing Database Registrations](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
 
 ## Acknowledgements
+
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
 * **Last Updated By/Date** - Jenny Chan, October 2021

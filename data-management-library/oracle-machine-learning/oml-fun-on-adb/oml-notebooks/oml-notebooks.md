@@ -327,7 +327,7 @@ To create a job:
 
 This completes the task of creating a job.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

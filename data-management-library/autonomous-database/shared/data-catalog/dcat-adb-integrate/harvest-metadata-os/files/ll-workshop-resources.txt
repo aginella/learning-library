@@ -1,0 +1,15 @@
+-- Last Updated: December 2, 2021
+
+1. training-dcat-compartment Compartment OCID:
+
+2. training-dcat-instance Data Catalog OCID:
+ocid1.datacatalog.oc1.ca-toronto-1.amaaaaaa7ratcziacbvycb7pdasj6vh43wetjwjgvdcq7gyx5esyiahbhbgq
+
+3. Tenancy OCID:
+ocid1.tenancy.oc1..aaaaaaaawunzd6xr55ka46cpbrck6ndreki5banncuynudejkajqhqsvdbza
+
+4. Region-Identifier:
+
+5. Data Catalog Data Lake (data asset) Key:
+
+6. User OCID:

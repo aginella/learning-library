@@ -2,17 +2,18 @@
 
 ## Introduction
 
-This lab walks you through the steps to create and run an Extract, instantiate the target database using Oracle Data Pump, and create and run a Replicat in the Oracle GoldenGate Deployment Console.
+This lab walks you through the steps to create and run an Extract, instantiate the target database using Oracle Data Pump, and create and run a Replicat in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
 
 Estimated time: 15 minutes
 
 ### About Extracts and Replicats
+
 An Extract is a process that extracts, or captures, data from a source database. A Replicat is a process that delivers data to a target database.
 
 ### Objectives
 
 In this lab, you will:
-* Log in to the Oracle GoldenGate deployment console
+* Log in to the OCI GoldenGate deployment console
 * Add transaction data and a checkpoint table
 * Add and run an Extract
 * Add and run a Replicat
@@ -211,6 +212,9 @@ Before using Oracle Data Pump to export data from the source database, first cre
 END;</copy>
     ```
 
+    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
+
+
     ![](images/05-10-create-credential.png " ")
 
 11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
@@ -317,6 +321,8 @@ Before importing data to the target database, create a credential in the target 
     END;
     </copy>
     ```
+
+    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
     ![](images/06-05.png " ")
 
@@ -476,8 +482,6 @@ Before importing data to the target database, create a credential in the target 
 11. In the REP Replicat **Action** menu, select **Start**.
 
     The yellow exclamation point icon changes to a green checkmark.
-
-In this lab, you created and ran an Extract and Replicat. You may now **proceed to the next lab**.
 
 ## Learn more
 

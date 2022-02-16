@@ -23,7 +23,6 @@ You may now [proceed to the next lab](#next).
 ## About Oracle Database 21c
 The 21c generation of Oracle's converged database offers customers; best of breed support for all data types (e.g. relational, JSON, XML, spatial, graph, OLAP, etc.), and industry leading performance, scalability, availability and security for all their operational, analytical and other mixed workloads.
 
- ![Oracle DB 21c Advantages](images/21c-support.png "Oracle DB 21c Advantages")
 Key updates made in Database 21c are:
 * JSON binary data type
 * Blockchain tables

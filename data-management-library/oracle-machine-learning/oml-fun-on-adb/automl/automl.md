@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create an AutoML experiment, edit and adjust experiment settings, view and deploy OML models.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### About Oracle Machine Learning AutoML UI
 Oracle Machine Learning AutoML UI (OML AutoML UI) is a no-code user interface supporting automated machine learning for both data scientist productivity and non-expert user access to powerful in-database algorithms. Like the OML4Py AutoML API, it accelerates machine learning projects by giving quick feedback on data set suitability for producing useful models – alleviating much of the drudgery of the machine learning process.
@@ -295,7 +295,7 @@ To view the generated notebook Customer 360:
 
 This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 
 ## Learn More

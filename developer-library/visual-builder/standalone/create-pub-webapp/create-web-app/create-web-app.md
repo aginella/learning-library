@@ -4,7 +4,7 @@
 
 This lab shows you how to use Visual Builder to create a basic web application and populate it with business objects.
 
-Estimated Lab Time:  15 minutes
+Estimated Time:  15 minutes
 
 ### Background
 
@@ -16,7 +16,7 @@ In this lab, you'll create the Employee, Department, and Location business objec
 
 Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
+> **Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## Task 1: Create a Web Application
 
@@ -122,18 +122,18 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     In the next task, we'll associate these locations with departments.
 
-
 ## Task 3: Create a Department Business Object
 
 Create the Department business object, which will have fields to show a department's name and location. In this task, you'll set up the department's Location field to pull in data from the Location business object you created in the previous task, but you won't actually add data to the Department business object just yet.
-
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
     ![](./images/vbcsca_cdb_s1.png)
 
 2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the **Name** value.
+
 3.  Click the **Fields** tab, then **\+** and select **Create Field**.
+
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -162,14 +162,16 @@ Create the Department business object, which will have fields to show a departme
 
     A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll specify its Location (one of the floors). The Display Field indicates that the Name field will be displayed, not the Id.
 
-
 ## Task 4: Create an Employee Business Object
 
 In this task, we'll create the last business object we need, the Employee object, containing the employee's name and identifying data. In this case, the Employee has a Reference type field to  refer to the Department business object.
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
+
 2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
+
 3.  Click the **Fields** tab, then click **\+** and select **Create Field**.
+
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -179,6 +181,7 @@ In this task, we'll create the last business object we need, the Employee object
     Click **Create Field**.
 
 5.  In the **Name** field's properties, select the **Required** check box under **Constraints**.
+
 6.  Click **\+** and select **Create Field** again, then enter or select:
 
     -   **Label**: `Department`
@@ -217,7 +220,6 @@ In this task, we'll create the last business object we need, the Employee object
 
     Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then collapse it again.
 
-
 ## Task 5: Create a Business Object Diagram
 
 Now that we have our business objects, let's create a diagram that provides a visual representation of business objects and their relationships.
@@ -233,8 +235,6 @@ Now that we have our business objects, let's create a diagram that provides a vi
     ![](./images/vbcsca_cde_s12.png)
 
     The diagram looks just like the graphic in the Before You Begin section.
-
-You can now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

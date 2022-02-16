@@ -8,7 +8,7 @@ For the purpose of this lab, we created another image that contains a domain and
 
 Estimated Lab Time: 15 minutes
 
-## Task 1: Upgrade WebLogic container packaged application using domain resource definition
+## **STEP 1**: Upgrade WebLogic container packaged application using domain resource definition
 
 Edit  your domain resource definition (*domain.yaml*) and modify the image location. The modified line with image should appear as follows:
 ```yaml
@@ -27,11 +27,11 @@ You can immediately check the status of your servers/pods. (You should observe t
 ```
 The output should be similar to the following:
 ```bash
-NAME                             READY     STATUS        RESTARTS   AGE
-sample-domain1-admin-server      1/1       Terminating   0          22m
-sample-domain1-managed-server1   1/1       Running       0          20m
-sample-domain1-managed-server2   1/1       Running       0          21m
-sample-domain1-managed-server3   1/1       Running       0          21m
+NAME                             READY   STATUS        RESTARTS   AGE
+sample-domain1-admin-server      1/1     Terminating   0          23m
+sample-domain1-managed-server1   1/1     Running       0          22m
+sample-domain1-managed-server2   1/1     Running       0          22m
+sample-domain1-managed-server3   1/1     Running       0          5m57s
 ```
 The operator now performs a rolling server restart, one server at a time. The first one is the *Admin* server, then the *Managed* servers.
 
@@ -39,10 +39,10 @@ During the rolling restart, check your web application periodically. If the resp
 
 `http://EXTERNAL-IP/opdemo/?dsname=testDatasource`
 
-![](images/010.check.changes.png)
+![](images/3.png)
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Maciej Gruszka, Peter Nagy, September 2020
-* **Last Updated By/Date**
+* **Author** - Maciej Gruszka, Peter Nagy
+* **Last Updated By/Date** - December 2021

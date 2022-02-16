@@ -38,6 +38,7 @@ In this lab, you will:
 * Explore the Kibana console.
 * Explore the Prometheus console.
 * Explore the Rancher console.
+* Explore the Kiali console.
 
 ### Prerequisites
 
@@ -50,106 +51,27 @@ In this lab, you will:
 
 Verrazzano installs several consoles. The endpoints for an installation are stored in the `Status` field of the installed Verrazzano Custom Resource.
 
-1. To get the endpoints for these consoles, copy the following command and paste it in the *Cloud Shell* and look at the `Status.Instance` field:
+1. To get the endpoints for these consoles, copy the following command and paste it in the *Cloud Shell*:
 
-```bash
-<copy>kubectl get vz -o yaml</copy>
-```
+    ```bash
+    <copy>kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .</copy>
+    ```
 
-```bash
-$ kubectl get vz -o yaml
-apiVersion: v1
-items:
-- apiVersion: install.verrazzano.io/v1alpha1
-  kind: Verrazzano
-  metadata:
-    annotations:
-      kubectl.kubernetes.io/last-applied-configuration: |
-        {"apiVersion":"install.verrazzano.io/v1alpha1","kind":"Verrazzano","metadata":{"annotations":{},"name":"my-verrazzano","namespace":"default"},"spec":{"profile":"dev"}}
-    creationTimestamp: "2021-08-23T15:19:23Z"
-    finalizers:
-    - install.verrazzano.io
-    generation: 2
-    managedFields:
-    - apiVersion: install.verrazzano.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
-        f:spec:
-          .: {}
-          f:profile: {}
-      manager: kubectl
-      operation: Update
-      time: "2021-08-23T15:19:23Z"
-    - apiVersion: install.verrazzano.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:finalizers: {}
-        f:spec:
-          f:components:
-            .: {}
-            f:fluentd:
-              .: {}
-              f:extraVolumeMounts: {}
-          f:security: {}
-        f:status:
-          .: {}
-          f:conditions: {}
-          f:instance:
-            .: {}
-            f:consoleUrl: {}
-            f:elasticUrl: {}
-            f:grafanaUrl: {}
-            f:keyCloakUrl: {}
-            f:kibanaUrl: {}
-            f:prometheusUrl: {}
-            f:rancherUrl: {}
-          f:state: {}
-          f:version: {}
-      manager: verrazzano-platform-operator
-      operation: Update
-      time: "2021-08-23T15:30:06Z"
-    name: my-verrazzano
-    namespace: default
-    resourceVersion: "49073970"
-    selfLink: /apis/install.verrazzano.io/v1alpha1/namespaces/default/verrazzanos/my-verrazzano
-    uid: c37cc781-1d16-4aa9-8e08-7111d786fe51
-  spec:
-    components:
-      fluentd:
-        extraVolumeMounts:
-        - source: /u01/data/docker/containers/
-    profile: dev
-    security: {}
-  status:
-    conditions:
-    - lastTransitionTime: "2021-08-23T15:19:24Z"
-      message: Verrazzano install in progress
-      status: "True"
-      type: InstallStarted
-    - lastTransitionTime: "2021-08-23T15:30:05Z"
-      message: Verrazzano install completed successfully
-      status: "True"
-      type: InstallComplete
-    instance:
-      consoleUrl: https://verrazzano.default.XX.XX.XX.XX.nip.io
-      elasticUrl: https://elasticsearch.vmi.system.default.XX.XX.XX.XX.nip.io
-      grafanaUrl: https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io
-      keyCloakUrl: https://keycloak.default.XX.XX.XX.XX.nip.io
-      kibanaUrl: https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io
-      prometheusUrl: https://prometheus.vmi.system.default.XX.XX.XX.XX.nip.io
-      rancherUrl: https://rancher.default.XX.XX.XX.XX.nip.io
-    state: Ready
-    version: 1.0.0
-kind: List
-metadata:
-  resourceVersion: ""
-  selfLink: ""
-```
+    The output should be similar to the following:
+    ```bash
+    $ kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .
+    {
+    "consoleUrl": "https://verrazzano.default.XX.XX.XX.XX.nip.io",
+    "elasticUrl": "https://elasticsearch.vmi.system.default.XX.XX.XX.XX.nip.io",
+    "grafanaUrl": "https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io",
+    "keyCloakUrl": "https://keycloak.default.XX.XX.XX.XX.nip.io",
+    "kialiUrl": "https://kiali.vmi.system.default.XX.XX.XX.XX.nip.io",
+    "kibanaUrl": "https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io",
+    "prometheusUrl": "https://prometheus.vmi.system.default.XX.XX.XX.XX.nip.io",
+    "rancherUrl": "https://rancher.default.XX.XX.XX.XX.nip.io"
+    }
+    $
+    ```
 
 2. Use the `https://verrazzano.default.YOUR_UNIQUE_IP.nip.io` to open the Verrazzano console.
 
@@ -182,6 +104,7 @@ metadata:
 9. From the home page of the Verrazzano Console, you can see *System Telemetry*, and because we installed the *Development Profile* of Verrazzano, you can see it in the **General Information** section. You can see the Helidon *quickstart-mp* application under **OAM Applications**. Click **hello-helidon-appconf** to view components of this application.
 
 ![Home Page](images/6.png)
+![Home Page](images/36.png)
 
 10. There is only one component for this application as you can see under **Components**. To explore the configuration click the **OAM Component Ref:** *hello-helidon-component* component as shown:
 
@@ -235,21 +158,24 @@ metadata:
 
 ![Kibana welcome page](images/34.png)
 
-3. On the Kibana homepage click the **Discover** link or its shortcut menu icon on the left side.
+3. On the Kibana homepage click **Home** and then click **Discover**.
 
 ![Kibana dashboard click](images/18.png)
 
-4. In order to find log entry in Elasticsearch first you need to define index pattern. Type `verrazzano-namespace-hello-helidon` in the **Index Pattern**. Select the result from the list below and click **Next**.
+4. In order to find log entry in Elasticsearch first you need to click **Create index pattern**. Type `verrazzano-namespace-hello-helidon` in the **Index Pattern**. Select the result from the list below and click **Next step**.
 
 ![Index pattern](images/19.png)
+![Index pattern](images/37.png)
+
+
 
 5. On the next page select *@timestamp* as **Time Filter** field name and click **Create Index pattern**.
 
-![Index pattern](images/20.png)
+![Index pattern](images/38.png)
 
-6. When the index is ready you need to click the *Discover* shortcut icon on the left side.
+6. When the index is ready you need to click **Home ->  Discover** short on the left side.
 
-![Index pattern](images/35.png)
+![Index pattern](images/39.png)
 
 7. Type the custom log entry value you created in the Helidon application: `Help requested` into the filter textbox. Press **Enter** or click **Refresh**. You should get at least one result. <br>
 >If you haven't hit the application endpoint, or that happened a long time ago, simply invoke again the following HTTP request in the Cloud Shell against your endpoint. You can execute request multiple times.
@@ -257,7 +183,7 @@ metadata:
 <copy>curl -k https://$(kubectl get gateway hello-helidon-hello-helidon-appconf-gw -n hello-helidon -o jsonpath={.spec.servers[0].hosts[0]})/help/allGreetings; echo</copy>
 ```
 
-![Log result](images/21.png)
+![Log result](images/40.png)
 
 ## Task 4: Explore the Prometheus Console
 
@@ -321,10 +247,40 @@ metadata:
 
 ![Pod](images/33.png)
 
+## Task 6: Explore the Kiali Console
+
+1. Go to Verrazzano console and then click on link for **Kiali** console.
+
+    ![Pod](images/41.png)
+
+2. Click on *Graph* on left side.
+
+    ![Pod](images/42.png)
+
+3. Click on Namespace dropdown and check the box for **hello-helidon** and move the curser out of dropdown list.
+
+![Pod](images/43.png)
+
+4. On right side, you can view information about the **hello-helidon** application. Click **Legend**.
+
+    ![Pod](images/44.png)
+
+5. Legend represents what each shapes reflects. On left side, you have links for Applications, Workloads, Services and Istio Config.
+
+    ![Pod](images/45.png)
+
+6. Click on Namespace dropdown and uncheck the box for **hello-helidon** and check the box for **verrazzano-system** and move the curser out of dropdown list.
+
+    ![Pod](images/46.png)
+
+7. Here you can view the traffic in **verrazzano-system** namespace.
+![Pod](images/47.png)
+
+
 Congratulations you have successfully completed the Helidon application deployment on Verrazzano lab.
 
 ## Acknowledgements
 
 * **Author** -  Peter Nagy
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, August 2021
+* **Last Updated By/Date** - Ankit Pandey, January 2022

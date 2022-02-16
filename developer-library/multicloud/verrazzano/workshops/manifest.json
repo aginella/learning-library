@@ -24,7 +24,7 @@
             "filename": "../deploy-bobsbook/deploy-bobsbook.md"
         },
         {
-            "title": "Lab 4: Access the Bobs Books sample application Explore Verrazzano and Grafana Console",
+            "title": "Lab 4: Access the Bobs Books sample application Explore Verrazzano, Grafana and Kiali Console",
             "filename": "../access-application/access-application.md"
         },
 		{

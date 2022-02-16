@@ -41,18 +41,18 @@ Source Private IP Address (MAIN)  student###-serverB :
 
 Replica Private IP Address (REPLICA) student###-serverA :	
 
-2.	ServerB (source): Make the replica a copy of the source in a shard folder to easily restore on the replica:
+2.	ServerB (source): Make the replica a copy of the source in a shared folder to easily restore on the replica:
 
     a. Inside /workshop/backups there is a folder for each student server. Search yours
 
-    **shell-source>**  
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-source>**  
 
     ```
     <copy>ls -l /workshop/backups</copy>
     ```
     b. take a full backup of the source using MySQL Enterprise Backup in your folder:
 
-    **shell-source>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-source>** 
 
     ```
     <copy>sudo /mysql/mysql-latest/bin/mysqlbackup --port=3307 --host=127.0.0.1 --protocol=tcp --user=admin --password --backup-dir=/workshop/backups/$(hostname) backup-and-apply-log</copy>
@@ -62,31 +62,35 @@ Replica Private IP Address (REPLICA) student###-serverA :
 
     a. It’s mandatory that each server in a replication topology have a unique server id. There is a copy of the my.cnf ready to be used. It’s a duplicate of the one used for mysql-advanced instance, with a different server&#95; id
 
-    **shell-replica>** sudo cp /workshop/support/my.cnf.replica /mysql/etc/my.cnf
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>**
+
+    ```
+    <copy>sudo cp /workshop/support/my.cnf.replica /mysql/etc/my.cnf </copy>
+    ```
     ```
     <copy>exit</copy>
     ```
-    **shell-replica>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** 
     ```
     <copy>sudo chown mysqluser:mysqlgrp /mysql/etc/my.cnf</copy>
     ```
     b. restore the backup from share folder (please change the red part with your folder name)
 
-    **shell-replica>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** 
     ```
     <copy>sudo /mysql/mysql-latest/bin/mysqlbackup --defaults-file=/mysql/etc/my.cnf --backup-dir=/workshop/backups/student###-serverb --datadir=/mysql/data --log-bin=/mysql/binlog/binlog copy-back</copy>
     ```
-    **shell-replica>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** 
     ```
     <copy>sudo chown -R mysqluser:mysqlgrp /mysql</copy>
     ```
     c. start the new replica instance it and verify that it works.
 
-    **shell-replica>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** 
     ```
     <copy>sudo systemctl start mysqld-advanced</copy>
     ```
-    **shell-replica>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** 
     ```
     <copy>mysql -uroot -p -h127.0.0.1 -P3307</copy>
     ```
@@ -100,11 +104,11 @@ Replica Private IP Address (REPLICA) student###-serverA :
     ```
     <copy>exit</copy>
     ```
-    b. **mysql-source>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>CREATE USER 'repl'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';</copy>
     ```
-    c. **mysql-source>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';</copy>
     ```
@@ -114,55 +118,55 @@ Replica Private IP Address (REPLICA) student###-serverA :
 
     a.	Configure the replica connection. PLEASE INSERT YOUR CORRECT SOURCE IP!
     
-    **mysql-replica>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-replica>** 
     ```
     <copy>change master to master_host='<private_IP_of_student###-serverB>', master_port=3307, master_user='repl', master_password='Welcome1!', master_auto_position=1;</copy>
     ```
     b.	start the replica threads
 
-    **mysql-replica>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-replica>** 
     ```
     <copy>exit</copy>
     ```
     c.	Verify replica status, e.g. that IO&#95; Thread and SQL&#95; Thread are started searching the value with the following command (in case of problems check error log)
 
-    **mysql-replica>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-replica>** 
     ```
     <copy>SHOW SLAVE STATUS\G</copy>
     ```
-2.	ServerB (source): Let’s test that data are replicated. Connect to source and make some changes
+2.	ServerB (source): Let’s verify the replicated data. Connect to source and make some changes
 
-    a. **mysql-source>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>CREATE DATABASE newdb;</copy>
     ```
-    b. **mysql-source>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>USE newdb;</copy>
     ```
-    c.**mysql-source>**    
+    c.**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>**    
     ```
     <copy>CREATE TABLE t1 (c1 int primary key);</copy>
     ```
-    d. **mysql-source>** 
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>INSERT INTO t1 VALUES(1);</copy>
     ```
-    e. **mysql-source>** 
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>INSERT INTO t1 VALUES(2);</copy>
     ```
-    f. **mysql-source>** 
+    f. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```
     <copy>DROP DATABASE employees;</copy>
     ```
 3.	ServerA (replica): Verify that the new database and table is on the replica, to do so connect to replica and submit
     
-    a. **mysql-replica>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-replica>** 
     ```
     <copy>SHOW DATABASES;</copy>
     ```
-    b. **mysql-replica>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-replica>** 
     ```
     <copy>SELECT * FROM newdb.t1;</copy>
     ```

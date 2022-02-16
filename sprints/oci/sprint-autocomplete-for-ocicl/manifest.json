@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "How to add autocomplete for OCI CL?",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to add autocomplete for OCI CL?",
+            "description": "",
+            "filename": "sprint-autocomplete-for-ocicl.md"
+        },
+        {
+            "title": "How to install OCI CL?",
+            "description": "",
+            "filename": "../sprint-install-ocicl/sprint-install-ocicl.md"
+        }
+    
+    ]
+}

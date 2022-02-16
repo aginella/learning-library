@@ -1,0 +1,21 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How can I download my ADB Wallet using command line?",
+            "description": "",
+            "filename": "sprint-setup-ords.md"
+        },
+        {
+                    "title": "Other related Sprints 1 - ",
+                    "description": "",
+                    "filename": ""
+        },
+        {
+                    "title": "Other related Sprints 2 -",
+                    "description": "",
+                    "filename": ""
+        }
+  ]
+}

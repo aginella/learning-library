@@ -1192,11 +1192,11 @@ When delete process is done **MDS-DB** will be set to Delete status.
 
 2. Open the navigation menu Identity & Security > Bastion
 
-    ![MDS](./images/10bastion01.png " ") 
+    ![MDS](./images/bastion-01.png " ") 
 
 3. Click 'Create Bastion'
 
-   ![MDS](./images/10bastion02.png " ") 
+   ![MDS](./images/bastion-02.png " ") 
 
 4. On Create Bastion page, complete the fields
 
@@ -1205,13 +1205,13 @@ When delete process is done **MDS-DB** will be set to Delete status.
     - Select the Target Subnet in root
     - Add the CIDR Block Allowlist: 0.0.0.0/0
     
-    ![MDS](./images/10bastion03.png " ") 
+    ![MDS](./images/bastion-03.png " ") 
 
 5. Click on Create Bastion
 
 6. Start the Cloud Shell and generate a SSH Key that will be used for the tunnel's session
 
-    ![MDS](./images/10bastion04.png " ") 
+    ![MDS](./images/bastion-04.png " ") 
 
 7. In the Cloud Shell, create the SSH Key with the following command:
 
@@ -1223,13 +1223,12 @@ When delete process is done **MDS-DB** will be set to Delete status.
 
 8. You will find the public key stored in ~/.ssh/id_rsa.pub
 
-  ![MDS](./images/10bastion05.png " ") 
+  ![MDS](./images/bastion-05.png " ") 
 
 9. On MDS-Bastion page, under sessions, click on 'Create Session'
 
-  ![MDS](./images/10bastion06.png " ") 
+  ![MDS](./images/bastion-06.png " ") 
 
-10. 
 
 ## Learn More
 

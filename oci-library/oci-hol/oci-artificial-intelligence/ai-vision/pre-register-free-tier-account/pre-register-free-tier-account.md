@@ -99,9 +99,6 @@ Please note that while your tenancy is initially created, you will only see a di
 
 You may now [proceed to the next lab](#next).
 
-## Task 3: Request Access to OCI Vision Service
-
-OCI Vision service is a pre-GA offering. In order to view in the console and complete the following labs, you can request access [here](https://www-sites.oracle.com/artificial-intelligence/vision/).
 
 ## **Acknowledgements**
 

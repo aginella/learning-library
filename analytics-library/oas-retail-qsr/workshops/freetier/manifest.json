@@ -1,0 +1,63 @@
+{
+  "workshoptitle": "Oracle Analytics Server - Retail",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
+    },
+    {
+      "title": "Lab 3: Initialize Environment",
+      "description": "Initialize Environment Lab",
+      "filename": "../../initialize-environment/initialize-environment.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 4: Main Dashboard",
+      "description": "Main Dashboard",
+      "filename": "../../main-dashboard/main-dashboard.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 5: Channel Sales",
+      "description": "Channel Sales",
+      "filename": "../../channel-sales/channel-sales.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 6: On Time Delivery",
+      "description": "On Time Delivery",
+      "filename": "../../on-time-delivery/on-time-delivery.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 7: HR Analysis",
+      "description": "HR Analysis",
+      "filename": "../../hr-analysis/hr-analysis.md",
+      "type": "external"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

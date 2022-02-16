@@ -25,21 +25,35 @@ You can import, create, and work with notebooks in Oracle Machine Learning Noteb
 
 3. Open the **Navigation** menu and click **Oracle Database**. Under **Oracle Database**, click **Autonomous Database**.
 
+<if type="freetier">
 4. On the **Autonomous Databases** page, make sure that the **`training-dcat-compartment`** is selected in the **Compartment** drop-down list in the **List Scope** section, and then click your **DB-DCAT Integration** ADB that you provisioned earlier.
+</if>
 
-5. On the **Autonomous Database Details** page, click **Service Console**. In the **Database Actions** card, click **Open Database Actions**.
+<if type="livelabs">
+4. On the **Autonomous Databases** page, make sure that your assigned LiveLabs compartment is selected in the **Compartment** drop-down list in the **List Scope** section, and then click your **DB-DCAT** ADB that you provisioned earlier.
+</if>
+
+<if type="freetier">
+5. On the **Autonomous Database Details** page, click **Service Console**.
 
    ![](./images/service-console.png " ")
+</if>
+
+<if type="livelabs">
+5. On the **Autonomous Database Details** page, click **Service Console**.
+
+    ![](./images/ll-service-console.png " ")   
+</if>
 
 6. On the **Service Console** page, click the **Development** link on the left.
 
     ![](./images/development-link.png " ")
 
-7. Scroll-down the **Development** page, and click the **Oracle Machine Learning Notebooks** card.
+7. Scroll-down the **Development** page, and then click the **Oracle Machine Learning User Interface** card.
 
     ![](./images/oml-card.png " ")
 
-8. On the **SIGN IN** page, enter **`moviestream`** in the **Username** field, your assigned password such as **`Training4ADB`** in the **Password** field, and then click **Sign In**.
+8. On the **SIGN IN** page, enter **`moviestream`** in the **Username** field, your password that you chose in **Lab 3 > Task 2** such as **`Training4ADB`** in the **Password** field, and then click **Sign In**.
 
     >**Note:** You specified the password for the `moviestream` user that was created when you ran the PL/SQL script in **Lab 3**, **Task 2: Initialize the Lab**.
 
@@ -54,7 +68,7 @@ You can import, create, and work with notebooks in Oracle Machine Learning Noteb
 
 You can import a notebook from a local disk or from a remote location if you provide the URL. In this task, you will first download an OML notebook to your local machine, and then import this notebook into OML.
 
-1. Download the [workshop-data-lake-accelerator.json](files/workshop-data-lake-accelerator.json?download=1) OML Notebook.
+1. Click the following link to download the [workshop-data-lake-accelerator.json](files/workshop-data-lake-accelerator.json?download=1) OML Notebook.
 
 2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click **Notebooks**. The **Notebooks** page is displayed.    
 
@@ -62,7 +76,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
 3. Click **Import**. The **Open** dialog box is displayed.
 
-4. Navigate to your local folder where you downloaded the OML notebook, and select the **`workshop-notebook-data-lake-accelerator.json`** notebook file. The file is displayed in the **File name** field. Make sure that the **JSON file (*.json)** type is selected in the second drop-down field, and then click **Open**.
+4. Navigate to your local folder where you downloaded the OML notebook, and select the **`workshop-notebook-data-lake-accelerator.json`** notebook file. The file is displayed in the **File name** field. Make sure that the **Custom Files (*.json;\*.ipynb)** type is selected in the second drop-down field, and then click **Open**.
 
 
     ![](./images/open-dialog.png " ")
@@ -71,7 +85,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
     ![](./images/notebook-imported.png " ")
 
-4. Open the imported notebook. Click the **Workshop - Data Lake Accelerator** notebook link. The notebook is displayed in the Notebook **Editor**.
+5. Open the imported notebook. Click the **Workshop - Data Lake Accelerator** notebook link. The notebook is displayed in the Notebook **Editor**.
 
     ![](./images/notebook-displayed.png " ")
 
@@ -80,13 +94,13 @@ You can import a notebook from a local disk or from a remote location if you pro
 
 An interpreter is a plug-in that allows you to use a specific data processing language backend. To display and visualize data using SQL in a notebook paragraph, that data must be fetched from the database; therefore, you must bind a notebook to an interpreter to fetch data from the database or any data source. A default set of interpreter bindings is available. Paragraphs using the **SQL**  (**`%sql`**) and PL/SQL (**`%script`**) interpreters allow you to invoke Oracle SQL and PL/SQL statements, respectively. The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the interpreter binding for SQL and PL/SQL interpreters for any specific paragraph in the notebook.
 
->**Note:** For the Zeppelin Notebooks in Oracle Machine Learning, you use the sql and pl/sql interpreters within an Oracle Database interpreter group and the md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
+>**Note:** For the Zeppelin Notebooks in Oracle Machine Learning, you use the sql and pl/sql interpreters within an Oracle Database interpreter group and the md (Markdown) interpreter for plain text formatting syntax so that it can be converted to HTML.
 
 1. Click on the gear icon on the top right of the notebook. The **Settings** panel is displayed. The list of available interpreters is displayed in the **Interpreter binding** section.
 
     ![](./images/settings-panel.png " ")
 
-2. Select at least one of the interpreters that indicate **%sql (default), %script, %python**. You can move the interpreters to change their order and bring the one you prefer to the top. The first interpreter in the list is the default. Click and drag the **trainingadb_medium %sql (default), %script, %python** interpreter to the top of the list to make it the default. Click **Save** to save your changes. See [About Interpreter Bindings and Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/omlug/interpreters-and-notebooks.html).
+2. Select at least one of the interpreters that indicate **%sql (default), %script, %python**. You can move the interpreters to change their order and bring the one you prefer to the top. The first interpreter in the list is the default. Click and drag the **your-database-name_medium %sql (default), %script, %python** interpreter to the top of the list to make it the default. Click **Save** to save your changes. See [About Interpreter Bindings and Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/omlug/interpreters-and-notebooks.html).
 
     ![](./images/reorder-interpreter.png " ")
 
@@ -100,9 +114,9 @@ In this task, you'll review the UI and some of the basic functionality of OML No
 >**Note:** If you are already familiar with OML or Zeppelin Notebooks, you may skip this task.  
 
 Oracle Machine Learning Notebooks is a web-based interface for data analysis, data discovery, and data visualization. A notebook is made up of one or more paragraphs. A paragraph is a notebook component where you can write SQL statements, run PL/SQL scripts, and run Python commands. A paragraph has an **code** (input) section and an **output** (result) section. In the input section, specify the interpreter to run along with the text and/or code. This information is sent to the interpreter to be run. In the output section, the results of the interpreter are displayed.
-When you create a new notebook, it opens automatically and it contains a single paragraph using the default **`%sql`** interpreter. You can change the interpreter by explicitly specifying other interpreters such as **`%script`**, **`%python`**, or **`%md`** (MarkDown).
+When you create a new notebook, it opens automatically and it contains a single paragraph using the default **`%sql`** interpreter. You can change the interpreter by explicitly specifying other interpreters such as **`%script`**, **`%python`**, or **`%md`** (Markdown).
 
-###Notebook Toolbar      
+### Notebook Toolbar      
 At the top of the notebook, you can find a toolbar which contains the following components:
 
 1. A Title.
@@ -148,7 +162,7 @@ On the far right of the notebook toolbar, you can use the following configuratio
     ![](./images/configuration-commands.png " ")
 
 
-###Paragraph    
+### Paragraph    
 
 Each paragraph contains the following components:
 1. **Title**: Click the title to edit it.
@@ -160,7 +174,7 @@ Each paragraph contains the following components:
 
 You can configure and run each paragraph individually. You can move and reposition a paragraph in the notebook. You can also adjust a paragraph's width and you can also display line numbers in a paragraph.
 
-###Paragraph commands
+### Paragraph commands
 On the top-right corner of each paragraph, you can use the command icons to:
 
 1. **Run this paragraph (Shift+Enter)**: Click this icon to execute the paragraph code.
@@ -200,15 +214,15 @@ You can use this drop-down list to do the following:
 
     ![](./images/show-code.png " ")
 
-    The code section of each paragraph is displayed. For example, paragraphs 1, 2, and 3 in the notebook use the **`%md`** (MarkDown) interpreter while the paragraphs 4 and 5 use the **`%sql`** interpreter.
+    The code section of each paragraph is displayed. For example, paragraphs 1, 2, and 3 in the notebook use the **`%md`** (Markdown) interpreter while the paragraphs 4 and 5 use the **`%sql`** interpreter.
 
     ![](./images/code-displayed.png " ")
 
-    In this notebook, the **`%md`** (MarkDown) paragraphs provide useful information about the paragraphs. The **`%md`** Markdown interpreter generates static html from plain Markdown text. In this lab, you will review the code in each paragraph one at a time, run that paragraph, and review the results as desired.
+    In this notebook, the **`%md`** (Markdown) paragraphs provide useful information about the paragraphs. The **`%md`** Markdown interpreter generates static html from plain Markdown text. In this lab, you will review the code in each paragraph one at a time, run that paragraph, and review the results as desired.
 
     >**Note:** To hide the code sections of all paragraphs, click the **Show/hide the code** toggle icon again. Keep the code sections displayed in this lab.
 
-2. Display the result (output) sections of all paragraphs in the notebook. On the notebook toolbar, click the **Show/hide the output** icon to show the output sections of the paragraphs where the output section is not shown by default.
+2. Display the result (output) sections of all paragraphs in the notebook. On the notebook toolbar, click the **Show/hide the output** icon to show the output sections of the paragraphs where the output section is not shown by default. By default, the Markdown paragraphs had their output sections displayed; therefore, click the **Show/hide the output** icon again to show the output sections of all paragraphs including the Markdown paragraphs.
 
     ![](./images/show-output.png " ")
 
@@ -228,7 +242,7 @@ You can use this drop-down list to do the following:
 
     ![](./images/run-top-sales.png " ")  
 
-    The output is displayed in the result section of the paragraph using the **Area Chart** graph format. You can change the output display format to **Table**, **Bar Chart**, **Pie Chart**, **Line Chart**, **Scatter Chart** formats. You can also use the **Download Data** command icon to download the output using **CSV** and **TSV** formats. Finally, you can use the **settings** link to change the layout of the displayed outut.   
+    The output is displayed in the result section of the paragraph using the **Area Chart** graph format. You can change the output display format to **Table**, **Bar Chart**, **Pie Chart**, **Line Chart**, **Scatter Chart** formats. You can also use the **Download Data** command icon to download the output using **CSV** and **TSV** formats. Finally, you can use the **settings** link to change the layout of the displayed output.   
 
     ![](./images/top-sales-output.png " ")
 
@@ -238,7 +252,13 @@ You can use this drop-down list to do the following:
 
 6. Examine, run, and review the output of the remaining paragraphs, as desired.
 
+<if type="freetier">
     You may now proceed to the next lab.
+</if>
+
+<if type="livelabs">
+**This concludes the lab and the workshop**.
+</if>
 
 
 ## Learn More
@@ -251,6 +271,12 @@ You can use this drop-down list to do the following:
 
 ## Acknowledgements
 
-* **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
+* **Author:** Lauran Serhal, Consulting User Assistance Developer, Oracle Autonomous Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
-* **Last Updated By/Date:** Lauran Serhal, October 2021
+* **Last Updated By/Date:** Lauran Serhal, February 2022
+
+Data about movies in this workshop were sourced from Wikipedia.
+
+Copyright (C) Oracle Corporation.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled [GNU Free Documentation License](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-15-minutes/introduction/files/gnu-free-documentation-license.txt)

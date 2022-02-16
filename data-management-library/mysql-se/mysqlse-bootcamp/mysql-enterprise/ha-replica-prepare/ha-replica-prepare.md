@@ -40,7 +40,7 @@ This lab assumes you have:
 
 1.	Connect to serverA and execute the script to create a new user/group, folders structure and install binaries (be careful with copy&paste)
 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>/workshop/support/lab7a-MySQL_Replication___Prepare_replica_server.sh</copy>
     ```

@@ -59,12 +59,15 @@ This is used when you Add Instance as Remote Monitoring using agentless option
 
 1.	On serverA: Install the MySQL Enterprise Monitor Service Manager on your Linux instance
 
-    a. **shell>** cd /workshop/linux/monitor
-
+    a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+    ```
+    <copy>cd /workshop/linux/monitor</copy>
+    ```
+    b. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>exit</copy>
     ```
-    b. **shell>** sudo ./mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin 
+    c. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** sudo ./mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin 
 
     ```
     <copy>exit</copy>
@@ -218,7 +221,7 @@ Press [Enter] to continue:
 
 1.	On serverA: Check the status of the MySQL Monitor
 
-    **Shell>**
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy> sudo /opt/mysql/enterprise/monitor/mysqlmonitorctl.sh status</copy>

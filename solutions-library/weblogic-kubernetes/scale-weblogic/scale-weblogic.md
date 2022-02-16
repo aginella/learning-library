@@ -13,7 +13,7 @@ The operator provides several ways to initiate scaling of WebLogic clusters, inc
 
 Estimated Lab Time: 10 minutes
 
-## Task 1: Scaling a WebLogic cluster using domain resource definition
+## **STEP 1**: Scaling a WebLogic cluster using domain resource definition
 
 The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes, edit the *domain.yaml* file and apply the changes using `kubectl`. Use your favorite editor to open the *domain.yaml* file.
 
@@ -38,11 +38,11 @@ Check the changes in the number of pods using `kubectl`:
 ```
 The output should be similar to the following:
 ```bash
-NAME                             READY     STATUS        RESTARTS   AGE
-sample-domain1-admin-server      1/1       Running       0          57m
-sample-domain1-managed-server1   1/1       Running       0          56m
-sample-domain1-managed-server2   1/1       Running       0          55m
-sample-domain1-managed-server3   1/1       Running       0          1m
+NAME                             READY   STATUS    RESTARTS   AGE
+sample-domain1-admin-server      1/1     Running   0          18m
+sample-domain1-managed-server1   1/1     Running   0          17m
+sample-domain1-managed-server2   1/1     Running   0          17m
+sample-domain1-managed-server3   1/1     Running   0          75s
 ```
 Soon, Managed Server 3 will appear and will be ready within a few minutes. You can also check the Managed Server scaling action using the WebLogic Server Administration Console:
 
@@ -68,5 +68,5 @@ Note! Do not use the Console to scale the cluster. The operator controls this op
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Maciej Gruszka, Peter Nagy, September 2020
-* **Last Updated By/Date**
+* **Author** - Maciej Gruszka, Peter Nagy
+* **Last Updated By/Date** - December 2021
