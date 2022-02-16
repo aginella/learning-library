@@ -25,7 +25,7 @@ You do not need to execute these codes, but review them to understand what infor
     <copy>allow any-user to use cloud-shell in tenancy</copy>
     ```
 
-## CLI Setup
+## CLI Info
 
 The CLI is a small-footprint tool that you can use on its own or with the Console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend Console functionality.
 

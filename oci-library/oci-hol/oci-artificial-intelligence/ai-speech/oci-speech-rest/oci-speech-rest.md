@@ -70,7 +70,7 @@ NOTE: be sure to replace <placeholder> values with actual job values
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+https://speech.aiservice"".us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
 </copy>
 ```
 Body:
@@ -114,19 +114,19 @@ Body:
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId></copy>
 ```
 ### <u>List Transcription Jobs</u>
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs?compartmentId=<compartmentId></copy>
 ```
 ### <u>Edit Transcription Job</u>
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>
 </copy>
 ```
 Body:
@@ -142,7 +142,7 @@ Body:
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/changeCompartment</copy>
 ```
 Body:
 ```
@@ -156,7 +156,7 @@ Body:
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/actions/cancel
 </copy>
 ```
 
@@ -164,7 +164,7 @@ https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/trans
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>
 </copy>
 ```
 
@@ -172,7 +172,7 @@ https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/trans
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks
 </copy>
 ```
 
@@ -180,7 +180,7 @@ https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/trans
 Endpoint:
 ```
 <copy>
-https://speech.aiservice-preprod.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs/<transcriptionJobId>/transcriptionTasks/<transcriptionTaskId>/actions/cancel
 </copy>
 ```
 

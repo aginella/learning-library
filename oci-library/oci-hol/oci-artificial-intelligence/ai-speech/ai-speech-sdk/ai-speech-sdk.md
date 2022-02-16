@@ -123,7 +123,8 @@ SAMPLE_COMPARTMENT_ID = "ocid1.tenancy.oc1..<uniqueID>"
 SAMPLE_DESCRIPTION = "This is newly created Job"
 SAMPLE_NAMESPACE = "<namespace_placeholder>"
 SAMPLE_BUCKET = "<bucket_placeholder>"
-SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code="en-US")
+LANGUAGE_CODE = "<language_code_placeholder>"
+SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 OBJECT_NAMES=["<filename1>, <filename2>"])
  
