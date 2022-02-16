@@ -136,7 +136,7 @@ To view the result of the transcription we will navigate to each the job and tas
 ### 1: Navigating to Job Details Page
 
 Click on the name of the job in the list or click "View details" via the three dots kebab menu on the far right of the job
-    ![](./images/navigate-to-job-details-page.png " ")
+    ![](./images/navigate-to-job-details.png " ")
 
 ### 2: Job Details Page
 
