@@ -106,10 +106,10 @@ This page is split into three sections
     ![](./images/Basic_information_page.png " ")
 
 Click "Next" to continue to file selection
-   
+
 
 ### 4: Select Which File(s) From Object Storage to Transcribe in this Job
-
+Use "Show wav files" toggle to filter input bucket for .wav files only
 Select one or more files to transcribe from the specified bucket in object storage then click "Submit"
     ![](./images/select-files.png " ")
 
