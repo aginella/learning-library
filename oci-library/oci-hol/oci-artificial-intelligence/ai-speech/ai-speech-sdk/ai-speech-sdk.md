@@ -214,18 +214,18 @@ You will see the result as below
 
 
 ## Learn More
-To know more about the Python SDK visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
+To know more about the Python SDK visit [Python OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
 
-To know more about the Java SDK visit [Java OCI-Language](https://docs.oracle.com/en-us/iaas/tools/java/2.3.1/)
+To know more about the Java SDK visit [Java OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/java/2.3.1/)
 
-To know more about the Go SDK visit [Go OCI-Language](https://docs.oracle.com/en-us/iaas/tools/go/45.1.0/ailanguage/index.html)
+To know more about the Go SDK visit [Go OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/go/45.1.0/ailanguage/index.html)
 
-To know more about the Ruby SDK visit [Ruby OCI-Language](https://docs.oracle.com/en-us/iaas/tools/ruby/2.14.0/OCI/AiLanguage.html)
+To know more about the Ruby SDK visit [Ruby OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/ruby/2.14.0/OCI/AiLanguage.html)
 
-To know more about the Java Script SDK visit [Java Script OCI-Language](https://docs.oracle.com/en-us/iaas/tools/typescript/2.0.1/modules/_ailanguage_index_.html)
+To know more about the Java Script SDK visit [Java Script OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/typescript/2.0.1/modules/_ailanguage_index_.html)
 
 
-To know more about the DOT NET SDK visit [DOT NET OCI-Langauge](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
+To know more about the DOT NET SDK visit [DOT NET OCI-Speech](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
 
 Congratulations on completing this lab!
 
