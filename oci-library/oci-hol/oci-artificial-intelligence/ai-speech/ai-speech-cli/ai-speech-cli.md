@@ -86,7 +86,15 @@ Run this command : oci speech transcription-job create -c
     </copy>
     ```
 
-### 2. Get Transcription Job
+### 2. Cancel transcription job
+Run this command : oci speech transcription-job cancel
+    ```
+    <copy>
+    oci speech transcription-job cancel --transcription-job-id <job-ocid>
+    </copy>
+    ```
+
+### 3. Get transcription job
 Run this command : oci speech transcription-job get
     ```
     <copy>
@@ -94,7 +102,7 @@ Run this command : oci speech transcription-job get
     </copy>
     ```
 
-### 3. Gets All Transcription Jobs from a particular compartment
+### 4. Gets all transcription jobs from a particular compartment
 Run this command : oci speech transcription-job list --all --compartment-id
     ```
     <copy> 
@@ -102,7 +110,15 @@ Run this command : oci speech transcription-job list --all --compartment-id
     </copy>
     ```
 
-### 4. Gets Transcription tasks under given transcription Job Id
+### 5. Move transcription job 
+Run this command : oci speech transcription-job cancel
+    ```
+    <copy>
+    oci speech transcription-job cancel --transcription-job-id <job-ocid>
+    </copy>
+    ```
+
+### 6. Gets transcription tasks under given transcription Job Id
 Run this command : oci speech transcription-task list --transcription-job-id 
     ```
     <copy>
@@ -110,7 +126,7 @@ Run this command : oci speech transcription-task list --transcription-job-id
     </copy>
     ```
 
-### 5. Gets a Transcription Task with given Transcription task id under Transcription Job id
+### 7. Gets a transcription task with given transcription task id under transcription job id
 Run this command : oci speech transcription-task get --transcription-job-id <jobID> --transcription-task-id <taskID>
     ```
     <copy>
@@ -118,6 +134,13 @@ Run this command : oci speech transcription-task get --transcription-job-id <job
     </copy>
     ```
 
+### 8. Cancel transcription task
+Run this command : oci speech transcription-task cancel
+    ```
+    <copy>
+    oci speech transcription-task cancel --transcription-job-id <job-ocid> --transcription-task-id <task-ocid>
+    </copy>
+    ```
 
 To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 
