@@ -115,7 +115,11 @@ Select one or more files to transcribe from the specified bucket in object stora
 
 ### 5: View Newly Created Job in Transcription Jobs List
 
-Once the job is created you will be directed back to the transcription jobs list page, where the newly created job will be at the top
+Once the job is created you will be directed back to the transcription jobs list page, where the newly created job will be at the top. Notice the status of the job will likely say "Accepted" or "In progress"
+
+Other possible job states are "Succeeded" "Failed" "Partially Succeeded" and "Canceled"
+
+You can use the state filter in the lower left to filter the jobs in the list based on these states
     ![](./images/new-job-in-list.png " ")
 
 ### 6: Edit Job
@@ -135,6 +139,7 @@ To view the result of the transcription we will navigate to each the job and tas
 
 ### 1: Navigating to Job Details Page
 
+On the transcription job list page we can see 
 Click on the name of the job in the list or click "View details" via the three dots kebab menu on the far right of the job
     ![](./images/navigate-to-job-details.png " ")
 
