@@ -13,13 +13,12 @@ LANGUAGE_CODE = "<language_code_placeholder>"
 SAMPLE_MODE_DETAILS = oci.ai_speech.models.TranscriptionModelDetails(domain="GENERIC", language_code=LANGUAGE_CODE)
 SAMPLE_OBJECT_LOCATION = oci.ai_speech.models.ObjectLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 OBJECT_NAMES=["<filename1>, <filename2>"])
- 
 SAMPLE_INPUT_LOCATION = oci.ai_speech.models.ObjectListInlineInputLocation(
 location_type="OBJECT_LIST_INLINE_INPUT_LOCATION", object_locations=[SAMPLE_OBJECT_LOCATION])
- 
 SAMPLE_OUTPUT_LOCATION = oci.ai_speech.models.OutputLocation(namespace_name=SAMPLE_NAMESPACE, bucket_name=SAMPLE_BUCKET,
 PREFIX="Python_SDK_DEMO")
 # For now only above job details are supported
+
 
 # Create Transcription Job with details provided
 transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(display_name=SAMPLE_DISPLAY_NAME,
@@ -37,8 +36,15 @@ except Exception as e:
 else:
     print(transcription_job.data)
 
-    
-    
+
+# Cancel transcription job and all tasks under it
+try:
+    ai_client.cancel_transcription_job(transcription_job.data.id)
+except Exception as e:
+    print(e)
+
+
+
 # Gets Transcription Job with given Transcription job id
 try:
     if transcription_job.data:
