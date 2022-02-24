@@ -43,15 +43,14 @@ GUI users can use any audio editing software that can load your input file and s
 
 Alternatively, download these pre-formatted sample files to use in Task 2:
 
-[sample1](./files/sample1.wav)
+[sample1](./files/Oracle_Advertising.wav)
 
-[sample2](./files/sample2.wav)
+[sample2](./files/Oracle_RedBull_Racing.wav.wav)
 
-[sample3](./files/sample3.wav)
+[sample3](./files/Ready_Player_One.wav)
 
-[sample4](./files/sample4.wav)
+[sample4](./files/The_Poet.wav)
 
-[sample5](./files/sample5.wav)
 
 ## Task 2: Upload Files to Object Storage
 
