@@ -102,8 +102,11 @@ This page is split into three sections
 
  <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names
 
- <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters 
+ <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
     ![](./images/Basic_information_page.png " ")
+
+Filters allow you to remove tag or mask certain words from the transcription, such as profanity
+    ![](./images/filters.png " ")
 
 Click "Next" to continue to file selection
 
