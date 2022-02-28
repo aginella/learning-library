@@ -16,10 +16,6 @@ You do not need to execute these codes, but review them to understand what infor
 
 ### Prerequisites:
 * Have completed Lab #1 policy setup
-* Familiar with Python programming is required
-* Have a Python environment ready in local
-* Familiar with local editing tools, vi and nano
-* Installed with Python libraries: `oci` and `requests`
 * If you don't have the permission to access the cloud shell, ask your administrator to add the below policy
     ```
     <copy>allow any-user to use cloud-shell in tenancy</copy>
