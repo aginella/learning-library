@@ -23,14 +23,14 @@
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },
         {
-            "title": "Lab 2: Access OCI Speech with OCI CLI",
-            "description": "Learn how to access OCI Speech with CLI",
-            "filename": "../../ai-speech-cli/ai-speech-cli.md"
-        },
-        {
-            "title": "Lab 3: Access OCI Speech with OCI SDKs",
+            "title": "Lab 2: Access OCI Speech with OCI SDKs",
             "description": "Learn how to access OCI Speech with Speech SDKs",
             "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
+        },
+        {
+            "title": "Lab 3: Access OCI Speech with OCI CLI",
+            "description": "Learn how to access OCI Speech with CLI",
+            "filename": "../../ai-speech-cli/ai-speech-cli.md"
         },
         {
             "title": "Lab 4: Access OCI Speech with REST APIs",

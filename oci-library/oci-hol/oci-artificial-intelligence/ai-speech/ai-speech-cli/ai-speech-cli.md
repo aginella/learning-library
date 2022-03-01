@@ -1,4 +1,4 @@
-# Lab 2: Access OCI Speech with OCI CLI
+# Lab 3: Access OCI Speech with OCI CLI
 
 ## Introduction
 
@@ -27,7 +27,7 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-## **TASK 1:** Navigate to the Cloud Shell
+## **TASK 1:** Run OCI CLI in Cloud Shell
 
 ### 1: Navigate to Cloud Shell
 
@@ -47,15 +47,17 @@ The Speech service displays the results as shown below:
 
 
 
-<!-- ## **TASK 3:**To Install CLI in your Local
-To install and use the CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
+## **TASK 2:** To install OCI CLI in your local environment
+
+Follow Lab 2 Task 2 setup for python, then in your python virtual environment, run:
+```
+<copy>
+pip install oci-cli
+</copy>
+```
 
 
-For information about using the CLI, see [Command Line Interface (CLI)](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm#Command_Line_Interface_CLI).
-For a complete list of flags and options available for CLI commands, see the [Command Line Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/). -->
-
-
-## **TASK 2:** Try issuing some of the OCI Speech commands
+## **TASK 3:** Try issuing some of the OCI Speech commands
 
 ### 1. Create Transcription Job
 Run this command : oci speech transcription-job create -c 
@@ -98,6 +100,14 @@ Run this command : oci speech transcription-job get
     </copy>
     ```
 
+### 4. Update transcription job
+Run this command: oci speech transcription-job update
+    ```
+    <copy>
+    oci speech transcription-job update --transcription-job-id <job_OCID>
+    </copy>
+    ```
+
 ### 4. Gets all transcription jobs from a particular compartment
 Run this command : oci speech transcription-job list --all --compartment-id
     ```
@@ -107,10 +117,10 @@ Run this command : oci speech transcription-job list --all --compartment-id
     ```
 
 ### 5. Move transcription job 
-Run this command : oci speech transcription-job cancel
+Run this command : oci speech transcription-job change-compartment
     ```
     <copy>
-    oci speech transcription-job cancel --transcription-job-id <job-ocid>
+    oci speech transcription-job change-compartment --transcription-job-id <job_OCID> --compartment-id <compartment_OCID>
     </copy>
     ```
 
