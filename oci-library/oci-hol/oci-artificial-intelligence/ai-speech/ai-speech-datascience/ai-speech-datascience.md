@@ -130,7 +130,7 @@ Open the Notebook that you've just uploaded
 
 Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
-These notebooks demonstrates how you can be more productive by using the various Speech services.
+This notebook should allow you to individually run the various OCI speech service commands and view their outputs
 
 Congratulations on completing this lab!
 
