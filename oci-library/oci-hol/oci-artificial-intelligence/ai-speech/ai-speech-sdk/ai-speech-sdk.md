@@ -1,4 +1,4 @@
-# Lab 2: Access OCI Speech with OCI SDKs
+# Lab 2: Access OCI speech with OCI SDKs
 
 ## Introduction 
 
@@ -25,7 +25,7 @@ Prerequisites:
 * Install with Python libraries: `oci` and `requests`
 
 
-## **TASK 1:** Setup API Signing Key and Config File
+## **Task 1:** Setup API Signing Key and Config File
 **Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials.**
 
 Mac OS / Linux:
@@ -42,15 +42,15 @@ Generate an API signing key pair
 
 ### 1. Open User Settings
 Open the Profile menu (User menu icon) and click User Settings.
-    ![](./images/userProfileIcon.png " ")
+    ![](./images/user-profile-icon.png " ")
 
 ### 2. Open API Key
 Navigate to API Key and then Click Add API Key.
-    ![](./images/addAPIButton.png " ")
+    ![](./images/add-api-button.png " ")
 
 ### 3. Generate API Key
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
-    ![](./images/genAPI.png " ")
+    ![](./images/gen-api.png " ")
 
 
 
@@ -60,13 +60,13 @@ Copy the values shown on the console.
 
 Create a config file in the .oci folder and paste the values copied.
 Replace the key_file value with the path of your generated API Key.
-    ![](./images/config2.png " ")
+    ![](./images/config-2.png " ")
 
 
 
 To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
-## **TASK 2:** Prerequisites and Setup for Python
+## **Task 2:** Prerequisites and Setup for Python
 
 Please follow the steps in the order described.
 Before you go any further, make sure you have Python 3.x version and that it’s available from your command line. You can check this by simply running:
@@ -107,7 +107,7 @@ Now Install oci by running:
 
 
 
-## **TASK 3:** OCI Speech Service SDK Code Sample
+## **Task 3:** OCI Speech Service SDK Code Sample
 
 #### Python Code
 ```Python
@@ -200,7 +200,7 @@ else:
 
 
 
-print("***GET ALL TASKS FROM TRANSCIRPTION JOB ID***")
+print("***GET ALL TaskS FROM TRANSCIRPTION JOB ID***")
 #Gets Transcription tasks under given transcription Job Id
 transcription_tasks = None
 try:
@@ -211,7 +211,7 @@ else:
     print(transcription_tasks.data)
 
 
-print("***GET PRATICULAR TRANSCRIPTION TASK USING JOB AND TASK ID***") 
+print("***GET PRATICULAR TRANSCRIPTION Task USING JOB AND Task ID***") 
 # Gets a Transcription Task with given Transcription task id under Transcription Job id
 transcription_task = None
 try:
@@ -224,7 +224,7 @@ else:
     print(transcription_task.data)
 
 
-print("***CANCEL PARTICULAR TRANSCRIPTION TASK***")
+print("***CANCEL PARTICULAR TRANSCRIPTION Task***")
 try:
     if transcription_task:
         ai_client.cancel_transcription_task(transcription_job.data.id, transcription_task.data.id)
@@ -237,12 +237,12 @@ Follow below steps to run Python SDK:
 
 ### 1. Download Python Code.
 
-Download [code](./files/speech_example.py) file and save it your directory.
+Download [code](./files/speech-example.py) file and save it your directory.
 
 ### 2. Execute the Code.
 Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
 ```
-<copy>python speech_example.py</copy>
+<copy>python speech-example.py</copy>
 ```
 ### 3. Result
 You will see the result as below
@@ -265,12 +265,10 @@ To know more about the DOT NET SDK visit [DOT NET OCI-Speech](https://docs.oracl
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

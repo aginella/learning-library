@@ -1,4 +1,4 @@
-# Lab 5: Using OCI Speech with DataScience Notebook Session
+# Lab 5: Use OCI speech with datascience notebook session
 
 ## Introduction
 
@@ -52,59 +52,59 @@ where data-scientists represents the name of your user group.
 
 where dynamic-group represents the name of your dynamic group.
 
-## **TASK 1:** Navigate to the Data Science Notebook Session
+## **Task 1:** Navigate to the Data Science Notebook Session
 
 Follow the below steps to open Notebook in DataScience:
 ### 1. Navigate to Data Science Service
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
-    ![](./images/cloudMenu.png " ")
+    ![](./images/cloud-menu.png " ")
 
 ### 2. Select Compartment
 Select the Compartment in which want to create your project.
-    ![](./images/selectComp.png " ")
+    ![](./images/select-comp.png " ")
 <!-- Click Create Project to create a new project. -->
 <!-- Select the Root Compartment -->
     
 
 ### 3. Create Project
 Click Create Project to create a new project.
-    ![](./images/createProject1.png " ")
+    ![](./images/create-project-1.png " ")
 <!-- Select the Project named 'oci-Speech-livelabs' -->
     
 
 ### 4. Enter Project Details
 Enter name and click Create Button.
-    ![](./images/createProject2.png " ")
+    ![](./images/create-project-2.png " ")
 <!-- Select the Notebook named 'Livelabs Notebook' -->
     
 
 
 ### 5. Create Notebook Session
 Click Create Notebook Session to create a new Notebook session.
-    ![](./images/createNotebookSession.png " ")
+    ![](./images/create-notebook-session.png " ")
 
 ### 6. Enter Notebook Details
 Select a name.
 We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
 Set block storage to 50 GB.
 Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
-    ![](./images/createNotebookSession2.png " ")
+    ![](./images/create-notebook-session-2.png " ")
 
 ### 7. Open the OCI Data Science notebook
 The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
 Open the notebook session that was provisioned.
-    ![](./images/openNotebook.png " ")
+    ![](./images/open-notebook.png " ")
 
-## **TASK 2:** Invoke the Speech Service
+## **Task 2:** Invoke the Speech Service
 
 
 ### 1. Download and Upload the Files
-Download this [Speech Notebook](./files/Speech.ipynb) and upload to notebook session
-    ![](./images/upload_speech_notebook.png " ")
+Download this [Speech Notebook](./files/speech.ipynb) and upload to notebook session
+    ![](./images/upload-speech-notebook.png " ")
 
 ### 2. Setup API Signing Key and Config File
 Open the Terminal by clicking the Terminal icon in the Launcher Tab.
-    ![](./images/DS_notebook_terminal.png " ")
+    ![](./images/ds-notebook-terminal.png " ")
 
 In the terminal, create a .oci directory in the Data Science notebook session.
     ```
@@ -122,7 +122,7 @@ In the terminal, move those files to the .oci folder.
     ```
     
 To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
-    ![](./images/ociFolder.png " ")
+    ![](./images/oci-folder.png " ")
 
 ### 3. Execute the Notebooks
 
@@ -134,12 +134,10 @@ This notebook should allow you to individually run the various OCI speech servic
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

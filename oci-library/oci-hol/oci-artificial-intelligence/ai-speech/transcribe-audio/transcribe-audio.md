@@ -1,4 +1,4 @@
-# Lab 1: Transcribing audio with the console
+# Lab 1: Transcribe audio with the console
 
 ## Introduction
 In this session, we will help users get familiar with OCI Speech and teach them how to use our services via the cloud console.
@@ -70,7 +70,7 @@ create a new policy with the below statement:
     ```
     ![](./images/group-name-policy.png " ")
 
-## **TASK 1:** Navigate to Overview Page
+## **Task 1:** Navigate to Overview Page
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Language item under AI services.
     ![](./images/navigate-to-ai-speech-menu.png " ")
@@ -81,12 +81,12 @@ Under documentation you can find helpful links relevant to OCI speech service
     ![](./images/overview-page.png " ")
 
 
-## **TASK 2:** Create and Manage Transcription Job
+## **Task 2:** Create and Manage Transcription Job
 
 ### 1: Navigate to OCI Speech
 
 Click "Transcription Job" to navigate to transcription jobs list.
-    ![](./images/click-Transcription-Job.png " ")
+    ![](./images/click-transcription-job.png " ")
 
 ### 2: Create Transcription Job
 
@@ -103,7 +103,7 @@ This page is split into three sections
  <strong>Data:</strong> Select the bucket in object storage containing the files you want to transcribe and optionally choose where you want the output files to be stored and/or give a prefix to their file names
 
  <strong>Configure transcription:</strong> Choose the language that the audio you want to transcribe is in and optionally add filters by clicking the "Add filter" button.
-    ![](./images/Basic_information_page.png " ")
+    ![](./images/basic-information-page.png " ")
 
 Filters allow you to remove tag or mask certain words from the transcription, such as profanity
     ![](./images/filters.png " ")
@@ -136,7 +136,7 @@ Enter new job information in edit slider
 To change the compartment of a job from this view select "Move Resource" from the right side three dots menu and choose the target compartment from the dialog
     ![](./images/kebab-move-resource.png " ")
 
-## **TASK 3:** Viewing the Results
+## **Task 3:** Viewing the Results
 
 To view the result of the transcription we will navigate to each the job and task details page
 
@@ -169,10 +169,10 @@ Similar to the job details page, on the task details page we can view specific m
     ![](./images/task-details-page.png " ")
 
 
-## **TASK 4:** Downloading and Viewing the Results in JSON
+## **Task 4:** Downloading and Viewing the Results in JSON
 
 You can click "Download transcript" in the top left to download the transcript in JSON format. Click the "Show JSON button" to view the transcription in JSON format.
-    ![](./images/show-JSON-button.png " ")
+    ![](./images/show-json-button.png " ")
 
 Click Show Standard Results button to leave the JSON view. 
     ![](./images/show-standard-results.png " ")
@@ -181,12 +181,10 @@ Click Show Standard Results button to leave the JSON view.
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**
     * Alex Ginella  - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

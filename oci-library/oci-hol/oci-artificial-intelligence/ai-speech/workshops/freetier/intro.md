@@ -36,12 +36,10 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 <!-- 1. Pretrained -->
 
 
-[Proceed to the next section](#next).
+[You may now proceed to the next lab](#next).
 
-### Acknowledgements:
+## Acknowledgements:
 * **Authors**
     * Alex Ginella - Oracle AI OCI Speech Services
     * Rajat Chawla  - Oracle AI OCI Speech Services
     * Ankit Tyagi -  Oracle AI OCI Speech Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

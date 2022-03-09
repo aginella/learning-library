@@ -1,4 +1,4 @@
-# Lab 4: Access OCI Speech with REST APIs
+# Lab 4: Access OCI speech with REST APIs
 
 ## Introduction
 
@@ -16,16 +16,16 @@ Postman is a GUI-based REST API invocation tool that is very popular among devel
 * Basic knowledge of REST API calls.
 * Postman GUI in your local setup. If you don't have POSTMAN, please download it from [POSTMAN](https://www.postman.com/downloads/)
 
-## **TASK 1:** Setting Up Postman for OCI REST APIs
+## **Task 1:** Setting Up Postman for OCI REST APIs
 We have provided some scripts and steps below that can be used to allow invoking OCI REST APIs through Postman. Please follow the steps in the order described.
 
 ### 1. Import the environment into Postman
 
 Download the [OCI Environment](./files/OCI_Environment.postman_environment.json) and import the environment into Postman using the 'Import' button at the top.
-    ![](./images/importENV.png " ")
+    ![](./images/import-env.png " ")
 
 Make sure to set OCI_Environment as the active environment.
-    ![](./images/setActive.png " ")
+    ![](./images/set-active.png " ")
 
 ### 2. Set the Variables
 Open and edit the newly imported environment (OCI_Environment), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci/config file you created in the Lab 3.
@@ -34,14 +34,14 @@ Make sure to set both Initial Value and Current Value of the variables(set both 
 
 Click the Save button to commit your changes to the environment.
 (sensitive information redacted from below screenshot)
-    ![](./images/setVar.png " ")
+    ![](./images/set-var.png " ")
 
 ### 3. Import the Collections
 Download and import [OCI REST INITIALIZATION](./files/OCI_REST_INITIALIZATION.postman_collection.json) and [OCI SPEECH REST COLLECTION](./files/OCI_SPEECH_REST_COLLECTION.postman_collection.json) into Postman using the 'Import' button at the top.
 
 ### 4. Execute OCI REST Initializer
 From the OCI REST INITIALIZATION collection, invoke the Initializer GET for 'jsrsasign-all-min.js' , which imports and initializes a required library jsrsasign for encryption and digital signatures. This is a one-time setup task. 
-    ![](./images/initializeREST.png " ")
+    ![](./images/initialize-rest.png " ")
 
 <!-- ### 5. Add Request in OCI REST COLLECTION
 
@@ -53,14 +53,14 @@ Enter Name and click 'Save to OCI REST COLLECTION'
 
 Just make sure that the OCI REST calls are executed as part of the OCI REST COLLECTION, as that collection contains the necessary javascript code to generate OCI's authentication header -->
 
-## **TASK 2:** Invoke Speech OCI REST APIs
+## **Task 2:** Invoke Speech OCI REST APIs
 
 Invoke Speech OCI REST APIs by clicking any one of the requests in the OCI SPEECH REST COLLECTION.
     
 Below in the example shown to invoke Create Transcription Job.
 
 Replace all <placeholder> values with the corresponding values of the job you want to create
-    ![](./images/postman_screenshot.png " ")
+    ![](./images/postman-screenshot.png " ")
 
 OCI Speech Service EndPoints for all the services:
 NOTE: be sure to replace <placeholder> values with actual job values
@@ -70,7 +70,7 @@ NOTE: be sure to replace <placeholder> values with actual job values
 Endpoint:
 ```
 <copy>
-https://speech.aiservice"".us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
+https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcriptionJobs
 </copy>
 ```
 Body:
@@ -185,7 +185,7 @@ https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcription
 ```
 
 
-[Proceed to the next section](#next).
+[You may now proceed to the next section](#next).
 
 
 ## Acknowledgements
@@ -193,5 +193,3 @@ https://speech.aiservice.us-phoenix-1.oci.oraclecloud.com/20220101/transcription
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

@@ -1,4 +1,4 @@
-# Lab 3: Access OCI Speech with OCI CLI
+# Lab 3: Access OCI speech with OCI CLI
 
 ## Introduction
 
@@ -27,27 +27,27 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-## **TASK 1:** Run OCI CLI in Cloud Shell
+## **Task 1:** Run OCI CLI in Cloud Shell
 
 ### 1: Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-    ![](./images/cloudShellIcon.png " ")
+    ![](./images/cloud-shell-icon.png " ")
 
 ### 2: Enter Speech CLI Command
 
 Enter any one of the Speech Pre-Deployed CLI commands you want to execute.
-    ![](./images/cloudShellCommand.png " ")
+    ![](./images/cloud-shell-command.png " ")
 
 
 ### 3: View Result
 
 The Speech service displays the results as shown below:
-    ![](./images/cloudShellResult.png " ")
+    ![](./images/cloud-shell-results.png " ")
 
 
 
-## **TASK 2:** To install OCI CLI in your local environment
+## **Task 2:** To install OCI CLI in your local environment
 
 Follow Lab 2 Task 2 setup for python, then in your python virtual environment, run:
 ```
@@ -57,7 +57,7 @@ pip install oci-cli
 ```
 
 
-## **TASK 3:** Try issuing some of the OCI Speech commands
+## **Task 3:** Try issuing some of the OCI Speech commands
 
 ### 1. Create Transcription Job
 Run this command : oci speech transcription-job create -c 
@@ -152,12 +152,10 @@ To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors**
     * Alex Ginella - Oracle AI Services
     * Rajat Chawla  - Oracle AI Services
     * Ankit Tyagi -  Oracle AI Services
-* **Last Updated By/Date**
-    * Srijon Sarkar  - Oracle AI Services, September 2021

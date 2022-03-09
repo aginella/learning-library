@@ -1,4 +1,4 @@
-# Lab 0: Uploading audio files to OCI
+# Lab 0: Create a bucket and upload audio files
 
 ## Introduction
 
@@ -90,12 +90,10 @@ More details on Object storage can be found on this page. [Object Storage Upload
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now proceed to the next section](#next).
 
 ## Acknowledgements
 * **Authors**
     * Alex Ginella - Software Developer - Oracle AI Services
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
-* **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, July 2021
