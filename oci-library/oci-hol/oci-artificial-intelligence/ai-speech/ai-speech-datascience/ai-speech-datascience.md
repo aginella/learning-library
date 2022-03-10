@@ -11,7 +11,7 @@ The Datascience Notebook is a web application that contains code, results and vi
 ### Objectives:
 * Learn how to use Speech Services within a DataScience notebook.
 
-## **Data Science Prerequisites:**
+## **Task 0:** Data Science Prerequisites
 
 Before you can start using Data Science, your tenancy administrator should set up the following networking, dynamic group, and policies.
 

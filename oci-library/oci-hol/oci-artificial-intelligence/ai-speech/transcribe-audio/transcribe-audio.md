@@ -16,7 +16,7 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Tenancy is whitelisted to be able to use OCI Speech
 
-## **Policy Setup**
+## **Task 0:** Policy Setup
 
 Before you start using OCI Speech, your tenancy administrator should set up the following policies by following below steps:
 
