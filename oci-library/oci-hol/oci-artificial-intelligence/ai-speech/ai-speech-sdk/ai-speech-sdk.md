@@ -40,27 +40,30 @@ Windows:
 
 Generate an API signing key pair
 
-### 1. Open User Settings
-Open the Profile menu (User menu icon) and click User Settings.
-    ![](./images/user-profile-icon.png " ")
+1. Open User Settings
 
-### 2. Open API Key
-Navigate to API Key and then Click Add API Key.
-    ![](./images/add-api-button.png " ")
+    Open the Profile menu (User menu icon) and click User Settings.
+        ![](./images/user-profile-icon.png " ")
 
-### 3. Generate API Key
-In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
-    ![](./images/gen-api.png " ")
+2. Open API Key
+
+    Navigate to API Key and then Click Add API Key.
+        ![](./images/add-api-button.png " ")
+
+3. Generate API Key
+
+    In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
+        ![](./images/gen-api.png " ")
 
 
 
-### 4. Generate Config File
-Copy the values shown on the console.
-    ![](./images/conf.png " ")
+4. Generate Config File
+    Copy the values shown on the console.
+        ![](./images/conf.png " ")
 
-Create a config file in the .oci folder and paste the values copied.
-Replace the key_file value with the path of your generated API Key.
-    ![](./images/config-2.png " ")
+    Create a config file in the .oci folder and paste the values copied.
+    Replace the key_file value with the path of your generated API Key.
+        ![](./images/config-2.png " ")
 
 
 
@@ -82,30 +85,29 @@ Additionally, you’ll need to make sure you have pip available. You can check t
 If you installed Python from source, with an installer from python.org, or via Homebrew you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately.
 
 
-### 1. Create virtualenv
-To create a virtual environment, run the venv module as a script as shown below
-```
-<copy>python3 -m venv <name of virtual environment></copy>
-```
-### 2. Activate virtualenv
-Once you’ve created a virtual environment, you may activate it.
+1. Create virtualenv
+    To create a virtual environment, run the venv module as a script as shown below
+    ```
+    <copy>python3 -m venv <name of virtual environment></copy>
+    ```
+2. Activate virtualenv
 
-Mac OS / Linux:
-```
-<copy>source <name of virtual environment>/bin/activate</copy>
-```
-Windows:
-```
-<copy><name of virtual environment>\Scripts\activate</copy>
-```
-### 3. Install OCI
-Now Install oci by running:
-```
-<copy>pip install oci</copy>
-```
+    Once you’ve created a virtual environment, you may activate it.
 
+    Mac OS / Linux:
+    ```
+    <copy>source <name of virtual environment>/bin/activate</copy>
+    ```
+    Windows:
+    ```
+    <copy><name of virtual environment>\Scripts\activate</copy>
+    ```
+3. Install OCI
 
-
+    Now Install oci by running:
+    ```
+    <copy>pip install oci</copy>
+    ```
 
 ## **Task 3:** OCI Speech Service SDK Code Sample
 
@@ -235,17 +237,19 @@ except Exception as e:
 ```
 Follow below steps to run Python SDK:
 
-### 1. Download Python Code.
+1. Download Python Code.
 
-Download [code](./files/speech-example.py) file and save it your directory.
+    Download [code](./files/speech-example.py) file and save it your directory.
 
-### 2. Execute the Code.
-Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
-```
-<copy>python speech-example.py</copy>
-```
-### 3. Result
-You will see the result as below
+2. Execute the Code.
+
+    Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
+    ```
+    <copy>python speech-example.py</copy>
+    ```
+3. Result
+
+    You will see the result as below
 
 
 
@@ -265,7 +269,7 @@ To know more about the DOT NET SDK visit [DOT NET OCI-Speech](https://docs.oracl
 
 Congratulations on completing this lab!
 
-[You may now proceed to the next section](#next).
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Authors**

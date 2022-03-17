@@ -134,7 +134,7 @@ This notebook should allow you to individually run the various OCI speech servic
 
 Congratulations on completing this lab!
 
-[You may now proceed to the next lab](#next).
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Authors**

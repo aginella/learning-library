@@ -28,6 +28,9 @@ Explore the OCI Speech service within the Oracle Cloud AI service group to perfo
 * Familiar with OCI services like DataScience, DataFlow etc., are recommended, but not required.
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
 <!-- ## AI Language Service Concepts -->
 <!-- * Pretrained -->
 
