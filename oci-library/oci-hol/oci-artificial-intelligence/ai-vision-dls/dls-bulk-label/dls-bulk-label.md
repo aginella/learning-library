@@ -22,7 +22,7 @@ In this lab, you will:
 - Ensure that you have Python SDK installed on your machine by following the steps [here](https://docs.oracle.com/en-us/iaas/tools/python/2.57.0/installation.html#install)
   * Note that if you have a Python version of less than 3, it is necessary to replace all instances of 'python3' in the CLI operations mentioned in this lab with 'python'. In these lab instructions, we will assume that the user has Python3.
 
-**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kME0F5aYc9Ln9pdjOn09iNHxmUmU-kn6M2HmOoKuNZfaVnDyZvSPNWmSb4R3UkIh/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical%20Image%20Classification-%20Training%20Data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
+**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zDOLdHIblEgbMO_4RCotgp4_iL32UnBY8WCjR78hAvJJJj8nbQyB6FNoHt633fIb/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-image-classification-training-data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
 
 ## **Policy Setup**
 
@@ -31,7 +31,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 1. Either identify or create a compartment where you will provision resources for this lab.
 
   a. From the OCI services menu, click 'Compartments' under 'Identity'
-  ![](./images/compartments.png)
+  ![OCI services menu](./images/compartments.png)
 
   b. Click 'Create Compartment'
 
@@ -42,21 +42,21 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   e. Select the parent compartment
 
   f. Click 'Create Compartment'
-  ![](./images/create-compartment.png)
+  ![Create compartment window](./images/create-compartment.png)
 
 2. Retrieve the compartment OCID and record it. You will need this later.
 
 3. Make a group and add your user to it.
 
   a. From the OCI services menu, click 'Groups' under 'Identity'
-  ![](./images/groups.png)
+  ![OCI services menu](./images/groups.png)
 
   b. Click 'Create Group'
 
   c. Provide an adequate group name (e.g. named ImageClassification_Group) and description
 
   d. Click 'Add User to Group'
-  ![](./images/add-user-to-group.png)
+  ![Add users to group](./images/add-user-to-group.png)
 
   e. Select user you want to add to the group.
 
@@ -64,7 +64,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 4.  Create a Dynamic Group.
 
     a. From the OCI services menu, click 'Dynamic Groups' under 'Identity'
-    ![](./images/dynamic-group.png)
+    ![OCI services menu](./images/dynamic-group.png)
 
     b. Select 'Create Dynamic Group'
 
@@ -77,12 +77,12 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
       ```
       <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
       ```
-      ![](./images/creating-dynamic-group.png)
+      ![Create dynamic group window](./images/creating-dynamic-group.png)
 
 5. Create policies for Dynamic Group and Group.
 
     a. From the OCI services menu, click 'Policies' under 'Identity'
-    ![](./images/policies.png)
+    ![OCI services menu](./images/policies.png)
 
     b. Click on 'Create Policy'
 
@@ -118,10 +118,10 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 ## **Task 1:** Create an Object Storage Bucket
 
 1. From the OCI services menu, click 'Buckets' under 'Object Storage & Archive Storage.'
-  ![](./images/obj-storage-bucket.png)
+  ![OCI services menu](./images/obj-storage-bucket.png)
 
 2. Set your Compartment to the desired Compartment using the drop down under List Scope.
-  ![](./images/select-compartment.png)
+  ![Select compartment](./images/select-compartment.png)
 
 3. Click 'Create Bucket' and enter details for your Bucket:
 
@@ -132,7 +132,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   c. Encryption: Encrypt using Oracle managed keys
 
   d. Click 'Create'
-  ![](./images/create-bucket.png)
+  ![Create object storage bucket window](./images/create-bucket.png)
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
 **Note:** These instructions are Mac OS compatible
@@ -158,17 +158,17 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 5. Repeat Steps 2 and 3, replacing "Stripe" and "s" with "Debris" and "d", which represent another category into which our images will be classified.
 
 6. Confirm that the images have been uploaded to object storage and have been prepended with the appropriate letter.
-![](./images/obj-storage-upload-confirm.png)
+![Inspecting that images were uploaded to object storage](./images/obj-storage-upload-confirm.png)
 
 ## **Task 3:** Create a Data Labeling Service Dataset
 1. From the OCI services menu, click 'Data Labeling' under 'Machine Learning.'
-![](./images/dls.png)
+![OCI services menu](./images/dls.png)
 
 2. Click on 'Datasets.'
-![](./images/datasets.png)
+![Clicking on datasets from Data Labeling Service](./images/datasets.png)
 
 3. Set your Compartment to the same Compartment where you created your Bucket using the drop down under List Scope.
-![](./images/compartment-dls.png)
+![Selecting the compartment](./images/compartment-dls.png)
 
 4. Create your dataset by clicking 'Create dataset.'
 
@@ -179,37 +179,37 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   c. Annotation Class: Single Label
 
   d. Click 'Next'
-  ![](./images/create-dataset.png)
+  ![Create dataset window - add dataset details](./images/create-dataset.png)
 
   e. Retrieve files from Object Storage by choosing 'Select from Object Storage'
-  ![](./images/select-from-obj-storage.png)
+  ![Create dataset window - select from object storage](./images/select-from-obj-storage.png)
 
   f. Choose the name of compartment where your Bucket exists
-  ![](./images/select-dataset-compartment.png)
+  ![Create dataset window - select compartment where bucket resides](./images/select-dataset-compartment.png)
 
   g. Choose your Bucket by name
-  ![](./images/select-dataset-bucket.png)
+  ![Create dataset window - select bucket](./images/select-dataset-bucket.png)
 
   h. Add Labels: enter all possible labels that you will want to use to label any of your data, pressing enter between each label. In our case, our labels will be:
     * cell
     * stripe
     * debris
-  ![](./images/dataset-labels.png)
+  ![Adding labels](./images/dataset-labels.png)
 
   i. Click 'Next'
-  ![](./images/dataset-next.png)
+  ![Clicking next](./images/dataset-next.png)
 
   j. Review the information and deploy your Dataset by clicking 'Create'
-  ![](./images/click-create-dataset.png)
+  ![Create dataset window - review information](./images/click-create-dataset.png)
 
 5. Retrieve the Dataset OCID- you will need this during the next Task. Dataset OCID can be found here:
-  ![](./images/dataset-OCID.png)
+  ![Identifying dataset OCID](./images/dataset-OCID.png)
 
 ## **Task 4:** Populate Your DLS Dataset With the Data From Your Object Storage Bucket
 1. Click into your new Dataset. When all of the data has been imported into your DLS Dataset from your Object Storage Bucket, it will be time to perform a bulk-labeling operation on your data.
 
 2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
-![](./images/download-bulk-labeling-code.png)
+![GitHub repository where bulk data labeling code resides](./images/download-bulk-labeling-code.png)
 
 3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config\_file\_path, region\_identifier, compartment\_id, dataset\_id, labels).
 
@@ -225,8 +225,8 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
     ```
 
 7. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
-![](./images/verify-label1.png)
-![](./images/verify-label2.png)
+![Pointing to an image in the dataset](./images/verify-label1.png)
+![Verifying image has label](./images/verify-label2.png)
 
 Congratulations on completing this lab!
 

@@ -12,7 +12,7 @@ Therefore in the interests of maintaining business continuity,  customers still 
 
 [Watch the video](youtube:lOzL5irmuJo)
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/A-hQSWZWmTU).</if>
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/e3DaQ2LKCU4).</if>
 
 ### Objectives
 

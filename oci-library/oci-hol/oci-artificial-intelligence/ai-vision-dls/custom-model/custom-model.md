@@ -35,10 +35,10 @@ Before you start using OCI Data Labeling Service, your tenancy administrator sho
 ## **Task 1:** Create a Vision Project
 
 1. From the OCI services menu, click 'Vision' under 'AI Services.'
-![](./images/vision.png)
+![OCI services menu](./images/vision.png)
 
 2. Click on 'Projects' under 'Custom Models.'
-![](./images/click-on-projects.png)
+![Vision AI page](./images/click-on-projects.png)
 
 3. Click 'Create Project' and enter details for your Project:
 
@@ -47,12 +47,12 @@ Before you start using OCI Data Labeling Service, your tenancy administrator sho
   b. Name: Enter a name for your project that you can recognize, e.g. image-classification-demo
 
   c. Click 'Create project'
-  ![](./images/create-project.png)
+  ![Create project window](./images/create-project.png)
 
 ## **Task 2:** Create a Custom Image Classification Model
 
 1. Select 'Create Model.'
-![](./images/create-model.png)
+![Clicking create model](./images/create-model.png)
 
 2. Enter details for your model:
 
@@ -65,7 +65,7 @@ Before you start using OCI Data Labeling Service, your tenancy administrator sho
   d. Choose the dataset that you created earlier
 
   e. Click 'Next'
-  ![](./images/model-details.png)
+  ![Create and train model window - select data](./images/model-details.png)
 
 ## **Task 3:** Train Custom Model and Submit
 1. Enter training details for the model.
@@ -76,29 +76,29 @@ Before you start using OCI Data Labeling Service, your tenancy administrator sho
 
   c. Click 'Next'
 
-  ![](./images/model-training-details.png)
+  ![Create and train model window - train model](./images/model-training-details.png)
 
 
 2. Review that the model information is correct and click 'Create and train.'
-![](./images/create-and-train.png)
+![Create and train model window - review](./images/create-and-train.png)
 
 **Note:** This step might vary in time. Wait for the model to appear as 'Active'.
 
 ## **Task 4:** Test the Model On New Images
 
 1. Navigate to the Project Details page and click on the model just created.
-![](./images/project-detail-page.png)
+![Select model that was just created](./images/project-detail-page.png)
 
-2. Click this [link] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/PoLf5CbMnrSxjP1DEhYLX51umFUEMHIgVj8zfcMtoLaieNG_IYiiMuWCEfFzuzpA/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical_Demo_TestImages.zip) to download sample test images to your local machine.
+2. Click this [link] (https://objectstorage.us-ashburn-1.oraclecloud.com/p/N8RpDkD6PNFANaEUK5R44QvNAp72Ps1SIno1BAlnesTSQLIMi2GnOEIpVVVTaP3_/n/orasenatdpltintegration03/b/all-images-live-lab/o/biomedical-demo-test-images.zip) to download sample test images to your local machine.
 
 3. Upload one image from the test dataset on your local machine to test the newly created model.
 
   a. Select 'Local file' under 'Image source'
 
   b. Select 'select one...' in the 'Upload image' section. Navigate to the folder containing the test images on your local machine and select an image to upload.
-  ![](./images/upload-image.png)
+  ![Identifying where to upload a test image](./images/upload-image.png)
    c. Examine confidence measurements under the 'Results' pane
-   ![](./images/test-image.png)
+   ![Analyzing the confidence measures in the results pane](./images/test-image.png)
 
 
 
