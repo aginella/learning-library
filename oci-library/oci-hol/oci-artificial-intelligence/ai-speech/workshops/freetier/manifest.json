@@ -3,75 +3,42 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-<<<<<<< HEAD
             "title": "Get started",
-=======
-            "title": "Getting Started",
->>>>>>> upstream/master
             "description": "Sign up for and log into the Oracle Cloud",
             "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
         },
         {
-<<<<<<< HEAD
             "title": "Introduction: OCI speech",
-=======
-            "title": "Introduction: OCI Speech",
->>>>>>> upstream/master
             "description": "Learn how to generate text transcripts from audio files using OCI Speech",
             "filename": "./intro.md"
         },
         {
-<<<<<<< HEAD
             "title": "Lab 0: Create a bucket and upload files",
-=======
-            "title": "Lab 0: Creating a bucket and uploading files",
->>>>>>> upstream/master
             "description": "Learn how to create an input bucket in object storage and upload files",
             "filename": "../../object-storage/object-storage.md"
         },
         {
-<<<<<<< HEAD
             "title": "Lab 1: Transcribe audio with the console",
-=======
-            "title": "Lab 1: Transcribing audio with the console",
->>>>>>> upstream/master
             "description": "Learn how to transcribe audio files using oci console",
             "filename": "../../transcribe-audio/transcribe-audio.md"
         },
         {
-<<<<<<< HEAD
             "title": "Lab 2: Access OCI speech with OCI SDKs",
             "description": "Learn how to access OCI Speech with Speech SDKs",
             "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
         },
         {
             "title": "Lab 3: Access OCI speech with OCI CLI",
-=======
-            "title": "Lab 2: Access OCI Speech with OCI CLI",
->>>>>>> upstream/master
             "description": "Learn how to access OCI Speech with CLI",
             "filename": "../../ai-speech-cli/ai-speech-cli.md"
         },
         {
-<<<<<<< HEAD
             "title": "Lab 4: Access OCI speech with REST APIs",
-=======
-            "title": "Lab 3: Access OCI Speech with OCI SDKs",
-            "description": "Learn how to access OCI Speech with Speech SDKs",
-            "filename": "../../ai-speech-sdk/ai-speech-sdk.md"
-        },
-        {
-            "title": "Lab 4: Access OCI Speech with REST APIs",
->>>>>>> upstream/master
             "description": "Learn how to access OCI Speech with REST API.",
             "filename": "../../oci-speech-rest/oci-speech-rest.md"
         },
         {
-<<<<<<< HEAD
             "title": "Lab 5: Use OCI speech with datascience notebook session",
-=======
-            "title": "Lab 5: Using OCI Speech with DataScience Notebook Session",
->>>>>>> upstream/master
             "description": "Learn how to access OCI Speech in DataScience Notebook Session.",
             "filename": "../../ai-speech-datascience/ai-speech-datascience.md"
         },
