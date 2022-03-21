@@ -110,7 +110,7 @@ Follow the below steps to open Notebook in DataScience:
 
 1. Download and Upload the Files
 
-    Download this [Speech Notebook](./files/speech.ipynb) and upload to notebook session
+    Download this [Speech Notebook](./files/Speech.ipynb) and upload to notebook session
         ![](./images/upload-speech-notebook.png " ")
 
 2. Setup API Signing Key and Config File

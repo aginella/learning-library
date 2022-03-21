@@ -41,13 +41,13 @@ GUI users can use any audio editing software that can load your input file and s
 
 Alternatively, download these pre-formatted sample audio files to use in Task 2:
 
-[sample1](./files/Oracle_Advertising.wav)
+[sample1](./files/oracle-advertising.wav)
 
-[sample2](./files/Oracle_RedBull_Racing.wav.wav)
+[sample2](./files/oracle-redBull-racing.wav.wav)
 
-[sample3](./files/Ready_Player_One.wav)
+[sample3](./files/ready-player-one.wav)
 
-[sample4](./files/The_Poet.wav)
+[sample4](./files/the-poet.wav)
 
 
 ## Task 2: Upload Files to Object Storage
@@ -88,7 +88,7 @@ More details on Object storage can be found on this page. [Object Storage Upload
 
 Congratulations on completing this lab!
 
-You may now **proceed to the next lab**.
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Authors**

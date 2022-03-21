@@ -92,7 +92,7 @@ If you already have a cloud account, skip to **STEP 2**.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-console-home-page.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**
 
 
 ## **Acknowledgements**
