@@ -387,7 +387,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
         ```
     Check both Migrate Listener and Update Database options
     Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
-        Named Host Credentials as ***ORACLE***
+        Normal Host Credentials as ***ORACLE***
         Privileged Host Credentials as ***ROOT***
         SYSDBA Database Credentials as ***SYS_SALES***
 

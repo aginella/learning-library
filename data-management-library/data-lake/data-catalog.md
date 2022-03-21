@@ -163,39 +163,6 @@ In the next task you will harvest data again, but this would normally be schedul
 
 ![Harvest](./images/harvest1.png " ")
 
-Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
-
-Select Create Data Asset, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
-
-![Create Data Asset](./images/create_new_data_asset.png " ")
-
-Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
-
-OCI-Region
-
-![Create Data Asset](./images/create_assetjson.png " ")
-
-Continue to fill in the name of GENRE_JSON. Choose the type as Oracle Object Storage. You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
-
-```
-<copy>
-https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
-</copy>
-```
-
-![Create Data Asset](./images/create_new_data_asset.png " ")
-
-Then add the connection for the data asset. Create json_connection and put in the pre-authenticated data set.
-
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/
-</copy>
-```
-
-![Create Data Asset](./images/json_connection.png " ")
-
-The data asset will then be added to this data catalog. Now we can use these data assets to set up processes for data loading and ETL with OCI Data Flow.
 
 ## Task 6: New table to demonstrate catalog discovery
 

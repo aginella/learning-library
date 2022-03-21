@@ -1,4 +1,4 @@
-# Introduction to Labs and Workshops                                   
+# Introduction to Labs and Workshops
 
 The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs.
 
@@ -28,7 +28,7 @@ At Oracle, we have a GitHub project named **Oracle** which has **305** repositor
 
 ![](./images/git-hub-oracle-projects-learning-library.png " ")
 
-+ You can access the **Oracle** GitHub project using the following URL:     
++ You can access the **Oracle** GitHub project using the following URL:
   [https://github.com/oracle](https://github.com/oracle)
 
   ![](./images/git-hub-oracle-project.png " ")
@@ -39,13 +39,40 @@ At Oracle, we have a GitHub project named **Oracle** which has **305** repositor
   ![](./images/git-hub-oracle-repos.png " ")
 
 + You can access **Oracle**'s GitHub project **learning-library** repository directly using the following URL which you should bookmark as you will use it often:
-  [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library)    
+  [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library)
 
   ![](./images/git-hub-learning-library.png " ")
 
-  The highlighted **sample-livelabs-templates** folder contains this workshop and also the available Livelabs templates.        
+  The highlighted **sample-livelabs-templates** folder contains this workshop and also the available Livelabs templates.
 
   > **Note:** The term **learning-library** that we reference in this workshop is the GitHub repository for the **Oracle** GitHub project. It is NOT the same as **Oracle Learning Library (OLL)** used formerly in the OBE world. OLL is an online resource for content about Oracle products [https://apexapps.oracle.com/pls/apex/f?p=44785:1](https://apexapps.oracle.com/pls/apex/f?p=44785:1).
+
+## LiveLabs Workshop Workflow
+
+Before you start, please check LiveLabs ([developer.oracle.com/livelabs](https://developer.oracle.com/livelabs)) to see if there is already a workshop similar to the content you want to create. Please also check WMS ([bit.ly/oraclewms](https://bit.ly/oraclewms)) to see if there is already a workshop in development that resembles your content. If so, please contact that workshop team to see if you can cooperate on the workshop. If not, please proceed.
+
+In order for a workshop to go from an idea to a LiveLabs workshop in production, it has to go through the following phases or statuses in WMS. You can refer to this section to see your current and next steps.
+
+1. After workshop team submits the workshop request (see details in Lab 1 -> Task 1), the workshop is in *Submitted* status. The workshop's *council* group will review the workshop within 2 business days. Council will either approve the workshop and move it to *Approved*, or ask the workshop team for more information and move it to *More Info Needed*.
+  ![Submitted](./images/submitted.png " ")
+
+2. Council asks workshop team for more information. Workshop team will respond to council via the **Message the Team** tab in WMS to get the workshop approved.
+  ![More Info Needed](./images/more-info-needed.png " ")
+
+3. Council approves the workshop. Now, workshop team can start developing the workshop.
+  ![Approved](./images/approved.png " ")
+
+4. Workshop team will move the workshop to *In Development* when they start workshop development. Workshop team can refer to Lab 1 to Lab 4 to see workshop development related instructions.
+  ![In Development](./images/in-development.png " ")
+
+5. After development, workshop team will move the workshop status to *Self QA*. Follow Lab 4 -> Task 8 to self QA the workshop. After Self QA, workshop team will move the workshop status to *Self QA Complete*.
+  ![Self QA](./images/self-qa.png " ")
+
+6. The workshop's *stakeholder* will verify the QA within 2 business days. They will either send workshop team issues to fix, or move the workshop to *Completed* status, meaning the workshop is ready for production.
+  ![Self QA Complete](./images/self-qa-complete.png " ")
+
+7. The workshop is completed. After workshop team submits the publishing request, and LiveLabs team approves it, the workshop will be live in LiveLabs automatically within a business day.
+  ![Completed](./images/completed.png " ")
 
 ## Develop LiveLabs Workshops Workflow
 The following diagram shows the general workflow process that your need to follow to set up your environment to develop labs and workshops. Most of the tasks are performed only once.
@@ -87,5 +114,6 @@ The following diagram shows the general workflow process that your need to follo
 * **Contributors:**
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Arabella Yao, Product Manager, Database Product Management
 * **Last Updated By/Date:**
-    * Lauran Serhal and Anuradha Chepuri, November 2021
+    * Arabella Yao, March 2022

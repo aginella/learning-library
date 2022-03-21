@@ -178,13 +178,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ```
     <copy>cd ~/fleet
-    cat create_image_Tier2_sidb_x64.sh</copy>
-    ```
-
-    **OR**
-
-    ```
-    <copy>sh create_image_Tier2_sidb_x64.sh</copy>
+    sh create_image_Tier2_sidb_x64.sh</copy>
     ```
     ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
 
@@ -327,7 +321,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     Check both Migrate Listener and Update Database options
     Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
-        Named Host Credentials as ***ORACLE***
+        Normal Host Credentials as ***ORACLE***
         Privileged Host Credentials as ***ROOT***
         SYSDBA Database Credentials as ***SYS_SALES***
 

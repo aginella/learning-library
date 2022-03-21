@@ -156,22 +156,38 @@ Now that your workshop is in the learning library, set your workshop status in W
 ## Task 8: Self QA
 You have finish developing your workshop. In order to publish your workshop, you still need to perform self QA on the workshop.
 
-1.  On the *Workshop Details* page, ensure **Short Description**, **Long Description**, **Workshop Outline**, and **Workshop Prerequisites** are all up-to-date. Click **?** beside each field to see its details.
+1.  On the *Workshop Details* page, ensure **Workshop Title** matches the workshop title in development, and **Short Description**, **Long Description**, **Workshop Outline**, and **Workshop Prerequisites** are all up-to-date. Click **?** beside each field to see its details.
 
   ![Basic Information](images/description.png " ")
   ![Detailed Workshop Information](images/outline-description.png " ")
 
-2.  If your workshop has been added to oracle/learning-library GitHub repo, scroll down and update the **Production GitHub/GitLab URL**. Update it to the new oracle.github.io address you identified in Task 6. Update the **Development GithHub/GitLab URL** to your personal github page address.
+2.  If your workshop has been added to oracle/learning-library GitHub repo (your pull request has been merged), scroll down and update the **Production GitHub/GitLab URL**. Update it to the new oracle.github.io address you identified in Task 6. Update the **Development GithHub/GitLab URL** to your personal github page address.
   ![GitHub link](images/github-url.png " ")
 
-3. Click the **Tags** tab. Make sure you have selected tags for **Level**, **Role**, **Focus Area**, and **Product**. Click **Save**. Tags help people find your workshop in LiveLabs.
+3. Click the **Tags** tab. Make sure you have selected correct tags for **Level**, **Role**, **Focus Area**, and **Product**. Click **Save**. Tags help people find your workshop in LiveLabs.
 	![Tags](images/tags.png " ")
 
-4.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
+4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
+
+5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
+  ![Self QA Complete](images/self-qa-complete.png " ")
+
+6. Then, email your completed Self QA document to your stakeholder email address. Stakeholder is who sent you the Self QA form. You can also find your stakeholder by going into WMS and looking at your *Workshop Details* page.
+
+7. Your stakeholders will verify the QA within 2 business days. They will reach out to you via WMS if there are more changes needed. Otherwise, they will move the workshop into **Completed** status. If you have not heard back from your stakeholder 2 business days after you submit the Self QA form, please message them via WMS. While you are waiting to hear back from your stakeholder, you can go to Task 9 and request publishing.
+
+  ![Message](images/message-team.png " ")
+
+8. Questions?  Go to your workshop and find your stakeholder email address, and contact them.  You can also ask in the #workshops-authors-help Slack channel.
+
+  ![Stakeholder](images/stakeholder.png " ")
+
+## Task 9: Request Publishing
+1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
 
 	![Request Publishing](images/publishing-tab.png)
 
-5. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
+2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
 
     - Always Free On? - Can this workshop be done in an Always Free account using only Always Free services? (i.e. Compute Micro, ADB-Shared, etc). [Here](https://www.oracle.com/cloud/free/#always-free) is a list of Always Free eligible services.
 
@@ -183,23 +199,9 @@ You have finish developing your workshop. In order to publish your workshop, you
 
     ![Publishing Information](images/livelabs-publishing.png " ")
 
-6. Click **Save**.
+3. Click **Save**.
 
-7.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your stakeholder (e.g. livelabs-help-db_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
-
-8. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS. Then, email your completed Self QA document to your stakeholder email address.
-
-  ![Self QA Complete](images/self-qa-complete.png " ")
-
-9. Your stakeholders will verify the QA within 2 business days. They will reach out to you via WMS if there are more changes needed. Otherwise, they will move the workshop into **Completed** status. If you have not heard back from your stakeholder 2 business days after you submit the Self QA form, please message them via WMS.
-
-  ![Message](images/message-team.png " ")
-
-10. When your workshop is in **Completed** status, and we have approved your publishing request, your workshop will be published automatically within 1 business day.
-
-11. Questions?  Go to your workshop and find your stakeholder email address, and contact them.  You can also ask in the #workshops-authors-help Slack channel.
-
-  ![Stakeholder](images/stakeholder.png " ")
+4. When your workshop is in **Completed** status, and we have approved your publishing request, your workshop will be published automatically within 1 business day.
 
 You may now **proceed to the next lab**.
 
@@ -251,5 +253,6 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
+    * Arabella Yao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022
+* **Last Updated By/Date:** Arabella Yao, March 2022
