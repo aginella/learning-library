@@ -123,7 +123,7 @@ Follow the below steps to open Notebook in DataScience:
         <copy>mkdir ~/.oci</copy>
         ```
 
-    Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
+    Upload the config file and the private key you created in Lab 2 (Setup API Signing Key and Config File) to the notebook session by clicking on the "upload files" icon.
 
     In the terminal, move those files to the .oci folder.
         ```
